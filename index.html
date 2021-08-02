@@ -1,13 +1,13 @@
-
 <!-- 
 Author  : Emmanuel Distingué NGBAME KOYAPOLO
 Contact : ngbamedistingue@yahoo.com
 Date    : 29 july 2021 
-Statut  : Not yet finished...
+Statut  : Finished.
 -->
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,35 +21,36 @@ Statut  : Not yet finished...
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <title>My Portfolio</title>
 </head>
+
 <body>
     <div class="scroll-up-btn">
         <i class="fas fa-angle-up"></i>
     </div>
     <nav class="navbar">
         <div class="max-width">
-            <div class="logo"><a href="#"><span>My</span>Porfolio.</a></div>
+            <div class="logo"><a href="#"><span>Mon</span>Porfolio.</a></div>
             <ul class="menu">
-                <li><a href="#home">Menu</a></li>
-                <li><a href="#about">A propos</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#skills">Compétences</a></li>
-                <li><a href="#teams">Equipes</a></li>
-                <li><a href="#contact">Contacts</a></li>
+                <li><a href="#home" class="menu-btn">Menu</a></li>
+                <li><a href="#about" class="menu-btn">A propos</a></li>
+                <li><a href="#services" class="menu-btn">Services</a></li>
+                <li><a href="#skills" class="menu-btn">Compétences</a></li>
+                <li><a href="#teams" class="menu-btn">Equipes</a></li>
+                <li><a href="#contact" class="menu-btn">Contacts</a></li>
             </ul>
             <div class="menu-btn">
-                <i class="fas fa-bar"></i>
+                <i class="fas fa-bars"></i>
             </div>
         </div>
     </nav>
 
-    <!-- home section starts -->
+    <!-- home section start -->
     <section class="home" id="home">
         <div class="max-width">
             <div class="home-content">
-                <div class="text-1">Hello, my name is</div>
-                <div class="text-2">Emmanuel Distingué</div>
-                <div class="text-3">I'm a Developper <span class="typing"></span></div>
-                <a href="#"> Here me</a>
+                <div class="text-1">Bonjour, je m'appelle</div>
+                <div class="text-2">Emmanuel NGBAME</div>
+                <div class="text-3">Je suis un <span class="typing"></span></div>
+                <a href="#">Votre alternant</a>
             </div>
         </div>
     </section>
@@ -60,12 +61,24 @@ Statut  : Not yet finished...
             <h2 class="title">A propos de moi</h2>
             <div class="about-content">
                 <div class="column left">
-                    <img src="images/profile-331.jpeg" alt="">
+                    <img src="images/profile-1.jpeg" alt="">
                 </div>
                 <div class="column right">
-                    <div class="text">I'm Emmanuel and I am a <span>Developper</span></div>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae nulla consectetur ab veritatis corporis inventore ex expedita quisquam, quis, recusandae deleniti. Unde, quisquam cumque sunt laboriosam delectus expedita minima nisi iusto adipisci facilis nesciunt cum magni est? Fuga quam dolor labore excepturi vitae dolores mollitia officia, neque architecto illo expedita veritatis accusamus maiores quas deserunt! Autem totam quaerat odio ipsa!</p>
-                    <a href="#">Télécharger Cv</a>
+                    <div class="text">Je suis Emmanuel and je suis un <span class="typing-2"></span></div>
+                    <p>Etudiant, titulaire d'un diplôme de graduat (bac+3) en <b>Analyse et Programmation </b>
+                        à <b><a href="http://www.isckinshasa.cd/" target="_blank"> <span class="linkEts">l'Institut Supérieur de Commerce de Kinshasa (ISC-Kinshasa)</span></a></b>.
+                        Tout au long de mon cursus j'ai effectué un stage de fin de cursus au sein de la société <a href="https://sofide.org/v/" target="_blank"><b><span class="linkEts">La Société Financière de Développement (SOFIDE-Kinshasa)</span></b></a>
+                        où j'ai pû mettre mes compétences en pratique dans l'analyse, la conception et le dévelopement. Mais j'ai aussi beaucoup appris avec de proffessionnels de cet établissement.
+                        J'ai profité d'une formation dans le développement web (Front) avec l'équipe <a href="https://wolftech.online/" target="_blank"><b><span class="linkEts">Wolf Technologies.</span></b></a><br>
+                    </p>
+                    <p>
+                        Entre temps je me forme tout le jour sur <a href="https://www.udemy.com/" target="_blank"> <span class="linkEts"><b>Udemy</b></span></a> pour préparer mon alternance.
+                    </p>
+                    <p>
+                        Je suis actuellement dans la recherche d'une <b>entreprise</b> en vue d'une <b>alternance</b> qui doit débuter en <b>Septembre 2021</b> dans le Développement dans 
+                        toute sa globalité (développeur Fullstack, Apprenti dans la gestion de projets informatiques, Développeur applicatif, Testeur de logiciel, Apprendi Informaticien etc.)
+                    </p>
+                    <a href="data/CV_NGBAME_Emmanuel_2021_Info.pdf" download><span class="LinkCv">Télécharger CV</span></a>
                 </div>
             </div>
         </div>
@@ -78,81 +91,109 @@ Statut  : Not yet finished...
             <div class="serv-content">
                 <div class="card">
                     <div class="box">
+                        <i class="fas fa-brain"></i>
+                        <div class="text">Analyse</div>
+                        <p>
+                            Avec la méthode MERISE ou UML je peux faire l'étude d'un projet allant de l'analyse à la conception,
+                            utilisant les techniques de la méthode MERISE pour mieux adapter le problème jusqu'à mettre en place un modèle efficace selon le cas.
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <i class="fas fa-edit"></i>
+                        <div class="text">Conception</div>
+                        <p>Je peux tout aussi bien concevoir un logiciel en autonomie comme en équipe.
+                            Je suis autonome, rigoureux, appliqué,
+                            motivé et avec un esprit d'équipe constant peu importe la diversité. 
+                            J'ai de projets réalisés en équipe et de nombreux projets personnels en cours.
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
                         <i class="fas fa-paint-brush"></i>
-                        <div class="text">Developpement</div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi praesentium non, totam quasi iure harum saepe, quia labore earum laboriosam, eius ipsam beatae consequatur rerum amet! Temporibus, numquam incidunt! Commodi magnam impedit consequatur illo, quibusdam ut ipsum! Optio, sit ex.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="box">
-                        <i class="fas fa-chart-line"></i>
-                        <div class="text">Developpement</div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi praesentium non, totam quasi iure harum saepe, quia labore earum laboriosam, eius ipsam beatae consequatur rerum amet! Temporibus, numquam incidunt! Commodi magnam impedit consequatur illo, quibusdam ut ipsum! Optio, sit ex.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="box">
-                        <i class="fas fa-code"></i>
-                        <div class="text">Apps design</div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi praesentium non, totam quasi iure harum saepe, quia labore earum laboriosam, eius ipsam beatae consequatur rerum amet! Temporibus, numquam incidunt! Commodi magnam impedit consequatur illo, quibusdam ut ipsum! Optio, sit ex.</p>
+                        <div class="text">Design</div>
+                        <p>Un peu poussé, j'ai un goût particulier dans l'argonomie, bien que je ne suis pas graphiste mais 
+                            je suis créatif et je peux donc proposé un design lors de la conception d'un site ou d'une application.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
+        </div>
     </section>
 
-    <!-- Skills section start -->
+    <!-- skills section start -->
     <section class="skills" id="skills">
         <div class="max-width">
-            <h2 class="title">Mes Compétences</h2>
+            <h2 class="title">Mes compétences</h2>
             <div class="skills-content">
                 <div class="column left">
-                    <div class="text">Mes projets et expériences</div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, nostrum voluptatem. Aut doloribus laboriosam rem distinctio vitae? Iusto expedita veniam pariatur iure, delectus nemo nulla debitis labore maiores sunt mollitia illum earum quidem enim deserunt praesentium eius. Voluptate incidunt voluptas eveniet consequatur saepe quis dolore debitis ipsam! Repellendus temporibus quaerat, fugit, distinctio repudiandae quia unde ipsam vitae assumenda, veniam ipsa.</p>
-                    <a href="#">Voir plus</a>
+                    <div class="text">Mes compétences sur base de mes études et expériences</div>
+                    <p>Les diffents langages de programmation et outils informatiques auxquels je m'en sors pas mal.</br>
+                        Sur ce lien vous verrez mon Github où je ne mets que pres peu de mes projets. </br>
+                        <span class="rqr">**</span>Ce lanage est en cours de progression. </br>
+                        <span class="rqr">* </span>Ces lanages sont en cours d'apprentissage.
+                    </p>
+                    <a href="https://github.com/dididnk" target="_blank">Mon Github</a>
                 </div>
                 <div class="column right">
                     <div class="bars">
                         <div class="info">
-                            <span>HTML</span>
+                            <span>C</span>
                             <span>90%</span>
                         </div>
-                        <div class="line html"></div>
+                        <div class="line c"></div>
                     </div>
                     <div class="bars">
                         <div class="info">
-                            <span>CSS</span>
-                            <span>70%</span>
-                        </div>
-                        <div class="line css"></div>
-                    </div>
-                    <div class="bars">
-                        <div class="info">
-                            <span>VISUAL BASIC 11.0</span>
-                            <span>80%</span>
+                            <span>Visual Basic 11.0</span>
+                            <span>85%</span>
                         </div>
                         <div class="line vb"></div>
                     </div>
                     <div class="bars">
                         <div class="info">
-                            <span>DELPHI 7</span>
-                            <span>70%</span>
+                            <span>HTML 5 & CSS 3</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="line htmlCss"></div>
+                    </div>
+                    <div class="bars">
+                        <div class="info">
+                            <span>Delphi 7</span>
+                            <span>75%</span>
                         </div>
                         <div class="line delphi"></div>
                     </div>
                     <div class="bars">
                         <div class="info">
-                            <span>PYTHON</span>
-                            <span>75%*</span>
+                            <span><span class="rqr">* </span>Python</span>
+                            <span>70%</span>
                         </div>
                         <div class="line python"></div>
                     </div>
                     <div class="bars">
                         <div class="info">
-                            <span>C</span>
-                            <span>80%</span>
+                            <span>MySQL, SQL Server, SQL</span>
+                            <span>60%</span>
                         </div>
-                        <div class="line c"></div>
+                        <div class="line bdd"></div>
+                    </div>
+                    <div class="bars">
+                        <div class="info">
+                            <span>Microsoft Acces</span>
+                            <span>65%</span>
+                        </div>
+                        <div class="line msacces"></div>
+                    </div>
+                    <div class="bars">
+                        <div class="info">
+                            <span> <span class="rqr">**</span> PHP, Kotlin, JavaScript, C#</span>
+                            <span>20%</span>
+                        </div>
+                        <div class="line all"></div>
                     </div>
                 </div>
             </div>
@@ -162,61 +203,83 @@ Statut  : Not yet finished...
     <!-- teams section start -->
     <section class="teams" id="teams">
         <div class="max-width">
-            <h2 class="title">Mon équipe</h2>
+            <h2 class="title">My teams</h2>
             <div class="carousel owl-carousel">
                 <div class="card">
                     <div class="box">
+                        <img src="images/wolf-1.jpeg" alt="">
+                        <div class="text">Rickain LUBO</div>
+                        <p> Project, Database and Web Officer Nations Unies (OCHA) </br>
+                            CO Wolf Technologies and MAKUTA application </br>
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
                         <img src="images/tab-1.jpeg" alt="">
-                        <div class="text">Someone name</div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, deleniti?</p>
+                        <div class="text">Dunia-Tabitha NGBAME</div>
+                        <p>Assistante administrative chez POLYRISE.</p>
                     </div>
                 </div>
                 <div class="card">
                     <div class="box">
                         <img src="images/sam-1.jpeg" alt="">
-                        <div class="text">Someone name</div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, deleniti?</p>
+                        <div class="text">Samuel</div>
+                        <p>Développeur Web.</p>
                     </div>
                 </div>
                 <div class="card">
                     <div class="box">
-                        <img src="images/wolf-1.jpeg" alt="">
-                        <div class="text">Someone name</div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, deleniti?</p>
+                        <img src="images/saiz-1.jpeg" alt="">
+                        <div class="text">Joyce SABWE</div>
+                        <p>Mathématicien et Développeur.</p>
                     </div>
                 </div>
                 <div class="card">
                     <div class="box">
                         <img src="images/dnk-1.jpeg" alt="">
-                        <div class="text">Someone name</div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, deleniti?</p>
+                        <div class="text">ANONYME</div>
+                        <p>Coach en développement numérique chez Google API.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- contact section starts -->
+    <!-- contact section start -->
     <section class="contact" id="contact">
         <div class="max-width">
-            <h2 class="title">Me Contacter</h2>
+            <h2 class="title">Contactez moi</h2>
             <div class="contact-content">
                 <div class="column left">
-                    <div class="text">En un click !</div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga explicabo sit sequi.</p>
+                    <div class="text">Merci pour votre visite !</div>
+                    <p>
+                        Si vous êtes une entreprise en recherche d'un alternant, je serais très ravis de collaborer avec vous.
+                        Ci-dessous mes coordonnées, n'hésitez pas à me contacter je suis à votre entière disposition.
+                    </p>
+                    </p>
+                        Je ne fermerais pas non plus la porte à une proposition d'embauche CDD, CDI ou contrat de professionnalisation.
+                    </p>
                     <div class="icons">
                         <div class="row">
                             <i class="fas fa-user"></i>
                             <div class="info">
-                                <div class="head">Name</div>
-                                <div class="sub-title">Emmanuel Distingué</div>
+                                <div class="head">Nom complet</div>
+                                <div class="sub-title">Emmanuel NGBAME KOYAPOLO</div>
                             </div>
                         </div>
                         <div class="row">
                             <i class="fas fa-map-marker-alt"></i>
                             <div class="info">
-                                <div class="head">Adress</div>
-                                <div class="sub-title">22 Avenue Aristide Briand</div>
+                                <div class="head">Addresse</div>
+                                <div class="sub-title">45 Avenue Aristide Briand, Mérignac 33700, Appartement 22</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <i class="fas fa-phone-alt"></i>
+                            <div class="info">
+                                <div class="head">Téléphone</div>
+                                <div class="sub-title">07 66 79 45 58</div>
                             </div>
                         </div>
                         <div class="row">
@@ -229,11 +292,11 @@ Statut  : Not yet finished...
                     </div>
                 </div>
                 <div class="column right">
-                    <div class="text">M'envoyer un message</div>
+                    <div class="text">Ecrivez-moi</div>
                     <form action="#">
                         <div class="fields">
                             <div class="field name">
-                                <input type="text" placeholder="Name" required>
+                                <input type="text" placeholder="Nom" required>
                             </div>
                             <div class="field email">
                                 <input type="email" placeholder="Email" required>
@@ -243,10 +306,10 @@ Statut  : Not yet finished...
                             <input type="text" placeholder="Sujet" required>
                         </div>
                         <div class="field textarea">
-                            <textarea cols="30" rows="10" placeholder="Description" required></textarea>
-                            <div class="button">
-                                <button type="submit">Envoyer</button>
-                            </div>
+                            <textarea cols="30" rows="10" placeholder="Message..." required></textarea>
+                        </div>
+                        <div class="button-area">
+                            <button type="submit">Envoyer</button>
                         </div>
                     </form>
                 </div>
@@ -256,7 +319,7 @@ Statut  : Not yet finished...
 
     <!-- footer section starts -->
     <footer>
-        <span>Créer par <a href="#">Emmanuel Distingué NGBAME KOYAPOLO</a> | <span class="far fa-copyright"> 2021 tout droit reservé.</span></span>
+        <span>Créer par <a href="#">Emmanuel Distingué NGBAME KOYAPOLO</a> | <span class="far fa-copyright"> 2021 TOUT DROIT RESERVE.</span></span>
     </footer>
 
 
@@ -265,4 +328,5 @@ Statut  : Not yet finished...
     <script src="script.js"></script>
 
 </body>
+
 </html>
