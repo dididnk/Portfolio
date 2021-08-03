@@ -28,7 +28,7 @@ Statut  : Finished.
     </div>
     <nav class="navbar">
         <div class="max-width">
-            <div class="logo"><a href="#"><span>Mon</span>Porfolio.</a></div>
+            <div class="logo"><a href="#"><span>Mon</span>Portfolio.</a></div>
             <ul class="menu">
                 <li><a href="#home" class="menu-btn">Menu</a></li>
                 <li><a href="#about" class="menu-btn">A propos</a></li>
@@ -293,23 +293,23 @@ Statut  : Finished.
                 </div>
                 <div class="column right">
                     <div class="text">Ecrivez-moi</div>
-                    <form action="#">
+                    <form action="contact.php" method="POST">
                         <div class="fields">
                             <div class="field name">
-                                <input type="text" placeholder="Nom" required>
+                                <input type="text" placeholder="Nom" name="Name" id="Name" required>
                             </div>
                             <div class="field email">
-                                <input type="email" placeholder="Email" required>
+                                <input type="email" placeholder="Email" name="Email" id="Email" required>
                             </div>
                         </div>
                         <div class="field">
-                            <input type="text" placeholder="Sujet" required>
+                            <input type="text" placeholder="Sujet" name="Subject" id="Subject" required>
                         </div>
                         <div class="field textarea">
-                            <textarea cols="30" rows="10" placeholder="Message..." required></textarea>
+                            <textarea cols="30" rows="10" placeholder="Message..." name="Message" id="Message" required></textarea>
                         </div>
                         <div class="button-area">
-                            <button type="submit">Envoyer</button>
+                            <button type="submit" id="Envoyer">Envoyer</button>
                         </div>
                     </form>
                 </div>
@@ -322,11 +322,9 @@ Statut  : Finished.
         <span>Créer par <a href="#">Emmanuel Distingué NGBAME KOYAPOLO</a> | <span class="far fa-copyright"> 2021 TOUT DROIT RESERVE.</span></span>
     </footer>
 
-
-
-
     <script src="script.js"></script>
-
 </body>
+
+</script>
 
 </html>
