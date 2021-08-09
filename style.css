@@ -172,7 +172,7 @@ section .title::after{
 /* home section styling */
 .home{
     display: flex;
-    background: url("images/Mybackground-1.jpg") no-repeat center;
+    background: url("https://dididnk.github.io/Portfolio/images/Mybackground-1.jpg") center center no-repeat;
     height: 100vh;
     color: #fff;
     min-height: 500px;
