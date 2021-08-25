@@ -42,12 +42,13 @@ section{
     padding: 0 80px;
     margin: auto;
 }
-.about, .services, .skills, .teams, .contact, footer{
+.about, .services, .skills, .projets, .teams, .contact, footer{
     font-family: 'Poppins', sans-serif;
 }
 .about .about-content,
 .services .serv-content,
 .skills .skills-content,
+.projets-content,
 .contact .contact-content{
     display: flex;
     flex-wrap: wrap;
@@ -284,6 +285,7 @@ section .title::after{
 }
 .services .serv-content .card{
     width: calc(33% - 20px);
+    height: 60vh;
     background: #222;
     text-align: center;
     border-radius: 6px;
@@ -400,11 +402,81 @@ section .title::after{
 .skills-content .right .all::before{
     width: 20%;
 }
+
+/* projtsc section styling */
+
+.projets .title::after{
+    content: "My projects";
+}
+.projets .projets-content .left{
+    width: 45%;
+}
+.projets .projets-content .left img{
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+.part2{
+    margin-top: 20px;
+}
+
+.projets .projets-content .left2{
+    display: flex;
+    background: url("https://dididnk.github.io/Portfolio/images/ecodis.png") center center no-repeat;
+    height: 300px;
+    width: 300px;
+    background-size: cover;
+    background-attachment: fixed;
+    border-radius: 10px;
+}
+.projets .projets-content .right{
+    width: 55%;
+}
+.projets .projets-content .right .text{
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.projets .projets-content .right .text span{
+    color: crimson;
+}
+.projets .projets-content .right p,
+.projets .projets-content .right ol{
+    text-align: justify;
+}
+.projets .projets-content .right ol{
+    padding: 10px;
+    margin-left: 20px;
+}
+.projets .projets-content .right a .LinkCv{
+    display: inline-block;
+    background: crimson;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 30px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid crimson;
+    transition: all 0.3s ease;
+}
+.projets .projets-content .right a:hover{
+    color: crimson;
+    background: none;
+}
+.linkEts,
+.rqr{
+    color: crimson;
+    border: none;
+}
+
 /* teams section styling */
 .teams .title::after{
     content: "who with me";
 }
 .teams .carousel .card{
+    height: 50vh;
     background: #222;
     border-radius: 6px;
     padding: 25px 35px;
@@ -518,7 +590,8 @@ footer span a:hover{
 
 /* responsive media query start */
 @media (max-width: 1104px) {
-    .about .about-content .left img{
+    .about .about-content .left img,
+    .projets .projets-content .left img{
         height: 350px;
         width: 350px;
     }
@@ -572,15 +645,18 @@ footer span a:hover{
     .max-width{
         max-width: 930px;
     }
-    .about .about-content .column{
+    .about .about-content .column,
+    .projets .projets-content .column{
         width: 100%;
     }
-    .about .about-content .left{
+    .about .about-content .left,
+    .projets .projets-content .left{
         display: flex;
         justify-content: center;
         margin: 0 auto 60px;
     }
-    .about .about-content .right{
+    .about .about-content .right,
+    .projets .projets-content .right{
         flex: 100%;
     }
     .services .serv-content .card{
@@ -620,7 +696,8 @@ footer span a:hover{
         font-size: 27px;
     }
     .about .about-content .right .text,
-    .skills .skills-content .left .text{
+    .skills .skills-content .left .text,
+    .projets .projets-content .right .text{
         font-size: 19px;
     }
     .contact .right form .fields{
@@ -629,9 +706,6 @@ footer span a:hover{
     .contact .right form .name,
     .contact .right form .email{
         margin: 0;
-    }
-    .right form .error-box{
-       width: 150px;
     }
     .scroll-up-btn{
         right: 15px;
