@@ -421,15 +421,6 @@ section .title::after{
     margin-top: 20px;
 }
 
-.projets .projets-content .left2{
-    display: flex;
-    background: url("https://dididnk.github.io/Portfolio/images/ecodis.png") center center no-repeat;
-    height: 300px;
-    width: 300px;
-    background-size: cover;
-    background-attachment: fixed;
-    border-radius: 10px;
-}
 .projets .projets-content .right{
     width: 55%;
 }
