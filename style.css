@@ -411,11 +411,10 @@ section .title::after{
 .projets .projets-content .left{
     width: 45%;
 }
-.projets .projets-content .left img{
-    height: 300px;
-    width: 300px;
-    object-fit: cover;
-    border-radius: 6px;
+.projets .projets-content .left img,
+.projets .projets-content .left2 img{
+    height: 350px;
+    width: 350px;
 }
 .part2{
     margin-top: 20px;
