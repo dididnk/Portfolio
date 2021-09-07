@@ -225,10 +225,14 @@ section .title::after{
 .about .title::after{
     content: "Who I am";
 }
-.about .about-content .left{
+.about .about-content .left,
+.projets .projets-content .left,
+.projets .projets-content .left2{
     width: 45%;
 }
-.about .about-content .left img{
+.about .about-content .left img,
+.projets .projets-content .left img,
+.projets .projets-content .left2 img{
     height: 400px;
     width: 400px;
     object-fit: cover;
@@ -411,11 +415,7 @@ section .title::after{
 .projets .projets-content .left{
     width: 45%;
 }
-.projets .projets-content .left img,
-.projets .projets-content .left2 img{
-    height: 350px;
-    width: 350px;
-}
+
 .part2{
     margin-top: 20px;
 }
@@ -581,7 +581,8 @@ footer span a:hover{
 /* responsive media query start */
 @media (max-width: 1104px) {
     .about .about-content .left img,
-    .projets .projets-content .left img{
+    .projets .projets-content .left img,
+    .projets .projets-content .left2 img{
         height: 350px;
         width: 350px;
     }
@@ -640,7 +641,8 @@ footer span a:hover{
         width: 100%;
     }
     .about .about-content .left,
-    .projets .projets-content .left{
+    .projets .projets-content .left,
+    .projets .projets-content .left2{
         display: flex;
         justify-content: center;
         margin: 0 auto 60px;
