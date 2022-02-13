@@ -36,12 +36,13 @@ Statut  : Finished.
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    font-family: @FontPage;
 }
 html{
     scroll-behavior: smooth;
 }
-
+body{
+    font-family: @FontPage;
+}
 /* custom scroll bar */
 ::-webkit-scrollbar {
     width: 10px;
@@ -126,7 +127,7 @@ section .title::after{
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: @FontDesign !important;
+    font-family: @FontDesign;
 }
 .navbar .logo:hover{
     display: flex;
@@ -246,8 +247,9 @@ section .title::after{
     transition: all 0.3s ease;
 }
 .home .home-content a:hover{
-    color: @Yellow;
-    background: none;
+    color: @Black;
+    
+    background-color: @Yellow;
 }
 
 /* about section styling */
