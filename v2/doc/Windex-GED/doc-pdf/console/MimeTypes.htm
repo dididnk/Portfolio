@@ -1,0 +1,169 @@
+<html>
+	<meta http-equiv="content-type" content="text/html; charset=ISO-8859-15" />
+	<meta name="author" content="Multimédia SOLUTIONS" />
+	<link rel="stylesheet" href="../css/style.css" />
+	<title>Types de documents à indexer</title>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" type="text/javascript"><!--
+jQuery(document).ready( function(){
+	if (parent.frames.length!=0) { return; }
+	jQuery('h1').eq(0).append('<div class="allHelp"><a href="../index.htm">Toute la documentation</a></div>');
+});
+//-->
+</script>
+</head>
+<body>
+<h1 align="center">Types de documents à indexer</h1>
+
+<p align="center"><img src="images/screen/MimeTypes.png" border="0"></p>
+
+<div class="attention">Le type du document est indépendant 
+de l'extension du fichier !<br><span class="WindexServer">Windex Server</span> 
+se base sur le code MIME d'un fichier pour déterminer son type.
+</div>
+
+<div class="definition">MIME signifie &quot;Multi-purpose Internet Mail Extensions&quot;. <br>
+	C'est une spécification décrivant les formats de messages multimédias sur l'Internet. <br>
+	Elle permet entre autre, d'identifier le type du contenu d'un 
+	fichier.<br>
+	Plusieurs fichiers peuvent avoir le même code MIME.
+	<br>Ainsi, les fichiers avec l'extension <span class="code">asp</span>
+	ou <span class="code">nsf</span>sont reconnus 
+	comme étant de la même famille que les fichiers HTML.
+</div>
+
+<p>Après avoir modifié les types de documents, vous devez impérativement cliquer 
+	que le bouton <img src="images/btValider.gif"  border="0" align="absbottom"> </p>
+
+<table class="tableau">
+<thead>
+	<tr>
+		<th>Type</th><th>Description</th>
+	</tr>
+</thead><tbody>
+	<tr><td>*/*</td><td>
+		<h3>Filtre générique</h3>
+		<p>Ce filtre est utilisé pour les documents ayant un format différent des formats 
+		traités par <span class="WindexServer">Windex Server</span> (ci-dessous) tel
+		que les images, les vidéos ...<br>
+		Il n'indexe pas le contenu des documents mais il permet d'indexer leur nom, 
+			leur taille, leur type ...
+		</p>
+	</td></tr>
+	<tr><td>Attora Archive</td><td>
+		<h3>Archive contenant des documents Attora</h3>
+	</td></tr>
+	<tr><td>Attora Doc</td><td>
+		<h3>Documents Attora</h3>
+	</td></tr>
+	<tr><td>Excel<br>Excel(vnd)</td><td>
+		<h3><a name="3aD_Documents_Excel">Documents Microsoft Excel</a><a name="upd_031120_b"></a></h3>
+		<p>Les fichiers au format Microsoft Excel peuvent être identifiés sous deux codes 
+			MIME différents, d'où la présence des deux cases à cocher. Dans le doute, nous 
+			vous conseillons de cocher les deux.</p>
+		<p><span class="WindexServer">Windex Server</span> indexe le texte,mais 
+			également le résultat des éventuelles formules contenues dans le document.
+		</p>
+		<p>Les autres informations du document (<i>telles que l'auteur, le sujet, le 
+			titre, les mots clefs...</i>) sont traitées comme des balises META en HTML, 
+			sous leur nom usuel (<i>author, subject, keywords...</i>).</p>
+	</td></tr>
+	<tr><td>HTML</td><td>
+		<h3>Documents HTML</h3>
+		<p><span class="WindexServer">Windex Server</span> détecte tous les hyperliens du document
+			HTML afin d'indexer les documents correspondants. 
+		</p>
+		<p>Il est très important que le jeu de caractères utilisé par vos documents 
+			HTML soit précisé. Cette information est indiquée généralement dans l'entête 
+			du document via la balise META <span class="code">HTTP-EQUIV</span>&nbsp;:</p>
+		<div class="code_exemple">&lt;META HTTP-EQUIV=&quot;content-type&quot;
+			CONTENT=&quot;text/html; charset=ISO-8859-1&quot;&gt;
+		</div>
+		<div class="definition">Un jeu de caractères est une liste de caractères codés et 
+			reconnus par un système, défini par une norme. En France, on utilise principale 
+			le jeu de caractères <i>ISO Latin-1</i> (<i>également connu sous le nom 
+			&quot;ISO 8859-1&quot;</i>). Ce jeu de caractères appartient à la 
+			famille de la norme ISO, qui définit des tables de 256 caractères :
+			<ul>
+				<li type="disc">Les 128 premiers caractères correspondent aux&nbsp;caractères 
+					standard ASCII. </li>
+				<li type="disc">Les 128 caractères suivants sont des signes diacritiques (<i>caractères 
+					accentués, ligatures...</i>)</li>
+			</ul>
+		</div>
+		<p>La connaissance du jeu de caractères permet à <span class="WindexServer">Windex Server</span> 
+			de déterminer les 
+			caractères formant un mot et donc d'indexer correctement un document.</p>
+			<p>La valeur de l'attribut <span class="code">ALT</span> de la balise <span class="code">IMG</span> 
+			est indéxée.</p>
+		<div class="code_exemple">&lt;IMG SRC=&quot;images/logo.gif&quot; 
+			<b>ALT=</b>&quot;Ceci est le logo de notre société&quot;&gt;</div>
+
+		<h3><a name="1a_Exclusion_partie_de_document">Exclusion d'une partie du document 
+			de l'indexation</a><a name="upd_031120_d"></a></h3>
+		<p>Si vous souhaitez qu'une partie d'un document HTML ne soit pas indexée, 
+			il vous suffit de l'encadrer par les balises <span class="code">&lt;WSNOINDEX&gt;</span> 
+			et <span class="code">&lt;WSNOINDEX&gt;</span>.<br>
+			Ces balises ne sont reconnues que par <span class="WindexServer">Windex Server</span> et ignorées 
+			par les navigateurs ou outils HTML. Tout au plus, certains outils pourront vous 
+			signaler qu'elles sont&nbsp;inconnues.</p>
+		<div class="code_exemple">&lt;HTML&gt;<br>&lt;BODY&gt;<br>
+			Ce texte sera indexé par Windex Server&lt;br&gt;<br><b>&lt;WSNOINDEX&gt;</b><br>
+			Par contre, celui-ci ne le sera pas.<br><b>&lt;/WSNOINDEX&gt;</b><br>
+			&lt;/BODY&gt;<br>
+			&lt;/HTML&gt;
+		</div>
+		<p>La balise <span class="code">&lt;TITLE&gt;</span>  est utilisée par
+			<span class="WindexServer">Windex Server</span> pour générer le titre du document présenté dans la page des résultats. </p>
+	</td></tr>
+	<tr><td>PDF</td><td>
+		<h3><a name="3aB_Documents_PDF">Documents Adobe Acrobat (PDF</a>)</h3>
+		<p>Le texte des documents PDF est indéxé, ainsi que les propriétés  (titre, résumé ...).</p>
+		<p>Les PDF "images" (documents papiers numérisés) ne contiennent pas de texte à indexer.<br>
+			Pour que <span class="WindexServer">Windex Server</span> puisse les indexer, ces fichiers PDF doivent être "Searchable".
+			En conséquence, ils doivent avoir été retraités par un logiciel d'OCR afin de  convertir les
+			images en texte dans le document PDF.
+		</p>
+		<div  class="attention">Pour qu'un fichier au format PDF soit traité
+			il ne doit pas être protégé.
+		</div>
+	</td></tr>
+	<tr><td>PowerPoint</td><td>
+		<h3><a name="3aC_Documents_Word">Documents Microsoft </a>PowerPoint</h3>
+		<p>Pour les documents PowerPoint, seul le texte du document est indexé.<br>
+			<a name="upd_031120_a"></a>Les autres informations du document 
+			(telles que l'auteur, le sujet, le titre, les mots clefs...) 
+			sont traitées comme des balises META en HTML, sous leur nom usuel (author, subject, 
+			keywords...).</p>
+	</td></tr>
+	<tr><td>RTF</td><td>
+		<h3><a name="3aF_Documents_RTF">Documents Rich Text Format (RTF)</a><a name="upd_031120_c"></a></h3>
+		<p>C'est un format de fichier textuel (norme ASCII ou ANSI) contenant des 
+			codes de formatage du document. Ces codes sont aussi exprimés en ASCII ou ANSI. 
+			On pourrait le comparer à un document HTML dans sa logique.
+		</p>
+	</td></tr>
+	<tr><td>TEXT</td><td>
+		<h3><a name="3aE_Documents_Text">Documents Text</a></h3>
+		<p>C'est le format le plus simple : le texte est "plat", sans aucun enrichissement ni 
+		aucune mise en forme à part quelques tabulations.</p>
+	</td></tr>
+	<tr><td>Word</td><td>
+		<h3><a name="3aC_Documents_Word">Documents Microsoft Word</a></h3>
+		<p>Pour les documents Word, seul le texte du document est indexé. 
+			<a name="upd_031120_a"></a>Les autres informations du document 
+			(telles que l'auteur, le sujet, le titre, les mots clefs...) sont
+			traitées comme des balises META en HTML, sous leur nom usuel (author, subject, 
+			keywords...).<br> 
+			A noter que le titre du document Word n'est pas traité comme une balise META, 
+			mais comme le titre du document.
+		</p>
+	</td></tr>
+	<tr><td>XML</td><td>
+		<h3>Documents XML</h3>
+	</td></tr>
+</tbody>
+</table>
+
+</body>
+</html>

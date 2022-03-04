@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-15" />
+<meta name="author" content="Multimédia SOLUTIONS" />
+<link rel="stylesheet" href="../css/style.css" />
+<title>Liste des mots vides</title>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" type="text/javascript"><!--
+jQuery(document).ready( function(){
+	if (parent.frames.length!=0) { return; }
+	jQuery('h1').eq(0).append('<div class="allHelp"><a href="../index.htm">Toute la documentation</a></div>');
+});
+//-->
+</script>
+</head>
+<body>
+<h1 align="center">Liste des mots vides</h1>
+
+<p align="center">&nbsp;<img style="border: 0px solid ; width: 800px; height: 309px;" alt="" src="images/screen/WordsToExclude.png"></p>
+<p>Cette liste énumère les mots sur lesquels une recherche ne serait pas pertinente 
+ou nécessaire.<br></p>
+<p>Cette liste peut être complétée en saisissant un mot dans 
+la zone <span class="code">Ajouter un mot</span> puis en cliquant sur le bouton <img src="../images/screen/btAdd.gif" align="absbottom" border="0">.</p>
+<p>Vous pouvez également utiliser un des 
+dictionnaires prédéfinis proposé dans la liste <span class="code">Ajouter un dictionnaire</span>.<br>
+Effacez tous les mots </p>
+<p>Pour supprimer un mot, cliquez dessus.</p>
+<p>Pour supprimer toutes les mots, cliquez sur le bouton <img src="../images/screen/btDelAll.gif" align="absmiddle" border="0">. 
+Vous devrez confirmer la suppression avant qu'elle ne soit effective.</p>
+
+<div class="definition">
+	Les mots vides sont des mots non significatifs lors d'une recherche.<br>
+	Exemple :<br>
+	<div class="code">ne, vous, il, elle, car, dont, pour, une, un, leur</div>
+</div>
+<div class="astuce">Tout mot non significatif dans une 
+	recherche peut être exclu de l'indexation en plus des mots vides.<br>
+	Par exemple le mot <span class="code"><i>windex</i></span>
+	est présent dans toutes les pages de la documentation; je 
+	l'exclus de l'indexation.
+</div>
+<div class="attention">Il est vivement conseillé d'ajouter 
+	à cette liste les <a href="SearchConfig/EditOperators.htm">opérateurs 
+	booléens</a> courament utilisés pour la recherche (ainsi que 
+	leurs <a href="SearchConfig/EditOperators.htm">synonymes</a>) 
+	afin d'éviter toute confusion.
+</div>
+</body></html>

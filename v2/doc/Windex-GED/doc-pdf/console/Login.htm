@@ -1,0 +1,71 @@
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=ISO-8859-15" />
+	<meta name="author" content="Multimédia SOLUTIONS" />
+	<link rel="stylesheet" href="../css/style.css" />
+	<title>Connexion</title>
+
+
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" type="text/javascript"><!--
+jQuery(document).ready( function(){
+	if (parent.frames.length!=0) { return; }
+	jQuery('h1').eq(0).append('<div class="allHelp"><a href="../index.htm">Toute la documentation</a></div>');
+});
+//-->
+</script>
+</head>
+<body>
+<h1 align="center">Connexion</h1>
+
+<p align="center"><img src="images/screen/Login.png" border="0"></p>
+<p>L'administration de <span class="WindexServer">Windex Server</span> se fait exclusivement par le 
+protocole HTTP, via l'adresse</p>
+<p align="center"><span class="code">http://mon_serveur:8080/WindexServer/manager.htm</span></p>
+<p>où <span class="code">mon_serveur</span> correspond à l'adresse 
+du serveur sur lequel est installé <span class="WindexServer">Windex Server</span>. 
+Il est suivit par le numéro du port qui dépend de votre installation, à savoir 
+</p>
+<ul>
+	<li><span class="code">8087</span> lorsqu'on utilise <span class="WindexServer">Windex Server</span>en mode "Standard"<br></li>
+	<li><span class="code">8080</span> lorsqu'on utilise le serveur de servlets Tomcat.</li>
+	
+</ul>
+<div class="astuce">Vous pouvez également accéder à <span class="WindexServer">Windex Server</span> 
+	via  l'adresse <span class="code">http://mon_serveur:8080/WindexServer/index.htm</span> <br>
+	Cette page vous propose alors deux liens : 
+	<ul>
+	<li>l'un vers le module d'administration,</li>
+	<li> l'autre vers le module de recherche ou de "Gestion documentaire" (module GED).</li>
+	</ul>
+</div>
+    
+<p>L'accès au module d'administration de <span class="WindexServer">Windex Server</span> 
+est contrôlé par un nom d'utilisateur et un mot de passe. </p>
+<p>Saisissez ces informations puis cliquez sur le bouton <img src="images/btSeConnecter.gif" align="absmiddle">.<br>
+Si ces informations sont erronées, vous serez redirigé à nouveau vers l'écran 
+d'identification.</p>
+<p>Lors de la première utilisation de <span class="WindexServer">Windex Server</span>, 
+l'identifiant et le mot de passe de l'administration sont par défaut :</p>
+<table align="center" border="1" cellspacing="0" bordercolordark="white" bordercolorlight="black">
+    <tr>
+        <td>
+            <p>Identifiant</p>
+        </td><td>
+            <p><span class="code">administrateur</span></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>Mot de passe</p>
+        </td><td>
+            <p><span class="code">WindexServer</span></p>
+        </td>
+    </tr>
+</table>
+
+<p>L'identifiant et le mot de passe peuvent être changé via l'écran 
+d'<a href="ChangePassword.htm">identification de l'administrateur</a>.</p>
+</body>
+
+</html>

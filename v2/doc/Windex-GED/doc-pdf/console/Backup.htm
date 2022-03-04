@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-15" />
+  <meta name="author" content="Multimédia SOLUTIONS" />
+  <meta name="classification" content="Interface" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <title>Gestionnaire</title>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" type="text/javascript"><!--
+jQuery(document).ready( function(){
+	if (parent.frames.length!=0) { return; }
+	jQuery('h1').eq(0).append('<div class="allHelp"><a href="../index.htm">Toute la documentation</a></div>');
+});
+//-->
+</script>
+</head>
+<body>
+<h1 align="center">Le module de sauvegarde</h1>
+
+<div><a name="Config"></a>Ce module permet de sauvegarder et restaurer la base de données des index et des métadonnées.<br>
+	Les documents se trouvant dans l'entrepôt doivent être sauvegardés séparément.<br>
+</div>
+
+<h2>Paramêtrage de la sauvegarde</h2>
+
+<p style="text-align: center;"><img src="images/screen/Backup-Config.png" alt=""><br>
+<br>
+</p>
+
+<p>
+	Dans le champ "Dossier" indiquez le dossier qui contiendra les sauvegardes.<br>
+	Le champ "Historique" permet d'indiquer le nombre de sauvegardes que vous souhaitez conserver.<br>
+	<br>
+	Le champ "Activer" permet de lancer en automatique la sauvegarde à des heures et des jours précis.<br>
+	Le champ "Horaire" indique l'heure de la sauvegarde.<br>
+	Les jours choisis doivent être sélectionnés en cochant la case les consernant.<br>
+</p>
+
+
+
+<h2><a name="Manager"></a>Gestion des sauvegardes</h2>
+<p style="text-align: center;"><img src="images/screen/Backup-Manager.png" alt=""><br>
+<br>
+</p>
+
+<p>
+Cette écran permet de lancer la sauvegarde en cliquant sur le bouton <img src="images/btLancerSauvegarde.gif" />.<br>
+Il affiche égelement la liste des sauvegardes conservées.<br>
+Pour chaque sauvegarde, il est possible de : </p>
+<ul> 
+	<li>la supprimer. Bouton <img src="images/bt-del.png" /></li> 
+	<li>ou la restaurer. Bouton <img src="images/btRestaurer.gif" /></li>
+</ul>
+
+</body></html>

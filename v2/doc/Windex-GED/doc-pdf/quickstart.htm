@@ -1,0 +1,119 @@
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=ISO-8859-15" />
+	<title>Windex Server : Démarrage rapide</title>
+	<link rel="stylesheet" href="css/style.css">
+	<meta name="description" content="Prise en main rapide de Windex Server - Premier contact" />
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" type="text/javascript"><!--
+jQuery(document).ready( function(){
+	if (parent.frames.length!=0) { return; }
+	jQuery('h1').eq(0).append('<div class="allHelp"><a href="index.htm">Toute la documentation</a></div>');
+});
+//-->
+</script>
+</head>
+<body>
+<h1 align="center">Démarrage rapide</h1>
+
+<h2><a name=StartWS></a>Lancement de Windex Server</h2>
+<p>Le lancement de <span class="WindexServer">Windex Server</span> 
+	dépend du type d'installation choisie.</p>
+	
+<h3 align="left">1. Installation en mode "Standard"</h3>
+<ul>
+    <li>Si <span class="WindexServer">Windex Server</span> est installé en tant que service Windows : <br>
+		Allez dans "Outils d'administration" puis "Services" pour 
+		démarrer ou arrêter <span class="WindexServer">Windex Server</span>.
+	</li>
+    <li>Sinon vous trouverez dans le dossier des raccourcis deux liens vers les programmes <br>
+		<span class="code">StartWindexServer</span> et
+		<span class="code">StopWindexServer</span> <br>
+		qui respectivement démarrent et arrêtent <span class="WindexServer">Windex Server</span>.<br>
+		<div class="attention">Dans ce cas de figure, vous 
+			devez impérativement arrêter <span class="WindexServer">Windex Server</span>
+			par la commande <span class="code">StopWindexServer</span>, au 
+			risque de corrompre irrémédiablement la base de données 
+			de <span class="WindexServer">Windex Server</span>.
+		</div>
+	</li>
+</ul>
+
+
+<h3>2. Intégration au serveur de servlets Tomcat</h3>
+<p>Le démarrage et l'arrêt de <span class="WindexServer">Windex Server</span> 
+	sont dépendants du démarrage et de l'arrêt de Tomcat. </p>
+
+
+<h2> Accès au module d'administration et de recherche </h2>
+<p>Les accès dépendent du type d'installation choisie.<br>
+	Par défaut, l'identifiant 
+	de l'administrateur est &quot;<span class="code">administrateur</span>&quot; 
+	et son mot de passe est &quot;<span class="code">WindexServer</span>&quot;</p>
+
+<h3><span class="WindexServer">Windex Server</span> en mode "Standard"</h3>
+<table border="1" cellspacing="0" bordercolordark="white" bordercolorlight="black" cellpadding="5">
+    <tr>
+        <td>
+            <p>Module d'administration</p>
+        </td>
+        <td><p><span class="code">http://mon_serveur:8087/WindexServer/manager.htm</span></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>Module de recherche</p>
+        </td>
+        <td><p><span class="code">http://mon_serveur:8087/WindexServer/Search.htm</span></p>
+        </td>
+    </tr>
+</table>
+
+
+<h3><span class="WindexServer">Windex Server</span> dans Tomcat</h3>
+<table border="1" cellspacing="0" bordercolordark="white" bordercolorlight="black" cellpadding="5">
+    <tr>
+        <td>
+            <p>Module d'administration</p>
+        </td>
+        <td><p><span class="code">http://mon_serveur:8080/WindexServer/manager.htm</span></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>Module de recherche</p>
+        </td>
+        <td><p><span class="code">http://mon_serveur:8080/WindexServer/Search.htm</span></p>
+        </td>
+    </tr>
+</table>
+
+<p align="left">où <span class="code">mon_serveur</span> correspond à l'adresse 
+	du serveur sur lequel est installé <span class="WindexServer">Windex Server</span>.</p>
+
+<h2>Activation de <span class="WindexServer">Windex Server</span></h2>
+<p>Dés la première utilisation, vous devez impérativement activer le logiciel.<br>
+	Cliquez sur l'icône <img  align="absmiddle" src="console/images/iconeLicense.png"> 
+	et suivez les instructions de validation de votre licence.</p>
+
+	
+<h2 align="left"> Changement du mot de passe de l'administrateur </h2>
+<p align="left">Il est recommandé de modifier le login et le mot de passe de l'administrateur
+	via l'icône <img src="console/images/iconeRight.png" align="absmiddle" > <br>
+	Les informations seront prises en compte après avoir sauvegardé la configuration en cliquant sur
+	l'icône <img  align="absmiddle" src="console/images/iconeSave.png" >
+	</p>
+
+
+<h2 align="left"> Quitter Windex Server </h2>
+<p align="left">Pour quitter le module d'administration, cliquez sur l'icône 
+	<img  align="absmiddle" src="console/images/iconeQuit.png" ></p>
+<p align="left">Pour quitter le module de recherche, fermez simplement l'instance 
+	de votre navigateur</p>
+<p align="left">Pour arrêter <span class="WindexServer">Windex Server</span>, 
+	suivez la procédure correspondant à votre installation et explicité plus haut 
+	dans la section &quot;<a href="#StartWS">Lancement de <span class="WindexServer">Windex Server</span></a>&quot;</p>
+</body>
+
+</html>

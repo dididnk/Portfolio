@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=ISO-8859-15" />
+	<title>Windex Server</title>
+	<base target="result" />
+	<link rel="stylesheet" href="../css/sommaire.css" />
+	<link rel="stylesheet" href="../css/ui-lightness/jquery-ui.doc.css" />
+	
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/jquery.ui.all.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function(){
+	startAccordion();
+	jQuery("#page").resize(function(){ 
+		if( jQuery.browser.msie )
+			jQuery("#sommaire").accordion("resize");
+	});
+	jQuery(window).resize(function(){
+		if( !jQuery.browser.msie )
+			jQuery("#sommaire").accordion("resize"); 
+	});
+	
+});
+function startAccordion(){
+	jQuery("#sommaire").accordion({
+		header: "h3",
+		autoHeight: true,
+		//clearStyle: true,
+		fillSpace: true
+	});
+}
+</script>
+</head><body><div id="page">
+<div id="pageHeader">
+	<h1><img src="../images/windexServer.gif" alt="Windex Server"/></h1>
+</div>
+<div id="pageContent">
+	<div id="sommaire">
+		<h3><a href="#">Généralités</a></h3>
+		<div class="cadre">
+			<div class="section">
+				<a href="../presentation.htm">Présentation</a><br>
+				<a href="../convent.htm">Conventions</a><br>
+			</div>
+		</div>
+		
+		<h3><a href="#">Le moteur de recherche</a></h3>
+		<div class="cadre">
+			<div class="section">
+				<a href="../userguide.htm">Module de recherche standard</a><br>
+			</div>
+		</div>
+		
+		<h3><a href="Explorer.htm">Gestion des documents</a></h3>
+		<div class="cadre">	
+			<div class="nota">Ce module est disponible uniquement dans la version GED de Windex Server</div>		
+			<div class="section">				
+				<a href="Explorer.htm">L'Exploreur</a><br>
+				<ul>
+					<li><a href="Explorer.htm#Gestion_des_documents">Gestion des documents</a></li>
+					<li><a href="Explorer.htm#Recherche_document">Recherche de document</a></li>
+					<li><a href="Explorer.htm#Ajout_Document">Ajout de document dans le dossier courant</a></li>
+				</ul>
+				<br/>
+				Les outils du Gestionnaire<br>
+				<ul>
+					<li><a href="Manager.htm">Le module Gestionnaire</a></li>
+					<li><a href="Addressbook.htm">Gestion du carnet d'adresses</a></li>
+					<li><a href="Addressbook-Profil.htm">Gestion des profils</a></li>
+					<li><a href="DocState.htm">Gestion des états</a></li>
+					<li><a href="Workflow.htm">Gestion du Workflow</a></li>
+					<li><a href="EventsEditor.htm">Gestion des évènements</a></li>
+					<li><a href="WorkflowExIm.htm">Export/import du Workflow</a></li>
+					<li><a href="EventsLogs.htm">Export des logs</a></li>
+				</ul>
+				<br/>
+				Les outils de l'utilisateur<br>
+				<ul>
+					<li><a href="Profil.htm">Profil utilisateur</a></li>
+					<li><a href="Message.htm">Les messages</a></li>
+					<li><a href="Alert.htm">Les alertes</a></li>
+				</ul>
+				<br/>
+				Modules documentaires<br>
+				<ul>
+					<li><a href="Properties.htm">Les propriétés</a></li>
+					<li><a href="ManageResources.htm">Gestion des ressources</a></li>
+					<li><a href="EditeNote.htm">Editer la note</a></li>
+					<li><a href="SendMessage.htm">Envoyer un message</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		<h3><a href="copyright.htm">A propos</a></h3>
+		<div class="cadre">
+			<div class="section">
+				<a href="../about.htm#Qui_somme_nous">Qui sommes-nous ?</a><br />
+				<a href="../about.htm#Conditions_utilisation">Conditions d'utilisation</a><br />
+				<a href="../about.htm#Credits">Crédits</a><br />
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>
+</body>
+</html>

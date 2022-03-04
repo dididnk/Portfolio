@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-15" />
+  <meta name="author" content="Multimédia SOLUTIONS" />
+  <meta name="classification" content="Interface" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <title>Gestion du carnet d'adresses</title>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" type="text/javascript"><!--
+jQuery(document).ready( function(){
+	if (parent.frames.length!=0) { return; }
+	jQuery('h1').eq(0).append('<div class="allHelp"><a href="index.htm">Toute la documentation</a></div>');
+});
+//-->
+</script>
+</head>
+<body>
+<h1 align="center">Gestion du carnet d'adresses<br>
+</h1>
+
+<p style="text-align: center;">&nbsp;<img alt="" src="images/screen/Addressbook.png"><br>
+</p>
+
+Ce module permet de créer les utilisateurs et de leur associer des droits d'accès aux documents.<br>
+<h2>Gestion des profils</h2>
+
+
+<div style="text-align: center;">
+
+<div style="text-align: left;">Un profil est un ensemble d'informations concernant les utilisateurs à qui il est associé.<br>
+A un profil donné sont associés des droits d'accès aux fichiers.<br>
+Un utilisateur ne peut avoir qu'un seul profil.<br>
+</div>
+<img alt="" src="images/screen/Addressbook-zoneProfils.png"><br>
+</div>
+Les différents boutons
+
+<table class="tableau">
+
+
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;"><img alt="+" src="images/bt-add.png"><br>
+      </td>
+      <td style="vertical-align: top;">Crée un nouveau profil.<br>
+Si un profil est sélectionné dans la liste déroulante, le nouveau profil correspond à une copie de celui-ci.<br>
+Vous pouvez ensuite modifier les paramètres de ce nouveau profil.<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><img alt="édition" src="images/bt-edit.png"><br>
+      </td>
+      <td style="vertical-align: top;">Appelle le module d'édition de
+profils. [<a href="Addressbook-Profil.htm">Plus de détails</a>]<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><img alt="x" src="images/bt-del.png"><br>
+      </td>
+      <td style="vertical-align: top;">Supprime le profil sélectionné à condition qu'il ne soit associé à aucun utilisateur<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><img alt="xx" src="images/bt-delAll.png"><br>
+      </td>
+      <td style="vertical-align: top;">Supprime tous les profils
+inutilisés<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<br>
+
+
+<br>
+<h2>Gestion des utilisateurs</h2>Cet espace permet de créer la liste des utilisateurs de <span class="WindexServer">Windex Server</span> <br>
+Les informations à saisir pour chacun d'eux sont :<br>
+
+<table class="tableau">
+
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;">Login</td>
+      <td style="vertical-align: top;">Nom utilisé pour se connecter
+à <span class="WindexServer">Windex Server</span> <br>
+Le login doit être unique.</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Civilité</td>
+      <td style="vertical-align: top;">La civilité : Mr, Mme, Mlle<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Nom</td>
+      <td style="vertical-align: top;">Nom de l'utilisateur<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Prénom</td>
+      <td style="vertical-align: top;">Prénom de l'utilisateur</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Service</td>
+      <td style="vertical-align: top;"><span class="new">Nouveauté</span> Service auquel est rattaché l'utilisateur</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Courriel</td>
+      <td style="vertical-align: top;">Adresse Email de l'utilisateur. Cette information est optionnelle
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Type</td>
+      <td style="vertical-align: top;">Indique le type d''utilisateur :<br>
+      	<ul>
+      		<li> Externe : <span class="new">Nouveauté</span> utilisateur externe.
+	      		Ces d'utilisateurs ont un usage « restreint » de la GED.<br>
+						L'utilisateur EXTERNE ne peut pas modifier les propriétés, ne voit pas le module Gestionnaire (carnet
+						d'adresses, Workflow, Evénements...), ne peux pas envoyer ni messages ni email concernant un
+						document. Il ne voit pas le carnet d'adresses des utilisateurs de la GED.
+						Le profil qui lui est associé peut lui donner des droits ou pas (lecture, création de dossiers....).
+						Cependant, il n'aura pas accès aux modules pré-cités.<br>
+						Le type EXTERNE permet, par exemple, de donner à 1 client le droit d'accès à son dossier dans la GED.<br>
+						Il ne verra pas le reste de l'arborescence (voir création du profil et définition des droits) et au minimum, ne
+						pourra que rechercher les documents dans son dossier, les consulter et les télécharger.<br>
+						<br>
+						<div class="astuce">Cette fonctionnalité permet de remplacer un serveur FTP et la création de comptes FTP.</div>
+					</li>
+      		<li> Standard : utilisateur standard</li>
+      		<li> Gestionnaire : utilisateur ayant accès aux modules de gestion (le carnet d'adresse, les états ...)</li>
+			</ul>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Langue</td>
+      <td style="vertical-align: top;">Langue de l'interface pour un utilisateur donné<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Profil<br>
+      </td>
+      <td style="vertical-align: top;">Profil de l'utilisateur
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<br><br>
+</body></html>

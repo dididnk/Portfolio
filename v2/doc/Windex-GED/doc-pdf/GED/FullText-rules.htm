@@ -1,0 +1,400 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-15" />
+  <meta name="author" content="Multimédia SOLUTIONS" />
+  <meta name="classification" content="Interface" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <title>Les règles de la recherche plein texte</title>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" type="text/javascript"><!--
+jQuery(document).ready( function(){
+	if (parent.frames.length!=0) { return; }
+	jQuery('h1').eq(0).append('<div class="allHelp"><a href="index.htm">Toute la documentation</a></div>');
+});
+//-->
+</script>
+</head>
+<body>
+<h1 align="center">Les règles de la recherche plein texte</h1>
+
+<h2><a name="1a_recherche_un_mot"> Recherche d'un mot</a></h2>
+
+<h4><a name="1aA_regles_de_base"><img src="../images/pucebleu.gif" border="0"> Quelques règles</a></h4>
+
+<ul>
+
+  <li type="disc">Vous pouvez saisir les mots sans accents<br>
+    <u>Exemple :</u><br>
+Pour rechercher les documents contenant le mot "<i>réseau</i>",
+saisissez "<span class="code">r</span><b><span class="code"><u>é</u></span></b><span class="code">seau</span>" ou "<span class="code">r</span><b><span class="code"><u>e</u></span></b><span class="code">seau</span>".<br>
+&nbsp;</li>
+</ul>
+
+<div class="attention">Cette fonctionnalité est disponible si
+l'Administrateur n'a pas désactivé la <a href="../console/SearchConfig/EditOperators.htm#2_Gestion_de_la_grammaire">gestion
+grammaticale</a>
+</div>
+
+<ul>
+
+  <li>Les mots au pluriel sont automatiquement pris en compte.<br>
+    <u>Exemple</u> : <br>
+Si vous recherchez les documents contenant le mot "<i>ordinateur</i>",
+les documents contenant le mot "<span class="code">ordinateur</span>"
+ou "<span class="code">ordinateur</span><b><span class="code"><u>s</u></span></b>"
+seront proposés<br>
+&nbsp;</li>
+</ul>
+
+<div class="attention">Cette fonctionnalité est disponible si
+l'Administrateur n'a pas désactivé la <a href="../console/SearchConfig/EditOperators.htm#2_Gestion_de_la_grammaire">
+gestion grammaticale</a>. <br>
+Les pluriels des mots se terminant par&nbsp;"ou" (hibou, chou, genou,
+caillou, joujou, bijou, pou) sont pris en compte. </div>
+
+<ul>
+
+  <li>Aucune différence n'est faite entre les majuscules et les
+minuscules.<br>
+&nbsp;</li>
+  <li>La troncature : il s'agit de la recherche sur une partie d'un mot<br>
+    <u>Exemple :</u><br>
+Pour rechercher les documents contenant les mots commençant par "<i>inter</i>",
+vous pouvez saisir "<span class="code">inter<b>*</b></span>"<br>
+A ce critère, les mots "<span class="code"><b><u>inter</u></b>net</span>",
+"<span class="code"><b><u>inter</u></b>naute</span>", "<span class="code"><b><u>inter</u></b>national</span>" pourront être
+recherchés dans les documents, mais aussi tout simplement "<span class="code"><b><u>inter</u></b></span>".<br>
+&nbsp;</li>
+</ul>
+
+<div class="attention">Le caractère " <span class="code">*</span>"
+doit être précédé d'au moins deux caractères. <br>
+Ce caractère se subsitue à x caractères ou aucun.<br>
+La <a href="../console/SearchConfig/EditOperators.htm#Mise_en_evidence_des_mots">mise
+en évidence</a> des mots trouvés n'est pas possible. <br>
+La <a href="../userguide.htm#1bA_Recherche_proximite">recherche par
+proximité</a> est désactivée.
+</div>
+
+<ul>
+
+  <li>Utilisation du ? : il s'agit de la recherche d'un mot à un
+caractère près<br>
+    <u>Exemple :</u><br>
+Pour rechercher les documents contenant les mots "<i>près</i>" ou "<i>pret</i>",
+saisissez "<span class="code">pre<b>?</b></span>"<br>
+A ce critère, les mots "<span class="code">prè<b><u>s</u></b></span>", "<span class="code">pre<b><u>t</u></b></span>", ou "<span class="code">prê<b><u>t</u></b></span>"
+pourront être trouvés. Par contre le mot "<span class="code">pré</span>"
+ne sera pas retenu.<br>
+&nbsp;</li>
+</ul>
+
+<div class="attention">Le caractère "?" se substitue à un seul
+caractère.<br>
+La <a href="../console/SearchConfig/EditOperators.htm#Mise_en_evidence_des_mots">mise
+en évidence</a> des mots trouvés n'est pas possible.&nbsp;<br>
+La <a href="../userguide.htm#1bA_Recherche_proximite">recherche par
+proximité</a> est désactivée. </div>
+
+<h2><a name="1b_recherche_plusieurs_mots">Recherche sur plusieurs mots</a></h2>
+
+<p>Les mots recherchés doivent être séparés par des espaces. Les règles
+édictées pour la recherche d'un mot s'appliquent aussi pour la
+recherche à partir de plusieurs mots.</p>
+
+<h4><a name="1bA_Recherche_proximite"><img src="../images/pucebleu.gif" border="0"> Recherche par proximité ou recherche du proche</a></h4>
+
+<p>Cet opérateur est le guillemet : "<br>
+Il doit entourer le groupe de mots sur lesquels porte la recherche de proximité.<br>
+Il peut être compris comme l'opérateur "<i>est
+suivi de</i>".</p>
+La recherche prend en compte la distance qui sépare deux mots. On
+considère que deux mots sont proches lorsqu'ils sont séparés par un ou
+plusieurs mots de liaison (<i>de, du, la, le, un, une,...</i>).
+<table class="tableau">
+<thead>
+    <tr>
+      <th>Je cherche les documents contenant...</th>
+      <th>Je peux saisir...</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+      <td rowspan="5" valign="top"> <span class="code">les mots
+"maison de ma mère"</span> </td>
+      <td> <span class="code">Maison mère</span> </td>
+    </tr>
+    <tr>
+      <td> <span class="code">maison de mère</span> </td>
+    </tr>
+    <tr>
+      <td> <span class="code">maison de ma mère</span> </td>
+    </tr>
+    <tr>
+      <td> <span class="code">maison ma mère</span> </td>
+    </tr>
+    <tr>
+      <td> <span class="code">maison ma mere</span> </td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+<div class="attention">L'activation de la phonétique, l'utilisation des
+jokers * ou ? désactivent la gestion du proche. <br>
+Dans ce cas, c'est
+l'opérateur "et" qui est utilisé implicitement.<br>
+</div>
+
+<div class="attention"><u>Remarque concernant les images dans un
+document HTML :</u><br>
+<br>
+Si deux mots sont séparés par une image (<i>balise </i><span class="code"><i>&lt;IMG&gt;</i></span> <i>en HTML</i>) possédant
+l'attribut<span class="code"> ALT,</span> celui-ci empêchera la recherche
+par proximité entre ces deux mots.
+</div>
+
+<h2><a name="1c_operateurs">Utilisation des opérateurs booléens<br>
+</a></h2>
+
+<div class="astuce">La liste des opérateurs booléens qui suit est basée sur leur
+nom standard. Ils peuvent être modifiés par l'Administrateur.
+</div>
+
+<h4><img src="../images/pucebleu.gif" border="0"> L'opérateur "<a name="op_et">et</a>"</h4>
+
+<ul>
+  <p>Pour trouver les documents contenant impérativement tous les mots
+saisis, il faut les séparer par l'opérateur "<span class="code">et</span>"<br>
+ou par un espace (opérateur implicite).<br>
+  </p>
+  
+  <p><u>Exemple:</u></p>
+</ul>
+
+<table class="tableau">
+  <thead>
+    <tr>
+      <th>Je cherche les documents contenant...</th>
+      <th>Je peux saisir...</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+      <td valign="top">
+      <div align="left"><span class="texte">à la fois les mots "</span><span class="code">réseau</span><span class="texte">" et "</span><span class="code">internet</span><span class="texte">"</span></div>
+      </td>
+      <td valign="top">
+      <div align="left"><span class="code">réseau et internet<br>
+réseau internet<br>
+</span></div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h4><img src="../images/pucebleu.gif" border="0"> L'opérateur "<a name="op_ou">ou</a>"</h4>
+
+<ul>
+
+  <p>Pour trouver les documents contenant l'un des mots saisis, il faut
+les séparer par l'opérateur "<span class="code">ou</span>". </p>
+  <p><u>Exemple :</u></p>
+</ul>
+
+<table class="tableau">
+<thead> 
+    <tr>
+      <th>Je cherche les documents contenant...</th>
+      <th>Je peux saisir...</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+      <td valign="top">
+      <div align="left"> <span class="texte">les mots "</span><span class="code">ordinateur</span><span class="texte">" ou "</span><span class="code">calculateur</span><span class="texte">"</span> </div>
+      </td>
+      <td valign="top">
+      <div align="left"><span class="code">ordinateur ou calculateur</span>
+      </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+
+</ul>
+
+<h4><img src="../images/pucebleu.gif" border="0"> L'opérateur "<a name="op_sauf">sauf</a>"</h4>
+
+<ul>
+
+  <p>Pour exclure certains mots de la recherche, utilisez l'opérateur "<span class="code">sauf</span>"</p>
+  <p><u>Exemple :</u></p>
+</ul>
+
+<table class="tableau">
+<thead> 
+    <tr>
+      <th>Je cherche les documents contenant...</th>
+      <th>Je peux saisir...</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+      <td valign="top">
+      <div align="left"> <span class="texte">les mots "</span><span class="code">rangement</span><span class="texte">" et "</span><span class="code">bureau</span><span class="texte">" mais ne contenant pas
+le mot "</span><span class="code">tiroir</span><span class="texte">"</span></div>
+      </td>
+      <td valign="top">
+      <div align="left"><span class="code">rangement et bureau sauf
+tiroir<br>
+rangement bureau sauf tiroir<br>
+</span> </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h4 align="left"><img src="../images/pucebleu.gif" border="0">
+Utilisation des <a name="parentheses">parenthèses</a></h4>
+
+<ul>
+
+  <p>Il existe un ordre de priorité entre les opérateurs <span class="code">et</span>, <span class="code">ou</span> et <span class="code">sauf</span>.</p>
+</ul>
+
+<table class="tableau">
+
+  <tbody>
+    <tr>
+      <td valign="middle" style="color: #FFF; background-color:#6D7D8D; text-align: center;">
+		  <img src="../images/fl_g.gif" align="absmiddle" border="0"><br>
+		  Plus&nbsp;fort
+      </td>
+      <td>proximité</td>
+      <td>et</td>
+      <td>ou</td>
+      <td>sans</td>
+      <td style="color: #FFF; background-color:#6D7D8D; text-align: center;">
+		<img src="../images/fl_d.gif" align="absmiddle" border="0"><br />
+		Moins fort
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+
+  <p>Toutefois, il peut être nécessaire de forcer cet ordre.
+Pour cela, utilisez les parenthèses pour indiquer l'ordre dans lequel
+doivent être traités les opérateurs.</p>
+  <p><u>Exemple :</u></p>
+</ul>
+
+<table class="tableau">
+<thead>
+    <tr>
+      <th>Je cherche les documents contenant...</th>
+      <th>Je peux saisir...</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+      <td valign="top">
+      <div align="left"> <span class="texte">les mots </span><span class="code">internet</span> <span class="texte">ou </span><span class="code">réseau</span> <span class="texte">et </span><span class="code">application</span> <span class="texte">ou </span><span class="code">développement</span></div>
+      </td>
+      <td valign="top">
+      <div align="left"><span class="code">(internet ou réseau ) et
+(application ou développement)</span> </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+
+  <p>Dans cet exemple, un document correspondra à ces critères s'il
+contient à la fois :</p>
+  <ul>
+    <li><span class="code">internet</span>, <span class="code">réseau</span>,
+      <span class="code">application</span>, <span class="code">développement</span><br>
+ou</li>
+  </ul>
+  <ul>
+    <li><span class="code">internet</span>,<span class="code"> réseau</span>,
+      <span class="code">application</span><br>
+ou</li>
+  </ul>
+  <ul>
+    <li><span class="code">internet</span>, <span class="code">réseau</span>,
+      <span class="code">développement</span><br>
+ou</li>
+  </ul>
+  <ul>
+    <li><span class="code">internet</span>, <span class="code">application</span>,
+      <span class="code">développement</span><br>
+ou</li>
+  </ul>
+  <ul>
+    <li><span class="code">internet</span>, <span class="code">application</span><br>
+ou</li>
+  </ul>
+  <ul>
+    <li><span class="code">internet</span>, <span class="code">développement</span><br>
+ou</li>
+  </ul>
+  <ul>
+    <li><span class="code">réseau</span>, <span class="code">application</span>,
+      <span class="code">développement</span><br>
+ou</li>
+  </ul>
+  <ul>
+    <li><span class="code">réseau</span>, <span class="code">application</span><br>
+ou</li>
+  </ul>
+  <ul>
+    <li><span class="code">réseau</span>, <span class="code">développement</span></li>
+  </ul>
+  <p>Nota : cet exemple ne tient pas compte de la gestion du pluriel,
+de la phonétique ni de la case.</p>
+  <p>En l'absence de parenthèse, compte tenu de la priorité entre les
+opérateurs, un document correspondrait à nos critères s'il contenait à
+la fois : </p>
+  <ul>
+    <li><span class="code">internet</span><br>
+ou</li>
+  </ul>
+  <ul>
+    <li><span class="code">réseau</span>, <span class="code">application</span><br>
+ou</li>
+  </ul>
+  <ul>
+    <li><span class="code">développement</span><br>
+ou</li>
+  </ul>
+  <ul>
+    <li><span class="code">internet</span>, <span class="code">réseau</span>,
+      <span class="code">application</span>, <span class="code">développement</span><br>
+ou</li>
+  </ul>
+  <ul>
+    <li><span class="code">internet</span>, <span class="code">réseau</span>,
+      <span class="code">application</span><br>
+ou</li>
+  </ul>
+  <ul>
+    <li><span class="code">réseau</span>, <span class="code">application</span>,
+      <span class="code">développement</span><br>
+ou</li>
+  </ul>
+  <ul>
+    <li><span class="code">internet</span>, <span class="code">développement</span></li>
+  </ul>
+</ul>
+
+</body></html>

@@ -1,0 +1,1250 @@
+<html>
+	<meta http-equiv="content-type" content="text/html; charset=ISO-8859-15" />
+	<meta name="author" content="Multimédia SOLUTIONS" />
+	<link rel="stylesheet" href="../../css/style.css" />
+	<title>Modèles de pages - Configuration des pages</title>
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" type="text/javascript"><!--
+jQuery(document).ready( function(){
+	if (parent.frames.length!=0) { return; }
+	jQuery('h1').eq(0).append('<div class="allHelp"><a href="../../index.htm">Toute la documentation</a></div>');
+});
+//-->
+</script>
+</head>
+<body>
+<h1 align="center">Modèles de pages - Configuration des pages</h1>
+
+<p>L'utilisateur interroge le moteur de recherche par l'intermédiaire 
+de la page <span class="code">Search.htm</span> située dans le dossier d'installation 
+de <span class="WindexServer">Windex Server</span>.&nbsp;Lorsque 
+la requête est traitée, 3 cas peuvent se produire :</p>
+<ul>
+    <div align="left">
+        <li>un ou plusieurs documents ont été trouvés.</li>
+        <li>la requête formulée par l'utilisateur est erronée</li>
+        <li>aucun document ne correspond à la demande</li>
+    </div>
+</ul>
+<p>A noter le cas de la recherche contextuelle qui génère également 
+une page de réponses.</p>
+<p>Dans chacun de ces cas, <span class="WindexServer">Windex Server</span> 
+renvoit une page HTML à l'utilisateur. Cette page est générée à partir d'un 
+modèle. Il existe un modèle pour chacun des trois cas ci-dessus. </p>
+<p>Des modèles par défaut sont situés dans le dossier <span class="code">User/Template</span> du dossier 
+d'installation de <span class="WindexServer">Windex Server</span>. 
+Ils sont opérationnels et  vous pouvez  les adapter à votre convenance (<i>couleurs, 
+agencement...</i>) tout en en respectant certaines règles.</p>
+
+<div class="attention">
+	<p align="center">!! IMPORTANT !!</p>
+	<p>Les éléments qui suivent nécessitent une connaissance 
+	minimale du langage HTML ainsi que du langage JavaScript.</p>
+	<p>Si vous modifiez les pages modèles 
+	avec un éditeur 
+	HTML, vérifiez bien que ce dernier tolère les instructions du 
+	Macro langage et ne les modifie pas.</p>
+</div>
+<br />
+<div class="attention">La modification des fichiers des modèles  est prise 
+	en compte immédiatement par <span class="WindexServer">Windex Server</span><span class="attention">.</span>
+</div>
+
+<p>Le symbole <img src="../../images/nocr.gif" align="absmiddle" border="0"> est utilisé 
+dans certains exemples : il indique que le texte situé à la ligne suivante doit 
+être écrit sur la même ligne que la ligne courante. Le souhait de rendre le 
+plus possible lisible cette documentation et les contraintes liées à&nbsp;sa 
+mise en page nous ont imposé cette règle.</p>
+<h2 align="left"><a name="Qu_est_ce_qu_un_modele">1. Qu'est-ce qu'un modèle ?</a></h2>
+<p>Un modèle est un fichier HTML contenant principalement du code HTML 
+et des instructions d'un Macro langage propre à <span class="WindexServer">Windex Server</span>. 
+Ces instructions, interprétées par <span class="WindexServer">Windex Server</span>, 
+permettent de construire dynamiquement la page HTML qui sera envoyée en réponse à l'utilisateur. Les pages modèles sont installées 
+par défaut dans le dossier <span class="code">User/Template</span> du dossier 
+d'installation de <span class="WindexServer">Windex Server</span>.</p>
+<h3><a name="Adressage_documents_a_partir_de_modele">a) Adressage de documents à partir des pages de modèle</a></h3>
+<p>Les pages HTML peuvent afficher des images, renvoyer vers d'autres 
+documents... Si les pages modèles sont situées dans le dossier <span class="code">User/Template</span>, 
+la page générée par <span class="WindexServer">Windex Server</span> 
+et retournée à l'utilisateur n'a pas d'existence physique. On ne peut donc pas 
+adresser un autre document relativement à la page générée : les adresses devront 
+être absolues.</p>
+<p>Nous vous suggérons vivement de stocker tous les fichiers nécessaires 
+aux pages modèles dans le dossier <span class="code">User</span>. Pour faciliter leur développement, les 
+images utilisées par ces pages ont été stockées dans le dossier <span class="code">User/images</span>. 
+Il est possible d'ajouter d'autres dossiers et sous-dossiers en fonction des 
+besoins. </p>
+<p>Supposons que l'on veuille utiliser dans une page modèle l'image 
+<span class="code">logo.gif</span> située dans le dossier <span class="code">User/images</span>. 
+Nous écrirons :</p>
+
+<div class="code_exemple">&lt;IMG src='/WindexServer/User/images/logo.gif'&gt;</div>
+
+<p>L'adressage en absolue se fait à partir de <span class="code">/WindexServer</span>, 
+qui correspond au dossier d'installation de <span class="WindexServer">Windex Server</span>.</p>
+<h2 align="left"><a name="page_de_saisie_de_requete">2. La page de saisie de requête</a></h2>
+<p>C'est la page par laquelle l'utilisateur va interroger le moteur 
+de recherche. Par défaut, cette page est située dans le dossier d'installation 
+de <span class="WindexServer">Windex Server</span> et s'appelle 
+<span class="code">Search.htm</span>. Ce n'est pas à proprement parler un modèle 
+car elle n'est pas située dans le dossier <span class="code">User/Template</span>. 
+Vous pouvez librement modifier le nom de cette page.</p>
+<p>Cette page contient un formulaire :</p>
+
+<div align="left" class="code_exemple">&lt;FORM action=&quot;/WindexServer/servlet/WindexServer&quot; 
+	method=&quot;POST&quot; <br>onSubmit=&quot;return applySubmit('Search')&quot;&gt;<br>&lt;INPUT type=&quot;hidden&quot; 
+	name=&quot;Agent&quot; value=&quot;Search&quot;&gt;<br>&lt;INPUT 
+	type=&quot;hidden&quot; name=&quot;isContext&quot; value=&quot;0&quot;&gt; 
+	<br><br>&lt;!-- 
+	<i>Code HTML du formulaire </i>--&gt;<br><br>&lt;/FORM&gt;
+</div>
+
+<p>Notez la présence des zones cachées <span class="code">Agent</span> 
+et <span class="code">IsContext</span> qui indiquent le traitement à exécuter lorsque l'utilisateur valide 
+le formulaire. Leur nom est imposé.</p>
+<p>Au début du fichier, à l'intérieur de la balise <span class="code">HEAD</span>, 
+une fichier contenant des fonctions JavaScript doit être inclus :</p>
+<div class="code_exemple">&lt;SCRIPT language=&quot;javascript&quot; 
+	src=&quot;/WindexServer/js/ctrl.js&quot;&gt;&lt;/SCRIPT&gt;
+</div>
+
+<p>Ce formulaire doit contenir certaines zones nécessaires au fonctionnement 
+de <span class="WindexServer">Windex Server</span>.
+:</p>
+
+<div class="attention">
+	Seuls les attributs dont les valeurs sont imposées par&nbsp;<span class="WindexServer">Windex Server</span> ont été indiqués.
+</div>
+<h3><a name="Zone_de_saisie_de_la_requete">a) Zone de saisie de la requête</a>
+</h3>
+<table class="cellule_exemple" border="0" width="100%">
+      <tr>
+          <td>
+              <p align="left" class="code_exemple">&lt;INPUT type=&quot;text&quot; 
+            name=&quot;Query&quot;&gt;</p>
+          </td>
+      </tr>
+  </table>
+<p>C'est la zone dans laquelle l'utilisateur saisie sa requête.</p>
+<p>Vous pouvez cependant construire vous même la zone représentant 
+la requête en modifiant en parallèle de la page <span class="code">Search.htm</span>, 
+le contenu du paramètre &quot;<span class="code">Requête</span>&quot; de l'écran 
+de <a href="#Requete">configuration de la recherche</a>.</p>
+<p>Par défaut, ce paramètre contient la valeur <span class="code">$@Input(Query)$</span> 
+qui indique que le texte de la requête est issu de la zone <span class="code">Query</span> 
+de la page <span class="code">Search.htm</span>. Si vous souhaitez indiquer 
+une autre zone, voire même composer la requête finale à partir de plusieurs 
+champs, il suffit de les ajouter en utilisant ou non des <a href="EditOperators.htm">opérateurs 
+booléens</a>. </p>
+<div class="attention">Les noms des opérateurs booléens utilisables sont 
+	ceux définis de la page de <a href="#3_operateurs_booleens">configuration 
+	de la recherche</a>.
+</div>
+<p>Le choix des opérateurs dépend de la logique que vous voulez implémenter 
+entre les zones.</p>
+<p>Exemple&nbsp;:</p>
+<p>Soit une page contenant deux champs de saisie de requête. La 
+requête qui devra être soumise à <span class="WindexServer">Windex Server</span> 
+sera la concaténation de ces deux zones avec un ET.</p>
+<div class="cellule_exemple" border="0" width="100%">
+	Le document doit vérifier 
+	la condition : &lt;INPUT type=&quot;text&quot; 
+	name=&quot;Query1&quot;&gt;&lt;br&gt;<br>
+	et la condition : &lt;INPUT type=&quot;text&quot; 
+	name=&quot;Query2&quot;&gt;
+</div>
+<p>Le paramètre <span class="code">Requête</span> aura la valeur : </p>
+
+<ul>
+<p><span class="code">$@Input(Query1)$ et $@Input(Query2)$</span></p>
+</ul>
+<p>Cependant, cette écriture implique que les deux zones contiennent 
+une valeur au moment où l'utilisateur demande la recherche. En effet, l'opérateur 
+booléen &quot;et&quot; est binaire, c'est à dire qu'il doit être écrit entre 
+deux valeurs à comparer. Si  <span class="code">Query2</span> n'est pas renseigné, la 
+syntaxe est fausse. La solution consiste à conditionner la requête :</p>
+<ul>
+<div class="code">$@Input(Query1)$ $@If( @(@Cmp(@(@Length(@Input(Query2))),'0')),'',@Concat('et ', @Input(Query2)))$</div>
+</ul>
+<p>Concrètement, si <span class="code">Query2</span> n'est pas 
+renseigné, la longueur de sa valeur est 0, et le paramètre requête se limite 
+à</p>
+<ul>
+<div class="code">$@Input(Query1)$</div>
+</ul>
+<p>Par contre, si <span class="code">Query2</span> est renseigné, 
+on obtient alors :</p>
+<ul>
+<div class="code">$@Input(Query1)$ et $@Input(Query2)$</div>
+</ul>
+<p>Notez que pour être exhaustif, il faudrait faire un test similaire 
+sur la valeur de <span class="code">Query1</span>&nbsp;si seul <span class="code">Query2</span> 
+était renseigné.</p>
+<div class="astuce">Dans le formulaire de recherche, vous pouvez utiliser un 
+	langage  (<i>JavaScript, PH</i>P), pour contrôler la saisie 
+	et imposer certaines règles (<i>Renseignements de zones, cohérence...</i>)
+</div>
+<div class="attention"><p>Implicitement, lorsque vous ne précisez pas d'opérateur entre deux valeur, c'est opérateur de proximité qui agit. Toutefois, si la requête implique des champs de type catégorie, date ou numérique, c'est implicitement l'opérateur ET.</p>
+	<p>Ainsi, la requête précédente aurait pu s'écrire :
+	<div class="code">$@Input(Query1)$ $@Input(Query2)$</div>
+	<p>Ce point est très important car il vous permettra d'alléger dans certains cas l'écriture de la requête.</p>
+</div>
+
+<br>
+<p>Vous pouvez également utiliser les parenthèses pour forcer l'ordre d'évaluation entre les opérateurs ou lever toute ambiguïté lors du traitement.
+</p>
+<p>Exemple :</p>
+<ul>
+    <ul>
+        <p><span class="code">( $@Input(Query1) OU &nbsp;$@Input(Query2)$
+) ET $@Input(Query3)$</span></p>
+    </ul>
+</ul>
+<ul>
+    <p>ne donnera pas le même résultat que la requête :</p>
+    <ul>
+        <p><span class="code">$@Input(Query1) OU &nbsp;$@Input(Query2)$
+ET $@Input(Query3)$</span></p>
+    </ul>
+    <p>car l'opérateur ET est prioritaire sur l'opérateur OU.</p>
+</ul>
+<p>Les accolades peuvent aussi être utilisées afin que certains caractères situés entre elles ne soient pas interprétés comme des opérateurs par exemple. Ainsi, lorsqu'un chaîne de caractères contient un espace, celui-ci est très souvent assimilé à l'opérateur de proximité !</p>
+<h3><a name="Recherche_phonetique">b) Recherche phonétique</a></h3>
+<table class="cellule_exemple" border="0" width="100%">
+      <tr>
+          <td>
+              <p align="left" class="code_exemple">&lt;INPUT type=&quot;checkbox&quot; 
+            name=&quot;UsePhoneticOnAllWord&quot; value=&quot;true&quot;&gt;</p>
+          </td>
+      </tr>
+  </table>
+<p>Cette zone est optionnelle. Pour des documents en langue française, 
+il est possible d'effectuer une recherche phonétique. Le nom de ce champ de formulaire est imposé afin qu'il soit reconnu par <span class="WindexServer">Windex Server</span>.</p>
+<h3><a name="Categorie">c) Catégorie</a></h3>
+<p>Cette section est optionnelle et ne doit être prise en compte que si vous 
+avez configuré des <a href="../MetaTags.htm">catégories</a>.</p>
+<p>L'exploitation des catégories nécessite deux étapes :</p>
+<ul>
+	<li>choix et mise au point du composant graphique représentant la catégorie</li>
+	<li>traitement de la requête de l'utilisateur</li>
+</ul>
+<h4><img src="../../images/pucebleu.gif"  border="0"> Choix et configuration du composant graphique</h4>
+
+<p>Les interfaces graphiques proposent différents composants pour 
+représenter et saisir une information :zone texte, boutons radios, case à cocher, 
+liste déroulante...</p>
+<p>Le choix du composant pour implémenter la catégorie dépend&nbsp;: 
+</p>
+<ul>
+	<li>de la nature de l'information représentée par la catégorie </li>
+	<li>de règles standards d'usage des interfaces</li>
+	<li>de ceux qu'on veut permettre à l'utilisateur au niveau de la recherche</li>
+</ul>
+<p>Ainsi, des cases à cocher permettront de faire une recherche 
+sur plusieurs valeurs simultanément ; une liste déroulante permettra 
+d'afficher un grand choix de valeurs ; des boutons radios permettront une recherche 
+exclusivement sur un critère...</p>
+<p>Prenons l'exemple donné dans le chapitre traitant des
+ <a href="../MetaTags.htm#4d_categorie">catégories</a> :</p>
+
+<table class="tableau">
+<thead>
+	<tr>
+		<th>Genre</th>
+		<th>Codification</th>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+		<td>
+			<span class="code">horreur</span>
+		</td>
+		<td>
+			<span class="code">ho</span>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="code">humour</span>
+		</td>
+		<td>
+			<span class="code">hu</span>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="code">drame</span>
+		</td>
+		<td>
+			<span class="code">dm</span>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="code">amour</span>
+		</td>
+		<td>
+			<span class="code">am</span>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="code">historique</span>
+		</td>
+		<td>
+			<span class="code">hi</span>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="code">classique</span>
+		</td>
+		<td>
+			<span class="code">cls</span>
+		</td>
+	</tr>
+</tbody>
+</table>
+
+<p>On envisage de permettre à l'utilisateur de rechercher sur le genre du film. 
+Le composant graphique le mieux approprié est la liste déroulante. </p>
+<p align="center"><img src="../images/ex/SearchConfig/genre.gif" border="0"></p>
+<p>Au niveau de sa déclaration dans <span class="WindexServer">Windex Server</span>, 
+nous aurons saisi les informations suivantes :</p>
+<table class="tableau">
+<thead>
+    <tr>
+        <th>Nom du champ</th>
+        <th>Nom associé</th>
+        <th>Type</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td>
+            <p><span class="code">genre</span></p>
+        </td>
+        <td>
+            <p><span class="code">CategGenre</span></p>
+        </td>
+        <td>
+            <p><span class="code">Catégorie</span></p>
+        </td>
+    </tr>
+</tbody>
+</table>
+&nbsp;
+<p>Le code HTML correspondant à cette liste déroulante est :<br>&nbsp;</p>
+<div class="cellule_exemple">
+            &lt;SELECT name=&quot;CategorieGenre&quot;&gt;<br>&lt;OPTION 
+            value=&quot;&quot;&gt;&lt;/OPTION&gt; &lt;!-- Option vide --&gt;<br>&lt;OPTION 
+            value=&quot;ho&quot;&gt;Horreur&lt;/OPTION&gt;<br>&lt;OPTION value=&quot;hu&quot;&gt;Humour&lt;/OPTION&gt;<br>&lt;OPTION 
+            value=&quot;dm&quot;&gt;Drame&lt;/OPTION&gt;<br>&lt;OPTION value=&quot;am&quot;&gt;Amour&lt;/OPTION&gt;<br>&lt;OPTION 
+            value=&quot;hi&quot;&gt;Historique&lt;/OPTION&gt;<br>&lt;OPTION 
+            value=&quot;cls&quot;&gt;Classique&lt;/OPTION&gt;<br>&lt;/SELECT&gt;
+</div>
+
+<p>Cette exemple montre bien la correspondance établie entre la valeur affichée 
+à l'écran (<i>Humour, Drame,...</i>) et la valeur interne que l'on retrouve 
+dans les documents indexés (<i>ho, dm,...</i>).</p>
+<p>Notez bien la présence d'une option &quot;vide&quot;, dont la valeur est une 
+chaînes de caractères vide. Elle permet de &quot;désactiver&quot; la recherche 
+par catégorie. Cette option sera expliquée plus loin lors de l'utilisation de 
+plusieurs zones de saisie dans la requête.</p>
+<div align="left">
+    <h4><img src="../../images/pucebleu.gif"  border="0"> Traitement 
+    de la requête de l'utilisateur</h4>
+</div>
+<p>Il faut indiquer à <span class="WindexServer">Windex Server</span> 
+quelles informations concernent la requête et comment les utiliser. Ce paramétrage 
+se fait au niveau de&nbsp;la <a href="#Requete">zone &quot;Requête&quot; 
+de l'écran de configuration de la recherche</a>.</p>
+<p>Lorsqu'on utilise  une zone de saisie de 
+nom <span class="code">Query</span>, la valeur de la zone &quot;Requête&quot; 
+est :</p>
+<ul>
+              <p align="left" class="code">$@Input(Query)$</p>
+</ul>
+<p>La prise en compte des champs suit une syntaxe bien précise :</p>
+<ul>
+<p><span class="code">[</span><span class="param">nom_associé</span><span class="code">]{</span><span class="param">expression</span><span class="code">}</span></p>
+</ul>
+<p>Entre crochets est indiqué le <a href="../MetaTags.htm#3_champ_associe">nom 
+associé au champ</a>. Dans notre exemple, nous avons indiqué que le nom 
+associé au champ <span class="code">Genre</span> est <span class="code">CategGenre</span>. 
+<span class="param">expression</span> représente la valeur qui doit être recherchée 
+pour cette catégorie, c'est à dire, la valeur choisie dans la liste déroulante 
+des catégories. <span class="param">expression</span> utilise le <a href="../Macro/Macro.htm">Macro 
+langage de <span class="WindexServer">Windex Server</span></a>.</p>
+<ul>
+              <p align="left" class="code">[CategGenre]{$@Input(CategorieGenre)$}</p>
+</ul>
+<p>Ce code peut se traduire par :</p>
+<ul>
+<p><i>Rechercher les documents pour lesquels le champ dont 
+le nom associé est </i><span class="code"><i>CategGenre</i></span><i> (à savoir 
+</i><span class="code"><i>genre</i></span><i>), contient la valeur choisie&nbsp;dans 
+la zone </i><span class="code"><i>CategorieGenre</i></span>.</p>
+</ul>
+    <div class="astuce"><a name="upd_031120_a"></a>Notez la présence des accolades autour de la valeur recherchée. 
+Elles permettent d'ignorer tout caractère ou code qui pourraient être interprété 
+comme un opérateur. Ainsi, si <span class="code">CategorieGenre</span> était 
+égal à &quot;<span class="code">Film humoristique&quot;</span>, après substitution 
+de la variable, la requête serait :
+<ul>
+              <p align="left" class="code">[CategGenre]Film humoristique</p>
+</ul>
+<p><span class="astuce">qui se traduirait par :</span></p>
+<ul>
+<p><i>Rechercher les documents contenant le mot &quot;<span class="code">humoristique</span>&quot; 
+    et pour lesquels le champ dont 
+le nom associé est </i><span class="code"><i>CategGenre</i></span><i>, contient la valeur &quot;<span class="code">Film</span>&quot;.</i></p>
+</ul>
+<p><span class="astuce">En effet, il faut penser que l'espace est un opérateur équivalent 
+à &quot;ET&quot; lorsque la requête fait intervenir des champs de type catégorie, date ou nombre  ! Vous pouvez également utiliser des parenthèses pour lever toute ambiguïté lors de l'évaluation de la requête.</span>
+                
+    </div>
+<p>Le schéma ci-dessous résume l'origine des différentes informations 
+intervenant :</p>
+<p align="center"><img src="../images/ex/SearchConfig/query_meta_c.gif" border="0"></p>
+<p>Cet exemple permet de prendre en compte dans la requête uniquement 
+la liste déroulante, et donc de ne faire des recherches que sur le contenu de 
+la catégorie précisée. En règle générale, la page de recherche proposera une 
+zone texte de saisie de requête.</p>
+<p align="center"><img src="../images/ex/SearchConfig/query_meta.gif" border="0"></p>
+<p>L'extrait de code ci-dessous représente la mise en oeuvre d'une 
+zone de saisie et d'une liste déroulante représentant une catégorie :</p>
+<table class="cellule_exemple" border="0" width="100%">
+      <tr>
+          <td>
+              <p align="left" class="code_exemple">Rechercher &lt;INPUT type=&quot;text&quot; 
+            name=&quot;Query&quot;&gt; dans la catégorie <br>&lt;SELECT name=&quot;CategorieGenre&quot;&gt;<br>&lt;OPTION 
+            value=&quot;&quot;&gt;&lt;/OPTION&gt;<br>&lt;OPTION value=&quot;ho&quot;&gt;Horreur&lt;/OPTION&gt;<br>&lt;OPTION 
+            value=&quot;hu&quot;&gt;Humour&lt;/OPTION&gt;<br>&lt;OPTION value=&quot;dm&quot;&gt;Drame&lt;/OPTION&gt;<br>&lt;OPTION 
+            value=&quot;am&quot;&gt;Amour&lt;/OPTION&gt;<br>&lt;OPTION value=&quot;hi&quot;&gt;Historique&lt;/OPTION&gt;<br>&lt;OPTION 
+            value=&quot;cls&quot;&gt;Classique&lt;/OPTION&gt;<br>&lt;/SELECT&gt;</p>
+          </td>
+      </tr>
+  </table>
+<p>Si l'utilisateur recherche les documents faisant référence à 
+&quot;Chaplin&quot; et appartenant à la catégorie &quot;Humour&quot;, il saisira 
+à l'écran :</p>
+<p align="center"><img src="../images/ex/SearchConfig/query_meta_b.gif" border="0"></p>
+<p>Au niveau du paramétrage, il faut maintenant faire intervenir 
+les deux zones. </p>
+<ul>
+              <p align="left" class="code">$@Input(Query)$ et [CategGenre]{$@Input(CategorieGenre)$}</p>
+</ul>
+<p>A l'instar de l<a href="#Zone_de_saisie_de_la_requete">'exemple 
+donné plus haut sur la zone de saisie simple</a>, il faut conditionner la requête 
+pour que sa syntaxe soit valide quelque soit le choix de l'utilisateur :</p>
+<ul>
+<p><span class="code">$@Input(Query)$ $@If( @(@Cmp(@(@Length(@Input(CategorieGenre))),'0')),'',@Concat('et 
+    [CategGenre]{',@Input(CategorieGenre),'}'))$</span></p>
+</ul>
+<p>Concrètement, si <span class="code">CategorieGenre</span> n'est 
+pas renseignée (<i>c'est à dire que l'utilisateur a choisi l'option vide</i>), la longueur 
+de sa valeur est 0, et le paramètre requête se limite à</p>
+<ul>
+<p><span class="code">$@Input(Query)$</span></p>
+</ul>
+<p>Ce choix permet d'ignorer la recherche sur les catégorie. Par contre, si l'utilisateur a choisi en plus une catégorie, 
+on obtient alors :</p>
+<ul>
+              <p align="left" class="code">$@Input(Query)$ et [CategGenre]{$@Input(CategorieGenre)$}</p>
+</ul>
+<p>Pour être exhaustif, il faudrait également tester la valeur 
+de <span class="code">Query</span>. Cependant, via un langage  (<i>JavaScript...</i>) 
+et suivant les règles de recherche que vous souhaitez mettre en oeuvre, vous 
+pouvez contrôler que la zone <span class="code">Query</span> est renseignée 
+si la recherche porte sur une catégorie. </p>
+
+<div class="attention">Implicitement, lorsque vous ne précisez pas d'opérateur entre deux valeur, 
+	c'est opérateur de proximité qui agit. Toutefois, si la requête implique des champs de type 
+	catégorie, date ou numérique, c'est implicitement l'opérateur ET.<br>
+	Ainsi, la requête précédente aurait pu s'écrire :<br>
+	<span class="code">$@Input(Query)$ [CategGenre]{$@Input(CategorieGenre)$)</span><br>
+	Ce point est très important car il vous permettra d'alléger dans certains cas l'écriture de la requête.
+</div>
+<h3><a name="Date">d) Date et nombre</a></h3>
+<p>Cette section est optionnelle et ne doit être prise en compte que si vous 
+avez configuré des <a href="../MetaTags.htm#4c_date">champs de type date</a> 
+ou de <a href="../MetaTags.htm#4b_numerique">type nombre</a>.</p>
+<p>L'utilisation de champs de type date ou nombre dans la recherche 
+est basée en grande partie sur les même règles que les champs de type catégorie. 
+</p>
+<p>Pour les dates, la valeur transmise à <span class="WindexServer">Windex Server</span> 
+doit cependant suivre un format bien précis :</p>
+<ul>
+    <div align="left">
+        <li><span class="code">AAAA/MM/JJ</span></li>
+    </div>
+</ul>
+<p>ou</p>
+<ul>
+    <div align="left">
+        <li><span class="code">MM/JJ/AAAA</span></li>
+    </div>
+</ul>
+<p>où </p>
+<ul>
+    <div align="left">
+        <li><span class="code">AAAA</span> représente le chiffres de l'année 
+        (<i>sur quatre positions</i>)</li>
+        <li><span class="code">MM</span> représente le mois (<i>sur deux positions 
+        de 01 à 12</i>)</li>
+        <li><span class="code">JJ</span> représente le jour (<i>sur deux positions</i>)</li>
+    </div>
+</ul>
+<p>Si l'utilisateur saisit une date différente, vous devrez faire 
+la conversion vers un de ces deux formats via :</p>
+<ul>
+    <div align="left">
+        <li> un autre langage 
+(<i>Javascript, PHP...</i>).</li>
+    </div>
+</ul>
+<p>ou</p>
+<ul>
+    <div align="left">
+        <li>la fonction <span class="code"><a href="../Macro/Macro.htm#FormatDate">@FormatDate</a></span>.</li>
+    </div>
+</ul>
+<p>Dans la suite de cette section, nous ne distinguerons plus ces 
+deux types de champs.</p>
+<p>Ces champs sont généralement utilisés en conjonction avec un 
+opérateur de comparaison.</p>
+<table class="tableau">
+<thead>
+    <tr>
+        <th>Code de l'opérateur</th>
+        <th>Signification</th>
+        <th>Remarque</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td width="6%">
+            <div align="center">
+                <span class="code">&gt;</span>
+</div>
+        </td>
+        <td width="47%">
+            <span class="texte">Supérieur à</span>
+        </td>
+        <td width="47%">
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td width="6%">
+            <div align="center">
+                <span class="code">&lt;</span>
+</div>
+        </td>
+        <td width="47%">
+            <span class="texte">Inférieur à</span>
+        </td>
+        <td width="47%">
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td width="6%">
+            <div align="center">
+                <span class="code">&gt;=
+                </span>
+</div>
+        </td>
+        <td width="47%">
+            <span class="texte">Supérieur ou égal à</span>
+        </td>
+        <td width="47%">
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td width="6%">
+            <div align="center">
+                <span class="code">&lt;=
+                </span>
+</div>
+        </td>
+        <td width="47%">
+            <span class="texte">Inférieur ou égal à</span>
+        </td>
+        <td width="47%">
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td width="6%">
+            <div align="center">
+                <span class="code">=
+                </span>
+</div>
+        </td>
+        <td width="47%">
+            <span class="texte">Egal à</span>
+        </td>
+        <td width="47%">
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td width="6%">
+            <div align="center">
+                <span class="code">[]
+                </span>
+</div>
+        </td>
+        <td width="47%">
+            <span class="texte">Compris entre (au sens large)</span>
+        </td>
+        <td width="47%" rowspan="4">
+            <span class="texte">Indiquez dans la zone de saisie complémentaire <br> les deux valeurs, séparées 
+            par une virgule</span>
+        </td>
+    </tr>
+    <tr>
+        <td width="6%">
+            <div align="center">
+                <span class="code">][
+                </span>
+</div>
+        </td>
+        <td width="47%">
+            <span class="texte">Compris entre (au sens strict)</span>
+        </td>
+    </tr>
+    <tr>
+        <td width="6%">
+            <div align="center">
+                <span class="code">[[
+                </span>
+</div>
+        </td>
+        <td width="47%">
+            <span class="texte">Compris entre (large à gauche)</span>
+        </td>
+    </tr>
+    <tr>
+        <td width="6%">
+            <div align="center">
+                <span class="code">]]
+                </span>
+</div>
+        </td>
+        <td width="47%">
+            <span class="texte">Compris entre (large à droite)</span>
+        </td>
+    </tr>
+</tbody>
+</table>
+<p>Cet opérateur peut être représenté par une liste déroulante :</p>
+<table class="cellule_exemple" border="0" width="100%">
+      <tr>
+          <td>
+            <p class="code_exemple">&lt;SELECT name=&quot;Operator&quot; 
+            size=&quot;1&quot;&gt;<br>&lt;OPTION value=&quot;&gt;&quot;&gt;supérieur 
+            à&lt;/OPTION&gt;<br>&lt;OPTION value=&quot;&lt;&quot;&gt;inférieur 
+            à&lt;/OPTION&gt;<br>&lt;OPTION value=&quot;&gt;=&quot;&gt;supérieur 
+            ou égal à&lt;/OPTION&gt;<br>&lt;OPTION value=&quot;&lt;=&quot;&gt;inférieur 
+            ou égal à&lt;/OPTION&gt;<br>&lt;OPTION value=&quot;=&quot;&gt;egale 
+            à&lt;/OPTION&gt;<br>&lt;OPTION value=&quot;[]&quot;&gt;comprise 
+            entre (au sens large)&lt;/OPTION&gt;<br>&lt;OPTION value=&quot;][&quot;&gt;comprise 
+            entre (au sens strict)&lt;/OPTION&gt;<br>&lt;OPTION value=&quot;[[&quot;&gt;comprise 
+            entre (large à gauche)&lt;/OPTION&gt;<br>&lt;OPTION value=&quot;]]&quot;&gt;comprise 
+            entre (large à droite)&lt;/OPTION&gt;<br>&lt;/SELECT&gt; </p>
+          </td>
+      </tr>
+  </table>
+<p>Exemple :</p>
+<p>Des documents HTML contiennent une balise META &quot;DateCreation&quot; contenant 
+la date de création du document.</p>
+<p>On peut alors imaginer l'interface suivante :</p>
+<p align="center"><img src="../images/ex/SearchConfig/date_a.gif" border="0"></p>
+<p>L'extrait de code ci-dessous représente la mise en oeuvre de 
+cette interface :</p>
+<table class="cellule_exemple" border="0" width="100%">
+      <tr>
+          <td>
+            <p class="code_exemple">Rechercher les documents dont la 
+            date de création est<br>&lt;SELECT name=&quot;Operator&quot; size=&quot;1&quot;&gt;<br>&lt;OPTION 
+            value=&quot;&gt;&quot;&gt;supérieure à&lt;/OPTION&gt;<br>&lt;OPTION 
+            value=&quot;&lt;&quot;&gt;inférieure à&lt;/OPTION&gt;<br>&lt;OPTION 
+            value=&quot;&gt;=&quot;&gt;supérieure ou égal à&lt;/OPTION&gt;<br>&lt;OPTION 
+            value=&quot;&lt;=&quot;&gt;inférieure ou égal à&lt;/OPTION&gt;<br>&lt;OPTION 
+            value=&quot;=&quot;&gt;égale à&lt;/OPTION&gt;<br>&lt;OPTION value=&quot;[]&quot;&gt;comprise 
+            entre (au sens large)&lt;/OPTION&gt;<br>&lt;OPTION value=&quot;][&quot;&gt;comprise 
+            entre (au sens strict)&lt;/OPTION&gt;<br>&lt;OPTION value=&quot;[[&quot;&gt;comprise 
+            entre (large à gauche)&lt;/OPTION&gt;<br>&lt;OPTION value=&quot;]]&quot;&gt;comprise 
+            entre (large à droite)&lt;/OPTION&gt;<br>&lt;/SELECT&gt;<br>&lt;INPUT 
+            type=&quot;text&quot; name=&quot;QueryDate&quot;&gt;</p>
+          </td>
+      </tr>
+  </table>
+<p>Au niveau de la configuration du champ, nous aurons déclaré :</p>
+<table class="tableau">
+<thead>
+    <tr>
+        <th>Nom du champ</th>
+        <th>Nom associé</th>
+        <th>Type</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td>
+            <p><span class="code">DateCreation</span></p>
+        </td>
+        <td>
+            <p><span class="code">CategDate</span></p>
+        </td>
+        <td>
+            <p><span class="code">Date</span></p>
+        </td>
+    </tr>
+</tbody>
+</table>
+<p>La syntaxe du paramètre &quot;Requête&quot; de l'<a href="#Requete">écran 
+de configuration de la recherche</a> est dans ce cas :</p>
+<ul>
+    <p><span class="code">[</span><span class="param">nom_associé</span><span class="code">]</span><span class="param">opérateur</span><span class="code">(</span><span class="param">expression</span><span class="code">)</span></p>
+</ul>
+<p>Entre crochets est indiqué le <a href="../MetaTags.htm#3_champ_associe">nom 
+associé au champ de type date</a>. Dans notre exemple, nous avons indiqué que le nom 
+associé au champ <span class="code">DateCreation</span> est <span class="code">CategDate</span>. <span class="param">opérateur</span> 
+représente 
+le code de l'opérateur de comparaison à utiliser. <span class="param">expression</span> représente la valeur qui doit être recherchée 
+pour cette date, c'est à dire, la valeur choisie dans la zone texte <span class="code">QueryDate</span>. <span class="param">expression</span> et <span class="param">opérateur</span> 
+utilisent le <a href="../Macro/Macro.htm">Macro 
+langage de <span class="WindexServer">Windex Server</span></a>.</p>
+<ul>
+    <p><span class="code">[CategDate]$@Input(Operator)$($@Input(QueryDate)$)</span></p>
+</ul>
+<p>Certains opérateurs nécessitent une 
+deuxième zone de saisie complémentaire (<i>opérateur &quot;Compris entre&quot;</i>). 
+</p>
+<p align="center"><img src="../images/ex/SearchConfig/date_b.gif" border="0"></p>
+<table class="cellule_exemple" border="0" width="100%">
+      <tr>
+          <td>
+            <p class="code_exemple">Rechercher les documents dont la 
+            date de création est<br>&lt;SELECT name=&quot;Operator&quot; size=&quot;1&quot;&gt;<br>&lt;OPTION 
+            value=&quot;&gt;&quot;&gt;supérieure à&lt;/OPTION&gt;<br>&lt;OPTION 
+            value=&quot;&lt;&quot;&gt;inférieure à&lt;/OPTION&gt;<br>&lt;OPTION 
+            value=&quot;&gt;=&quot;&gt;supérieure ou égal à&lt;/OPTION&gt;<br>&lt;OPTION 
+            value=&quot;&lt;=&quot;&gt;inférieure ou égal à&lt;/OPTION&gt;<br>&lt;OPTION 
+            value=&quot;=&quot;&gt;égale à&lt;/OPTION&gt;<br>&lt;OPTION value=&quot;[]&quot;&gt;comprise 
+            entre (au sens large)&lt;/OPTION&gt;<br>&lt;OPTION value=&quot;][&quot;&gt;comprise 
+            entre (au sens strict)&lt;/OPTION&gt;<br>&lt;OPTION value=&quot;[[&quot;&gt;comprise 
+            entre (large à gauche)&lt;/OPTION&gt;<br>&lt;OPTION value=&quot;]]&quot;&gt;comprise 
+            entre (large à droite)&lt;/OPTION&gt;<br>&lt;/SELECT&gt;<br>&lt;INPUT 
+            type=&quot;text&quot; name=&quot;QueryDate1&quot;&gt;<br>&nbsp;et 
+            <br>&lt;INPUT 
+            type=&quot;text&quot; name=&quot;QueryDate2&quot;&gt;&nbsp;
+          </td>
+      </tr>
+  </table>
+<p>Le paramètre &quot;Requête&quot; s'écrira alors </p>
+<ul>
+    <p><span class="code">[CategDate]$@Input(Operator)$($@Input(QueryDate)$ 
+    ; $@Input(QueryDate)$)</span></p>
+</ul>
+<p>La généralisation de la syntaxe nécessite le conditionnement de la requête. 
+On pourra améliorer la présentation en affichant la deuxième zone uniquement 
+lorsque l'utilisateur a sélectionné un opérateur le nécessitant.&nbsp;</p>
+<p>L'utilisation de la deuxième zone n'est pas obligatoire. Dans ce cas, les 
+deux valeurs seront saisies dans la première zone en les séparant par un point 
+virgule et le paramètre requête sera modifié en conséquence :</p>
+<ul>
+    <p><span class="code">[CategDate]$@Input(Operator)$($@Input(QueryDate)$)</span></p>
+</ul>
+<h3>e) Recherche sur le titre</h3>
+<p>Cette section est optionnelle et ne doit être prise en compte que si vous 
+avez configuré des <a href="../MetaTags.htm#Titre">titres</a>.</p>
+<p>Même si on peut définir plusieurs champs de type titre, 
+ils partagent tous le même nom associé (<span class="code">@Title</span>).</p>
+<div class="attention">Tous les 
+	champs de type titre sont concaténées pour constituer le titre 
+	final du document. Les différentes valeurs sont séparées par 
+	le caractère de saut à la ligne (<span class="code">\n</span>). 
+</div>
+
+				<p align="center"><img src="../images/ex/SearchConfig/title_a.gif" border="0"></p>
+<div class="code_exemple">Rechercher les documents 
+	dont le titre contient<br>&lt;INPUT type=&quot;text&quot; name=&quot;TitleRequest&quot;&gt;</div>
+
+	<p>La syntaxe du paramètre &quot;Requête&quot; est similaire aux cas précédents :</p>
+<ul>
+    <p><span class="code">[</span><span class="param">nom_associé</span><span class="code">](</span><span class="param">expression</span><span class="code">)</span></p>
+</ul>
+<p>ce qui donne pour notre exemple :</p>
+<ul>
+    <p><span class="code">[@Title]($@Input(TitleRequest)$)</span></p>
+</ul>
+<h3>f) Recherche sur le résumé</h3>
+<p>Cette section est optionnelle et ne doit être prise en compte que si vous 
+avez configuré des <a href="../Resume.htm#2_META_Resume">résumés</a>.</p>
+<p>La configuration se fait par l'intermédiaire de l'écran de <a href="../Resume.htm">configuration 
+du résumé</a>. Cependant, le nom associé n'est pas précisé. Par défaut, sa valeur 
+est <span class="code">@Summary</span>.</p>
+<p align="center"><img src="../images/ex/SearchConfig/summary_a.gif" border="0"></p>
+<table class="cellule_exemple" border="0" width="100%">
+      <tr>
+          <td>
+              <p align="left" class="code_exemple">Rechercher les documents 
+            dont le résumé contient<br>&lt;INPUT type=&quot;text&quot; name=&quot;SummaryRequest&quot;&gt;</p>
+          </td>
+      </tr>
+  </table>
+<p>La syntaxe du paramètre &quot;Requête&quot; est similaire aux cas précédents 
+:</p>
+<ul>
+    <p><span class="code">[</span><span class="param">nom_associé</span><span class="code">](</span><span class="param">expression</span><span class="code">)</span></p>
+</ul>
+<p>ce qui donne pour notre exemple :</p>
+<ul>
+    <p><span class="code">[@Summary]($@Input(SummaryRequest)$)</span></p>
+</ul>
+<h3>g) <a name="Restriction_recherche_a_un_site">Restriction de la recherche à un site en particulier</a><a name="upd_031120_b"></a></h3>
+<span class="WindexServer">Windex Server</span> peut indexer plusieurs 
+site internets. Par défaut, la recherche s'effectue sur l'intégralité des sites 
+indexés. 
+<p>On peut effectuer une recherche restreinte à un ou plusieurs sites uniquement.</p>
+<p>Le regroupement des documents par site se fait par l'intermédiaire d'un <a href="../MetaTags.htm">champ</a> 
+de type <a href="../MetaTags.htm#4d_categorie">catégorie</a>. Mais ce champ sera particulier, car sa valeur ne proviendra 
+pas d'une information contenue dans le document indexé :&nbsp;elle sera dynamique 
+et exprimée via le <a href="../Macro/Macro.htm">Macro langage</a> de <span class="WindexServer">Windex Server</span>. 
+La formule sera exprimée en utilisant des <a href="../MetaTags.htm#2a_Champs_virtuels">champs 
+virtuels</a>.</p>
+<p>Concrètement, on pourra créer le champ suivant :</p>
+<ul>
+    <li>Nom du champ : <span class="code">$@DocHost$</span></li>
+    <li>Nom associé : <span class="code">SiteDoc</span></li>
+    <li>Type : <span class="code">Catégorie</span></li>
+</ul>
+<p>Dans ce cas, la valeur du champ <span class="code">SiteDoc</span>, pour <b>chaque document</b>, 
+correspondra à&nbsp;la portion de son URL correspondant au site. </p>
+<table class="tableau">
+<thead>
+    <tr>
+        <th>URL</th>
+        <th>Valeur de champ &quot;SiteDoc&quot;</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td>
+            <p class="code">http://www.consultation.fr/documents/visites.htm</p>
+        </td>
+        <td>
+            <p class="code">www.consultation.fr</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p class="code">http://www.consultation.fr/documents/prescriptions.htm</p>
+        </td>
+        <td>
+            <p class="code">www.consultation.fr</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p class="code">http://www.medicaments.fr/vitamines/A.htm</p>
+        </td>
+        <td>
+            <p class="code">www.medicaments.fr</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p class="code">http://www.medicaments.fr/vitamines/B.htm</p>
+        </td>
+        <td>
+            <p class="code">www.medicaments.fr</p>
+        </td>
+    </tr>
+</tbody>
+</table>
+<p>Ensuite, au niveau de la requête, il suffit d'indiquer</p>
+<p align="center"><span class="code">([Site]{la_valeur_du_site}) $@Input(Query)$</span></p>
+<h3>h) Lancement de la recherche</h3>
+<p>Comme nous l'avons vu au début de ce chapitre, la saisie de la requête de 
+recherche utilise un <a href="#page_de_saisie_de_requete">formulaire</a>. Sa 
+validation se fait par l'intermédiaire d'un bouton, représenté en HTML par la 
+balise <span class="code">INPUT</span>. Avant la balise fermente du formulaire, 
+il faut ajouter le code suivant :</p>
+<table class="cellule_exemple" border="0" width="100%">
+      <tr>
+          <td>
+              <p align="left" class="code_exemple">&lt;INPUT type=&quot;image&quot; 
+            border=&quot;0&quot; onClick=&quot;return showSearch('Search');&quot;<img src="../../images/nocr.gif" align="absmiddle" border="0"><br>src=&quot;/WindexServer/User/images/btRechercher.gif&quot; name=&quot;Search&quot;&gt;</p>
+          </td>
+      </tr>
+  </table>
+<p>Si vous souhaitez proposer la rechercher contextuelle, ajoutez également 
+le code suivant :</p>
+<table class="cellule_exemple" border="0" width="100%">
+      <tr>
+          <td>
+              <p align="left" class="code_exemple">&lt;INPUT type=&quot;image&quot; 
+            border=&quot;0&quot; onClick=&quot;return showContext('ShowContext');&quot;<img src="../../images/nocr.gif" align="absmiddle" border="0"><br>src=&quot;/WindexServer/User/images/btContext.gif&quot; alt=&quot;Contexte&quot; 
+            name=&quot;ShowContext&quot;&gt;</p>
+          </td>
+      </tr>
+  </table>
+<p>Par défaut, si l'utilisateur appuie sur la touche &quot;Entrée&quot; au lieu 
+de cliquer sur le bouton &quot;Rechercher&quot;, c'est la recherche standard 
+qui est exécutée.</p>
+<h3>i) Activer par défaut la recherche &quot;suivit de&quot; ( NEAR )</h3>
+<p>Dans les versions précédente de <span class="WindexServer">Windex Server</span>&nbsp;l'absence d'opérateur entre deux mot représenté l'opérateur &quot;suivit de&quot; (NEAR) ainsi que l'utilisation d'espace.<br>La gestion de l'opérateur ET par défaut semble mieux correspondre à la logique de l'utilisateur habitué à utiliser le ET implicite au lieu de la notion de &quot;suivi de&quot;.<br>En conséquence, dans la zone de recherche, l'espace entre les mots ne correspond plus à l'opérateur NEAR mais à l'opérateur booléeen ET.</p>
+<p>Pour réactiver l'opérateur NEAR, il faut ajouter le paramètre &quot;SpaceIsOpNear=true&quot; dans la page HTML de recherche sous la forme d'un champ caché.<br>L'utilisateur peut cependant utiliser les guillemets pour activer l'opérateur &quot;suivi de&quot; (gestion de la proximité des mots).<br>Par exemple, pour l'expression : <br>&nbsp;&nbsp;&nbsp;&nbsp;<b>&quot;moteur de recherche&quot; cdrom</b><br><span class="WindexServer">Windex Server</span> recherche les documents qui comportent le mot <b>&quot;moteur&quot;</b> suivi du mot <b>&quot;recherche&quot;</b> et qui contiennent le mot &quot;<b>cdrom&quot;.</b></p>
+<h3>j) Considérations générales</h3>
+<p>Les exemples que nous avons abordés pour illustrer la mise en oeuvre de la 
+page de recherches sont loins d'être exhaustifs, mais suffisament représentatifs 
+de ce que l'on peut faire. Grâce au langage Macro de <span class="WindexServer">Windex Server</span> 
+et/ou d'autres langages  (<i>Javascript, PHP,...</i>), vous pouvez améliorer 
+l'ergonomie et les fonctionnalités de cette page à votre guise.</p>
+<h2><a name="La_page_d_affichage_des_reponses">3. La page d'affichage des réponses</a></h2>
+<p>C'est la page modèle la plus importante. Elle est installée par défaut dans 
+le dossier <span class="code">User/Template</span> sous le nom <span class="code">Search_ShowItem.htm</span>. 
+</p>
+<p>En règle générale, cette page doit afficher 3 informations :</p>
+<ul>
+    <li>le nombre total de réponses à la requête</li>
+    <li>les réponses (<i>par tranche; le nombre de réponses par tranche étant indiqué 
+    sur l'écran de </i><a href="#1a_Page_des_reponses"><i>configuration 
+    de la recherche</i></a>)</li>
+    <li>des boutons de navigation permettant de naviguer entre les différentes 
+    pages de réponses si toutes les réponses ne peuvent pas être affichées sur 
+    une seule page.</li>
+</ul>
+<p>Nous allons examiner concrètement la mise en oeuvre du langage de Macro de 
+<span class="WindexServer">Windex Server</span>. Les exemples suivants 
+ne sont qu'indicatifs et peuvent être librement adaptés en fonction des besoins.</p>
+<h3><a name="Affichage_du_nombre_de_reponses">a) Affichage du nombre de réponses</a></h3>
+<p>Le nombre de réponses est renvoyé par la fonction <span class="code"><a href="Macro/Macro.htm#NbRecord">@NbRecord</a></span> 
+de l'environnement <span class="code"><a href="../Macro/Macro.htm#environnement_@WindexResult">@WindexResult</a></span>.</p>
+<table class="cellule_exemple" border="0" width="100%">
+      <tr>
+          <td>
+              <p align="left" class="code_exemple">Nombre de r&amp;eacute;ponses 
+            : $@WindexResult(@NbRecord)$</p>
+          </td>
+      </tr>
+  </table>
+<p>On peut affiner l'affichage en gérant le pluriel du mot &quot;réponse&quot; :</p>
+<p>Si le nombre de réponses est supérieur à 1, on concatène un &quot;s&quot; 
+au mot &quot;réponse&quot;, sinon rien. </p>
+<table class="cellule_exemple" border="0" width="100%">
+      <tr>
+          <td>
+              <p align="left" class="code_exemple">$@If(@Superior(@WindexResult(@NbRecord),'1'),'s',''))$</p>
+          </td>
+      </tr>
+  </table>
+<p>En détail, il faut comparer le nombre de réponses de la requête</p>
+<table class="cellule_exemple" border="0" width="100%">
+      <tr>
+          <td>
+              <p align="left" class="code_exemple"><span class="code">@<a href="../Macro/Macro.htm#Superior">Superior</a>(@<a href="Macro/Macro.htm#environnement_@WindexResult">WindexResult</a>(@<a href="Macro/Macro.htm#NbRecord">NbRecord</a>),'1')</span></p>
+          </td>
+      </tr>
+  </table>
+<p>Si cette dernière condition est vraie, on doit retourner un 
+'s', sinon rien.</p>
+<h3><a name="Navigation_entres_les_pages_de_resultat">b) Navigation 
+entres les pages de résultat</a></h3>
+<p>Les réponses à la requête sont affichées par page contenant 
+chacune un certain nombre d'enregistrement. Ce nombre est configurable via l'écran 
+de <a href="#1a_Page_des_reponses">configuration de la recherche</a>, 
+et retourné par la fonction <span class="code"><a href="../Macro/Macro.htm#NbRecord">@NbMaxRecord</a></span> 
+de l'environnement <span class="code"><a href="../Macro/Macro.htm#environnement_@WindexResult">@WindexResult</a></span>. 
+Le passage à une page suivante ou précédente utilise un hyperlien qui appelle 
+un traitement spécial de <span class="WindexServer">Windex Server</span>. 
+Ce traitement nécessite certains paramètres : </p>
+<ul>
+    <div align="left">
+        <li>le numéro de l'enregistrement à partir duquel la page est affichée 
+        </li>
+        <li>combien d'enregistrement à afficher dans la page</li>
+        <li>l'ensemble des zones intervenant dans la constitution de la requête</li>
+    </div>
+</ul>
+<p>Pour afficher la page précédente, l'hyperlien est :</p>
+<table class="cellule_exemple" border="0" width="100%">
+      <tr>
+          <td>
+              <p align="left" class="code_exemple">&lt;a href=&quot;/WindexServer/servlet/WindexServer?Agent=Search<img src="../../images/nocr.gif" align="absmiddle" border="0"><br>
+			  &amp;FirstRecord=$@WindexResult(@PreviousRecord)$<img src="../../images/nocr.gif" align="absmiddle" border="0"><br>
+			  &amp;NbRecord=$@WindexResult(@NbMaxRecord)$&amp;Query=$@Input(@(@UrlEncode(Query))$&quot;&gt;<img src="../../images/nocr.gif" align="absmiddle" border="0"><br>
+			  Page précédente&lt;/a&gt;</p>
+          </td>
+      </tr>
+  </table>
+<ul>
+        <li>Le&nbsp;traitement de <span class="WindexServer">Windex Server</span> 
+        à exécuter est <span class="code">Agent=Search</span>.</li>
+        <li>Le paramètre <span class="code">FistRecord</span> indique le numéro 
+        du premier enregistrement que la page précédente affiche. Sa valeur 
+        est celle de la fonction <a href="../Macro/Macro.htm#PreviousRecord"><span class="code">@PreviousRecord</span></a>. 
+        </li>
+        <li>Le paramètre <span class="code">NbRecord</span> indique le nombre 
+        d'enregistrements à afficher. Sa valeur est celle de la fonction <a href="../Macro/Macro.htm#NbMaxRecord"><span class="code">@NbMaxRecord</span></a>. 
+        &nbsp;</li>
+</ul>
+<p>Dans cet exemple, nous n'avons indiqué qu'un seul champ correspondant 
+à la requête : <span class="code">Query</span>. Si d'autres champs devaient 
+intervenir, ils devraient être ajoutés.</p>
+<p>Pour afficher la page suivante, l'hyperlien est :</p>
+<table class="cellule_exemple" border="0" width="100%">
+      <tr>
+          <td>
+              <p align="left" class="code_exemple">&lt;a href=&quot;/WindexServer/servlet/WindexServer?Agent=Search<img src="../../images/nocr.gif" align="absmiddle" border="0"><br>&amp;FirstRecord=$@WindexResult(@NextRecord)$<img src="../../images/nocr.gif" align="absmiddle" border="0"><br>&amp;NbRecord=$@WindexResult(@NbMaxRecord)$&amp;Query=$@Input(@(@UrlEncode(Query))$&quot;&gt;<img src="../../images/nocr.gif" align="absmiddle" border="0"><br>Page 
+            suivante&lt;/a&gt;</p>
+          </td>
+      </tr>
+  </table>
+<p>Le code est très similaire au précédent. La seule différence 
+est au niveau de la valeur du paramètre <span class="code">FirstRecord</span> 
+:&nbsp;Dans ce cas, c'est le numéro du premier enregistrement que la page suivante 
+affiche, indiquée par la fonction <span class="code"><a href="../Macro/Macro.htm#NextRecord">@NextRecord</a></span>.</p>
+<p>On peut améliorer le code précédent. En effet, si la première 
+page est affichée, il n'y a pas de page précédente (<i>De même, si on est sur 
+la dernière page pour la page suivante</i>). On peut utiliser la fonction <span class="code"><a href="../Macro/Macro.htm#BeginIf">@BeginIf</a></span> 
+pour conditionner l'affichage des hyperliens de navigation :</p>
+<table class="cellule_exemple" border="0" width="100%">
+      <tr>
+          <td>
+              <p align="left" class="code_exemple">$@BeginIf(@WindexResult,@PreviousRecord)$<img src="../../images/nocr.gif" align="absmiddle" border="0"><br>&lt;a 
+            href=&quot;/WindexServer/servlet/WindexServer?Agent=Search<img src="../../images/nocr.gif" align="absmiddle" border="0"><br>&amp;FirstRecord=$@PreviousRecord$<img src="../../images/nocr.gif" align="absmiddle" border="0"><br>&amp;NbRecord=$@NbMaxRecord$&amp;Query=$@Input(@(@UrlEncode(Query))$&quot;&gt;<img src="../../images/nocr.gif" align="absmiddle" border="0"><br>Page 
+            précédente&lt;/a&gt;<img src="../../images/nocr.gif" align="absmiddle" border="0"><br>$@End$<br><br>$@BeginIf(@WindexResult,@NextRecord)$<img src="../../images/nocr.gif" align="absmiddle" border="0"><br>&lt;a 
+            href=&quot;/WindexServer/servlet/WindexServer?Agent=Search<img src="../../images/nocr.gif" align="absmiddle" border="0"><br>&amp;FirstRecord=$@NextRecord$<img src="../../images/nocr.gif" align="absmiddle" border="0"><br>&amp;NbRecord=$@NbMaxRecord$&amp;Query=$@Input(@(@UrlEncode(Query))$&quot;&gt;<img src="../../images/nocr.gif" align="absmiddle" border="0"><br>Page 
+            suivante&lt;/a&gt;<img src="../../images/nocr.gif" align="absmiddle" border="0"><br>$@End$&nbsp;</p>
+          </td>
+      </tr>
+  </table>
+<p>A noter que l'on ne précise plus l'environnement <span class="code">@WindexResult</span> 
+lorsqu'on appelle les fonctions <span class="code">@PreviousRecord</span>,&nbsp;<span class="code">@NextRecord</span> 
+et <span class="code">@NbMaxRecord</span>. Il devient implicite car il est indiqué 
+au niveau de la fonction <span class="code">@BeginIf</span>.<br></p>
+<h3><a name="Affichage_des_resultats">c) Affichage des résultats</a></h3>
+<p>Cette tâche est réalisée grâce à la fonction <span class="code"><a href="../Macro/Macro.htm#Begin">@Begin</a></span> 
+: en parcourant l'ensemble des réponses à&nbsp;la requête, une portion de code HTML 
+est répété pour chaque enregistrement.</p>
+<p>Les réponses à la requête sont affichées par page contenant 
+chacune un certain nombre d'enregistrements. Ce nombre est configurable via 
+l'écran de <a href="#1a_Page_des_reponses">configuration de 
+la recherche</a>, et retourné par la fonction <span class="code"><a href="../Macro/Macro.htm#NbRecord">@NbMaxRecord</a></span> 
+de l'environnement <span class="code"><a href="../Macro/Macro.htm#environnement_@WindexResult">@WindexResult</a></span>.</p>
+<p>Le numéro du premier enregistrement à afficher dans une page 
+provient de&nbsp;l'<a href="#Navigation_entres_les_pages_de_resultat">hyperlien 
+de navigation</a>, via le paramètre <span class="code">FirstRecord</span>. </p>
+<table class="cellule_exemple" border="0" width="100%">
+      <tr>
+          <td>
+              <p align="left" class="code_exemple">$@Begin(@WindexResult, @Input(FirstRecord), 
+            @NbMaxRecord)$<br>&lt;!-- <i>Début du code à répéter </i>--&gt;<br><br><span class="code">&lt;!-- 
+            <i>Fin du code HTML à répéter --&gt;</i></span><br>$@End$</p>
+          </td>
+      </tr>
+  </table>
+<p>Dans le code HTML à répéter, l'environnement par défaut est <span class="code">@WindexResult</span>, 
+car celui-ci est indiqué dans la fonction <span class="code">@Begin</span>. 
+Il n'est donc pas nécessaire de le préciser lorsqu'on utilise des fonctions 
+ou des variables de cet environnement.</p>
+<p>L'accès au document proposé utilise un hyperlien qui peut être codé de deux 
+manière :</p>
+<ul>
+    <li>accès direct au document.</li>
+    <li>accès indirect via <span class="WindexServer">Windex Server</span>.</li>
+</ul>
+<p>L'accès direct utilise la variable <span class="code"><a href="../Macro/Macro.htm#Url">Url</a></span> 
+qui renvoit l'url du document indexé.</p>
+<table class="cellule_exemple" border="0" width="100%">
+      <tr>
+          <td>
+              <p align="left" class="code_exemple">$@Begin(@WindexResult, @Input(FirstRecord), 
+            @NbMaxRecord)$<br><br>&lt;a href=&quot;$Url$&quot;&gt;$Url$&lt;/a&gt;&lt;br&gt;</p>
+            <p align="left" class="code_exemple">$@End$</p>
+          </td>
+      </tr>
+  </table>
+<p>Le second type d'accès est à utiliser lorsque <span class="WindexServer">Windex Server</span> 
+doit retraiter le document à afficher, en particulier pour mettre en évidence 
+les mots trouvés. Cette référence n'est 
+pas configurable et doit être utilisée comme indiqué ci-dessous :</p>
+<table class="cellule_exemple" border="0" width="100%">
+      <tr>
+          <td>
+              <p align="left" class="code_exemple">$@Begin(@WindexResult, @Input(FirstRecord), 
+            @NbMaxRecord)$<br><br>&lt;a href=&quot;/WindexServer/servlet/WindexServer?Agent=ShowDoc&amp;Id=$IdHighlight$<img src="../../images/nocr.gif" align="absmiddle" border="0"><br>&amp;Url=$@WindexResult(Url)$#AAA0&quot;&gt;<br>$@(@HtmlEncode(Title),'&lt;br&gt;'))$<br>&lt;/a&gt;</p>
+            <p align="left" class="code_exemple">$@End$</p>
+          </td>
+      </tr>
+  </table>
+<h3><a name="Indexation_locale_recherche_Web">d) Indexation locale et recherche 
+via le Web</a></h3>
+<p>Par défaut, les URLs des documents proposés dans la page des résultats utilisent 
+le même protocole que l'adresse de départ d'indexation. Ainsi, si vous avez 
+indexé des documents en local (<i>basé sur le protocole </i><span class="code"><i>file</i></span>), 
+les URLs des documents proposés seront basés sur le même protocole.
+</p>
+<p>Or, les documents exprimés sous ce protocole ne peuvent être accessibles 
+que depuis l'ordinateur qui les héberge ou bien via un partage réseau (mais 
+sous certains conditions).</p>
+<p>Bien souvent, ces mêmes documents seront accessibles via un serveur http. 
+Dans ce cas, il faudra convertir l'URL exprimée avec le protocole file en URL 
+exprimée avec le protocole http.</p>
+<p>Exemple :</p>
+<ul>
+    <p>On indexe en local un site dont l'adresse Internet est <span class="code">http://www.mon_site.fr</span>. 
+    La racine de ce site est située dans</p>
+    <p><span class="code">C:/Program Files/www/mon_site/html</span></p>
+    <p>L'URL à indexer sera :</p>
+    <p><span class="code">file://localhost/C:/Program Files/www/mon_site/html</span></p>
+    <p>Dans la page des résultats, tous les documents proposés et qui se rapportent 
+    à ce site, commenceront par :</p>
+    <p><span class="code">file://localhost/C:/Program Files/www/mon_site/html</span></p>
+    <p>alors qu'elles devraient commencer par </p>
+    <p><span class="code">http://www.mon_site.fr</span></p>
+    <p>Pour corriger l'URL proposée, il suffit d'utiliser les fonctions de <a href="../Macro/Macro.htm#Manipulations_chaines">manipulations 
+    des chaînes de caractères</a>. Ainsi, <span class="code"><a href="../Macro/Macro.htm#Url">$Url$</a></span>, 
+    qui représente dans le modèle de la page d'affichage des résultats, l'URL 
+    du document, sera utilisée de la façon suivante :</p>
+    <p><span class="code">$@(@Replace(Url,'file://localhost/C:/Program Files/www/mon_site/html','http://www.mon_site.fr'))$</span></p>
+    <p>Ainsi, dans toute URL proposée, le texte <span class="code">file://localhost/C:/Program 
+    Files/www/mon_site/html </span>sera remplacé par <span class="code">http://www.mon_site.fr</span>.</p>
+</ul>
+<h2><a name="Page_d_anomalies">4. Page d'anomalies</a></h2>
+<p>Cette page est affichée lorsqu'une erreur s'est produite lors du traitement 
+de la requête. Elle est installée par défaut dans 
+le dossier <span class="code">User/Template</span> sous le nom <span class="code">Search_Error.htm</span>. 
+</p>
+<p>Son contenu est très simple. Généralement elle indique qu'une erreur est 
+survenue et propose, via un hyperlien, de reformuler la requête.</p>
+<table class="cellule_exemple" border="0" width="100%">
+      <tr>
+          <td>
+              <p align="left" class="code_exemple">&lt;a href=&quot;/WindexServer/Search.htm&quot; 
+            title=&quot;Effectuer une autre recherche&quot;&gt;Effectuer une 
+            autre recherche&lt;/a&gt;</p>
+          </td>
+      </tr>
+  </table>
+<h2><a name="Page_d_absence_de_reponses">5. Page d'absence de réponses</a></h2>
+<p>Cette page est affichée lorsqu'aucun document ne correspond à la requête. 
+Elle est installée par défaut dans 
+le dossier <span class="code">User/Template</span> sous le nom <span class="code">Search_Error.htm</span>. 
+</p>
+<p>Son contenu est très simple. Généralement elle indique qu'aucun document 
+n'a été trouvé et propose, via un hyperlien, de reformuler la requête.</p>
+<h2><a name="recherche_contextuelle">6. Affichage de la recherche contextuelle</a></h2>
+<p>Cette page affiche le résultat de la <a href="../userguide.htm#Recherche_contextuelle">recherche contextuelle</a>. Elle est installée 
+par défaut dans le dossier <span class="code">User/Template</span> sous le nom <span class="code">ShowContext.htm</span>. 
+Son contenu est très simple et est basé sur l'environnement <a href="../Macro/Macro.htm#environnement_@WindexContext"><span class="code">@WindexContext</span></a> 
+et <a href="mailto:@Input.s"><span class="code">@Input</span></a>. La recherche contextuelle permet de trouver les mots qui suivent un mot donné (<i>le mot donné est saisie dans la zone de saisie de la page principale de recherche</i>) : 
+cette recherche s'appuie sur la notion de <a href="../userguide.htm#1bA_Recherche_proximite">proximité</a>. </p>
+<h3>a) Titre de la page</h3>
+<p>L'exemple installé par défaut affiche en tête de la page, le nombre de mots 
+trouvés et rappelle le mot recherché.</p>
+<table class="cellule_exemple" border="0" width="100%">
+      <tr>
+          <td>
+              <p align="left" class="code">$@BeginIf(@WindexContext,@(@Cmp(@NbRecord,'0')))$<br>Aucun 
+            mot ne suit le mot &quot;$@Input(Query)$&quot;<br>$@End$</p>
+            <p class="code">$@BeginIf(@WindexContext,@(@Not(@Cmp(@NbRecord,'0'))))$ 
+            <br>$@WindexContext(@NbRecord)$ mot$@(@If(@Superior(@WindexContext(@NbRecord),'1'),'s',''))$<br>sui$@(@If(@Superior(@WindexContext(@NbRecord),'1'),'vent','t'))$ 
+            le mot &quot;$@Input(Query)$&quot;<br>$@End$</p>
+          </td>
+      </tr>
+  </table>
+<p>Si aucun mot n'est trouvé, le message &quot;Aucun mot ne suit le mot &quot; 
+suivit du mot recherché est affiché. Dans le cas contraire, en fonction du nombre 
+de réponses, le message est adapté :</p>
+<ul>
+    <li>1 mot suit le mot ...</li>
+    <li>... mots suivent le mot ...</li>
+</ul>
+<p>Dans cet exemple, le mot recherché est représenté par <span class="code">$@Input(Query)$</span>. 
+Cette expression doit être égale à la valeur de la zone de saisie située sur la page de recherche.</p>
+<p>Reportez-vous au chapitre traitant du <a href="../Macro/Macro.htm">Macro langage</a>, 
+et plus particulièrement aux fonctions <a href="../Macro/Macro.htm#BeginIf"><span class="code">@BeginIf</span></a> 
+pour plus de détails.</p>
+<h3>b) Affichage des mots</h3>
+<p>A l'instar de la <a href="#Affichage_des_resultats">page d'affichage des 
+réponses</a>, les réponses d'une recherche contextuelle sont obtenues en parcourant 
+l'ensemble des réponses contenues dans l'environnement <span class="code"><a href="../Macro/Macro.htm#environnement_@WindexContext">@WindexContext</a></span> 
+grâce à la fonction <span class="code"><a href="../Macro/Macro.htm#Begin">@Begin</a></span>.</p>
+<table class="cellule_exemple" border="0" width="100%">
+      <tr>
+          <td>
+              <p align="left" class="code_exemple">$@Begin(@WindexContext, @Input(FirstRecord) 
+            ,@NbMaxRecord)$<br>&lt;!-- <i>Début du code à répéter </i>--&gt;<br><br><span class="code">&lt;!-- 
+            <i>Fin du code HTML à répéter --&gt;</i></span><br>$@End$</p>
+          </td>
+      </tr>
+  </table>
+<p>Par défaut, les mots sont affichés les uns derrières les autres, suivis entre 
+parenthèses du nombre de document contenant le mot en question précéde du mot 
+recherché. Un hyperlien est associé à chaque réponse. Il permet de lancer une 
+recherche affichant les documents en question.</p>
+<table class="cellule_exemple" border="0" width="100%">
+      <tr>
+          <td>
+              <p align="left" class="code_exemple">&lt;A href=&quot;/WindexServer/servlet/WindexServer?Agent=Search&amp;Query=$@Input(Query)$+$NextWord$&quot;&gt;<img src="../../images/nocr.gif" align="absmiddle" border="0"><br>$NextWord$ 
+            ($NbNextWord$)&lt;/A&gt; &amp;nbsp;</p>
+          </td>
+      </tr>
+  </table>
+<p>Dans cet exemple, le mot recherché est représenté par <span class="code">$@Input(Query)$</span>. 
+Cette expression doit être égale à la valeur de la zone de saisie située sur la page de recherche. La variable <span class="code"><a href="../Macro/Macro.htm#NextWord">NextWord</a></span> retourne le mot qui suit le mot recherché.</p>
+<p>Pour bien comprendre la signification de cet hyperlien, il faut se repencher sur la page de saisie de la requête. Lorsque l'utilisateur saisit une recherche et appuie sur le bouton &quot;Rechercher&quot;, cette dernière action génère l'URL suivante :</p>
+<ul>
+              <p><span class="code">/WindexServer/servlet/WindexServer?Agent=Search&amp;Query=$@Input(Query)$</span></p>
+</ul>
+<p>Cette URL peut être plus complexe, car en fait, elle est la concaténation de tous les champs du formulaire de saisie de la requête, sous la forme :</p>
+<ul>
+    <p><span class="code">nom_du_champ=valeur</span></p>
+</ul>
+<p>chacune de ces paires étant séparée par un <span class="code">&amp;</span>. Ainsi, dans l'URL indiquée, on retrouve le champ <span class="code">Agent</span> et <span class="code">Query</span>.</p>
+<p>Dans la page d'affichage de la recherche contextuelle, chaque mot proposé en réponse est associé à un hyperlien. </p>
+<p align="center"><img src="../images/ex/SearchConfig/contexte_scr.gif" border="0"></p>
+<p>Lorsqu'on clique dessus, on provoque en fait une <u>nouvelle recherche</u> portant sur le mot initial &quot;<b><u>suivi</u></b>&quot; du mot affiché : pour la copie d'écran ci-dessus, si on clique sur le mot <i>orientale</i>, on rechercherait alors les documents contenant le mot <i>cuisine</i> suivi du mot <i>oriental</i>e.</p>
+<p>Si on avait dû saisir la même recherche sur la page de saisie de la requête, on aurait écrit le premier mot suivit d'un <b><u>espace</u></b> puis du deuxième mot : en effet, l'espace est implicitement associé à l'opérateur de proximité. On aurait alors l'URL suivante :</p>
+<ul>
+              <p><span class="code">/WindexServer/servlet/WindexServer?Agent=Search&amp;Query=cuisine orientale</span></p>
+</ul>
+<p>Or, les espaces dans les URLs sont codés (on dira plutôt <i>encodés</i>) et remplacés par un <span class="code">+</span>.</p>
+<ul>
+              <p><span class="code">/WindexServer/servlet/WindexServer?Agent=Search&amp;Query=cuisine+orientale</span></p>
+</ul>
+<p>On comprend alors mieux le code indiqué plus haut :</p>
+<table class="cellule_exemple" border="0" width="100%">
+      <tr>
+          <td>
+              <p align="left" class="code_exemple">&lt;A href=&quot;/WindexServer/servlet/WindexServer?Agent=Search&amp;Query=$@Input(Query)$+$NextWord$&quot;&gt;<img src="../../images/nocr.gif" align="absmiddle" border="0"><br>$NextWord$ 
+            ($NbNextWord$)&lt;/A&gt; &amp;nbsp;</p>
+          </td>
+      </tr>
+  </table>
+<p>Cette URL provoque ainsi le même traitement que celui engendré par le bouton &quot;Rechercher&quot; de la page de saisie de la requête. Si votre page de saisie de la requête comprend plusieurs critères (champs de type catégorie, date ou nombre,...), 
+vérifiez bien que la requête que vous avez indiqué au niveau de la <a href="#Requete">configuration de la recherche</a>. En effet, dans l'URL que nous avons écrit plus haut, nous n'avons pas indiqué d'autres critères.</p>
+<p>Enfin, un bouton en bas de la page permet à l'utilisateur de formuler une 
+nouvelle requête :</p>
+<table class="cellule_exemple" border="0" width="100%">
+      <tr>
+          <td>
+              <p align="left" class="code_exemple">&lt;A href=&quot;/WindexServer/Search.htm&quot;&gt;&lt;IMG 
+            src=&quot;/WindexServer/User/images/AutreRecherche.gif&quot; <img src="../../images/nocr.gif" align="absmiddle" border="0"><br>Alt=&quot;Effectuer 
+            une autre recherche.&quot; border=0&gt;&lt;/A&gt;</p>
+          </td>
+      </tr>
+  </table>
+<p>&nbsp;</p>
+</body>
+
+</html>

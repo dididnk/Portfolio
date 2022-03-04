@@ -1,0 +1,95 @@
+<html>
+	<meta http-equiv="content-type" content="text/html; charset=ISO-8859-15" />
+	<meta name="author" content="Multimédia SOLUTIONS" />
+	<link rel="stylesheet" href="../css/style.css" />
+	<title>URLs à exclure de l'indexation</title>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" type="text/javascript"><!--
+jQuery(document).ready( function(){
+	if (parent.frames.length!=0) { return; }
+	jQuery('h1').eq(0).append('<div class="allHelp"><a href="../index.htm">Toute la documentation</a></div>');
+});
+//-->
+</script>
+</head>
+<body>
+<h1 align="center">URLs à exclure de l'indexation</h1>
+
+<p align="center"><img src="images/screen/UrlsToExclude.png"></p>
+<p align="left">&nbsp;Indiquez dans cette liste la ou les formes que doivent respecter les URLs 
+des documents à ne pas indexer.
+</p>
+<p>Cette fonction 
+permet d'accélérer l'indexation en évitant à <span class="WindexServer">Windex Server</span> 
+de parcourir des fichiers inutiles ou non indexables (<i>images, sons, vidéos, 
+scripts CGI, bases de données</i>).<br>
+</p>
+<p>Vous pouvez utiliser des caractères génériques suivants pour indiquer les noms 
+des fichiers à exclure&nbsp;:</p>
+<ul type="disc">
+    <span class="code">*</span>&nbsp;pour remplacer
+		n'importe quel groupement de lettres.<br>
+	<span class="code">?</span> pour remplacer un seul caractère.<br>
+    <span class="code">/</span> est utlisé pour séparer les dossiers.<br> 
+</ul>
+<table  class="tableau">
+<thead>
+    <tr>
+        <th>
+            Exclusion
+        </th>
+        <th>
+            Signification
+        </th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td valign="top">
+            <span class="code">*.gif<br></span>
+        </td>
+        <td>
+            N'indexe pas les fichiers portant l'extension<span class="code">gif</span><span class="texte">.</span>
+        </td>
+    </tr>
+    <tr>
+        <td valign="top">
+            <span class="code">*/rep/*</span>
+        </td>
+        <td>
+            N'indexe pas le contenu des dossiers <span class="code">rep</span>
+			ni de leur sous-dossiers.
+        </td>
+    </tr>
+    <tr>
+        <td valign="top">
+            <span class="code">*/??.*</span>
+        </td>
+        <td>
+            N'indexe pas les fichiers ne comportant que deux caractères dans 
+            leur nom.
+        </td>
+    </tr>
+    <tr>
+        <td valign="top">
+            <span class="code">*/*.??</span>
+        </td>
+        <td>
+            <span class="texte">N'indexe pas les fichiers dont l'extension comporte exactement 
+            deux caractères.</span>
+        </td>
+    </tr>
+</tbody>
+</table>
+<p><br>Saisissez  la valeur dans la zone puis cliquez sur le bouton <img src="../images/screen/btAdd.gif"  align="absmiddle"> 
+	pour ajouter l'élément à la liste.</p>
+<p>Pour modifier une URL présente dans la liste, corrigez la valeur, 
+	puis cliquez sur le bouton <img src="../images/screen/btUpdate.gif"  align="absmiddle"> 
+</p>
+<p>Pour supprimer une URL, cliquez sur le bouton <img src="../images/screen/btDel.gif"  align="absmiddle"> </p>
+<p>Pour supprimer toutes les URLs déjà saisies, 
+	cliquez sur le bouton <img src="../images/screen/btDelAll.gif"  align="absmiddle"><br>
+	Vous devrez confirmer la suppression avant qu'elle ne soit effective.</p>
+</body>
+
+</html>

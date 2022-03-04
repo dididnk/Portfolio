@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=ISO-8859-15" />
+	<title>Windex Server</title>
+	<base target="result" />
+	<link rel="stylesheet" href="css/sommaire.css" />
+	<link rel="stylesheet" href="css/ui-lightness/jquery-ui.doc.css" />
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.ui.all.js"></script>
+	<script type="text/javascript"><!--
+	jQuery(document).ready(function(){
+		startAccordion();
+		jQuery("#page").resize(function(){ 
+			if( jQuery.browser.msie )
+				jQuery("#sommaire").accordion("resize");
+		});
+		jQuery(window).resize(function(){
+			if( !jQuery.browser.msie )
+				jQuery("#sommaire").accordion("resize"); 
+		});
+		
+	});
+	function startAccordion(){
+		jQuery("#sommaire").accordion({
+			header: "h3",
+			autoHeight: true,
+			//clearStyle: true,
+			fillSpace: true
+		});
+	}
+	//--> 
+	</script>
+</head><body><div id="page">
+<div id="pageHeader">
+	<h1><img src="images/windexServer.gif" alt="Windex Server"/></h1>
+</div>
+<div id="pageContent">
+	<div id="sommaire">
+		<h3><a href="#">Généralités</a></h3>
+		<div class="cadre">
+			<div class="section">
+				<a href="quickstart.htm">Démarrage rapide</a><br>
+				<a href="presentation.htm">Présentation</a><br>
+				<a href="convent.htm">Conventions</a><br>
+			</div>
+		</div>
+
+		<h3><a href="#">Le module d'administration</a></h3>
+		<div class="cadre">
+			<div class="section">
+				Administration
+				<ul>
+					<li><a href="console/Login.htm">Connexion</a></li>
+					<li><a href="console/Interface.htm">L'interface</a></li>
+
+					<li><a href="console/License.htm">Licence</a></li>
+					<li><a href="console/Config-Save.htm">Sauvegarde</a></li>
+					<li><a href="console/Scheduler.htm">Planification</a></li>
+					<li><a href="console/RunIndexation.htm">Indexation</a></li>
+					<li><a href="console/SearchAdmin.htm">Tester la recherche</a></li>
+					<li><a href="console/Stats/Stats.htm">Tableau de bord</a></li>
+					<li><a href="console/ChangePassword.htm">Le compte Administrateur</a></li>
+					<li><a href="console/Quit.htm">Quitter</a></li>
+				</ul>
+				<br />
+				Paramétrage
+				<ul>
+					<li><a href="console/Hello.htm">Guide de démarrage</a></li>
+					<li><a href="console/UrlsToIndex.htm">Urls à indexer</a></li>
+					<li><a href="console/WordsToExclude.htm">Mots vides</a></li>
+					<li><a href="console/UrlsSummary.htm">Sommaire</a></li>
+					<li><a href="console/UrlsToInclude.htm">Restrictions</a></li>
+					<li><a href="console/UrlsToExclude.htm">Exclusions</a></li>
+					<li><a href="console/MimeTypes.htm">Types de documents</a></li>
+					<li><a href="console/MetaTags.htm">Champs</a></li>
+					<li><a href="console/Resume.htm">Résumé</a></li>
+					<li>Recherche<br>
+						<ul class="circle">
+							<li><a href="console/SearchConfig/EditSearchTemplate.htm">Page des résultats</a></li>
+							<li><a href="console/SearchConfig/EditOperators.htm">Opérateurs booléens</a></li>
+							<li><a href="console/SearchConfig/EditHighlightResultWord.htm">Mise en évidence des mots</a></li>
+						</ul>
+					</li>
+					<li><a href="console/AddressBook/Show.htm">Carnet d'adresses</a></li>
+					<li><a href="GED/Explorer.htm">Exploreur (GED)</a></li>
+					<li><a href="console/Explorer/DocState.htm">Gestion des états (GED)</a></li>
+					<li><a href="console/Explorer/Workflow.htm">Gestion du Workflow (GED)</a></li>
+					<li><a href="console/Explorer/Events.htm">Gestion des évènements (GED)</a></li>
+					<li><a href="console/Mail.htm">Paramétrage SMTP (GED)</a></li>
+					<li><a href="console/Properties.htm">Propriétés</a></li>
+					<li>Sauvegarde<br>
+						<ul class="circle">
+							<li><a href="console/Backup.htm">Paramétrage</a></li>
+							<li><a href="console/Backup.htm#Manager">Gestion</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<h3><a href="#">Le macro langage</a></h3>
+		<div class="cadre">
+			<div class="section">
+				<a href="console/Macro/Macro.htm">Le macro langage</a><br>
+				<a href="console/Macro/Macro.htm#Syntaxe_des_fonctions">Syntaxe des fonctions</a><br>
+				<a href="console/Macro/Macro.htm#Syntaxe_des_variables">Syntaxe des variables</a><br>
+				<a href="console/Macro/Macro.htm#Les_environnements">Les environnements</a><br>
+				<a href="console/Macro/Macro.htm#Fonctions_speciales">Fonctions spéciales</a><br>
+				<a href="console/Macro/Macro.htm#environnement_@">L'environnement @</a><br>
+				<a href="console/Macro/Macro.htm#environnement_@Input">L'environnement @Input</a><br>
+				<a href="console/Macro/Macro.htm#environnement_@WindexResult">L'environnement @WindexResult</a><br>
+				<a href="console/Macro/Macro.htm#environnement_@WindexContext">L'environnement @WindexContext</a>
+			</div>
+		</div>
+		<h3><a href="#">Le moteur de recherche</a></h3>
+		<div class="cadre">
+			<div class="section">
+				<a href="userguide.htm">Module de recherche standard</a><br>
+			</div>
+		</div>
+
+		<h3><a href="GED/Explorer.htm">Gestion des documents</a></h3>
+		<div class="cadre">	
+			<div class="nota">Ce module est disponible uniquement dans la version GED de Windex Server</div>		
+			<div class="section">				
+				<a href="GED/Explorer.htm">L'Exploreur</a><br>
+				<ul>
+					<li><a href="GED/Explorer.htm#Gestion_des_documents">Gestion des documents</a></li>
+					<li><a href="GED/Explorer.htm#Recherche_document">Recherche de document</a></li>
+					<li><a href="GED/Explorer.htm#Ajout_Document">Ajout de document dans le dossier courant</a></li>
+				</ul>
+				<br/>
+				Les outils du Gestionnaire<br>
+				<ul>
+					<li><a href="GED/Manager.htm">Le module Gestionnaire</a></li>
+					<li><a href="GED/Addressbook.htm">Gestion du carnet d'adresses</a></li>
+					<li><a href="GED/Addressbook-Profil.htm">Gestion des profils</a></li>
+					<li><a href="GED/DocState.htm">Gestion des états</a></li>
+					<li><a href="GED/Workflow.htm">Gestion du Workflow</a></li>
+					<li><a href="GED/EventsEditor.htm">Gestion des évènements</a></li>
+					<li><a href="GED/WorkflowExIm.htm">Export/import du Workflow</a></li>
+					<li><a href="GED/EventsLogs.htm">Export des logs</a></li>
+				</ul>
+				<br/>
+				Les outils de l'utilisateur<br>
+				<ul>
+					<li><a href="GED/Profil.htm">Profil utilisateur</a></li>
+					<li><a href="GED/Message.htm">Les messages</a></li>
+					<li><a href="GED/Alert.htm">Les alertes</a></li>
+				</ul>
+				<br/>
+				Modules documentaires<br>
+				<ul>
+					<li><a href="GED/Properties.htm">Les propriétés</a></li>
+					<li><a href="GED/ManageResources.htm">Gestion des ressources</a></li>
+					<li><a href="GED/EditeNote.htm">Editer la note</a></li>
+					<li><a href="GED/SendMessage.htm">Envoyer un message</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		<h3><a href="copyright.htm">A propos</a></h3>
+		<div class="cadre">
+			<div class="section">
+				<a href="about.htm#Qui_somme_nous">Qui sommes-nous ?</a><br />
+				<a href="about.htm#Conditions_utilisation">Conditions d'utilisation</a><br />
+				<a href="about.htm#Credits">Crédits</a><br />
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>
+</body>
+</html>

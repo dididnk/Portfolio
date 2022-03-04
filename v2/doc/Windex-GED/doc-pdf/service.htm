@@ -1,0 +1,100 @@
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=ISO-8859-15" />
+	<title>Installation de Windex Server en tâche de fond</title>
+	<meta name="author" content="Multimédia SOLUTIONS" />
+	<meta name="description" content="Service" />
+	<link rel="stylesheet" href="css/style.css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" type="text/javascript"><!--
+jQuery(document).ready( function(){
+	if (parent.frames.length!=0) { return; }
+	jQuery('h1').eq(0).append('<div class="allHelp"><a href="index.htm">Toute la documentation</a></div>');
+});
+//-->
+</script>
+</head>
+<body>
+<h1 align="center" >Installation de Windex Server en tâche de fond</h1>
+
+<p>Ce chapitre explique, suivant la plateforme, le processus d'installation de 
+<span class="WindexServer">Windex Server</span> en tant que tâche 
+de fond. </p>
+<p>Ces procédures ne s'applique que dans le cas d'une installation de <span class="WindexServer">Windex Server</span> 
+avec son micro serveur propriétaire. Si vous avez intégré <span class="WindexServer">Windex Server</span> 
+à un serveur de servlet Tomcat, c'est le serveur Tomcat qui doit être lancé 
+en tant que tâche de fond. Reportez-vous alors au site de <a href="http://jakarta.apache.org/tomcat/" target="_blank">Tomcat</a> 
+pour plus de détails.</p>
+<h2 align="left">1. Installation du service WindexServer sous Windows NT, 2000 
+ou XP</h2>
+<p align="left">Si l'ordinateur sur lequel vous avez installé <span class="WindexServer">Windex Server</span> 
+fonctionne sous Windows NT, 2000 ou XP, le kit d'installation vous aura proposé 
+l'installation de <span class="WindexServer">Windex Server</span> 
+en tant que service. Cependant, si vous n'avez pas choisi initialement cette 
+option, vous pouvez l'activer à postériori.</p>
+<p align="left">Dans le dossier d'installation de <span class="WindexServer">Windex Server</span>, 
+dans le répertoire <span class="code">WEB-INF/bin</span>, vous trouverez 
+les fichiers suivants :</p>
+<ul>
+    <li><span class="code">JavaService.exe</span></li>
+    <li><span class="code">installService.bat</span><br>Installe <span class="WindexServer">Windex Server</span> 
+    en tant que service et démarre le service.</li>
+    <li><span class="code">uninstallService.bat</span><br>Arrête le service 
+    WindexServer et le désinstalle.</li>
+    <li><span class="code">license.html</span><br>Licence du programme <span class="code">JavaService.exe</span></li>
+    <li><span class="code">JavaService-bin-1.2.0.zip</span><br>Archive du programme 
+    <span class="code">JavaService</span> avec sa documentation.</li>
+</ul>
+<p align="left">Ces fichiers ont été configuré en fonction des renseignements 
+donnés lors de l'installation de <span class="WindexServer">Windex Server</span> 
+(<i>dossier d'installation...</i>). Il n'est donc pas nécessaire de les modifier 
+pour les utiliser.</p>
+<h3 align="left">Pour installer le service</h3>
+<p align="left">Double-cliquez sur installService.bat. Contrôlez ensuite dans 
+la gestion des services, l'état du service WindexServer.</p>
+<p align="left">Cette étape n'est à réaliser qu'une seule fois ! A l'issu de 
+cette installation, <span class="WindexServer">Windex Server</span> 
+se démarre et s'arrête via le composant &quot;Service&quot;.</p>
+<div  class="attention">Le non respect de la procédure 
+	d'arrêt du micro serveur peut occasionner la corruption 
+	<u>irrémédiable </u>de la base de données de <span class="WindexServer">Windex Server</span>.
+</div>
+         
+<p align="left">Le fonctionnement du service peut être observé par l'intermédiaire 
+	de deux fichiers log situés dans le dossier <span class="code">WEB-INF</span> 
+	: <span class="code">service_stdout.log</span> et <span class="code">service_stderr.log</span>.</p>
+<h2 align="left">2. Installation du démon WindexServer sous Unix</h2>
+<p align="left">Pour les systèmes Unix, le lancement d'une application en tâche 
+	de fond (appelée démon) est plus délicate. Il n'existe pas de procédure standard, 
+	car la mise en oeuvre d'un démon dépend du type Unix. Reportez-vous à la documentation 
+	d'administration de votre système pour plus de détails.</p>
+<p align="left">Dans le dossier d'installation de <span class="WindexServer">Windex Server</span>, 
+	dans le répertoire <span class="code">WEB-INF/bin</span>, vous trouverez 
+	les fichiers suivants :</p>
+<ul>
+    <li><span class="code">restart_windexserver</span><br>Lance ou arrête le 
+    démon WindexServer.</li>
+    <li><span class="code">check_windexserver</span><br>Utilisé par <span class="code">restart_windexserver</span>, 
+    il vérifie si le démon WindexServer est déjà lancé ou non.</li>
+</ul>
+<p>La syntaxe de <span class="code">restart_windexserver </span>est :</p>
+<p><span class="code">restart_windexserver [start|run|stop]</span></p>
+<ul>
+    <li><span class="code">start</span> <br>démarre WindexServer en tâche de 
+    fond</li>
+    <li><span class="code">run</span> &nbsp;&nbsp;<br>démarre WindexServer en 
+    premier plan</li>
+    <li><span class="code">stop</span> &nbsp;<br>arrête WindexServer</li>
+</ul>
+<p><span class="code">check_windexserver</span> est réservé à <span class="code">restart_windexserver</span>. 
+	Cependant, vous pouvez l'utiliser pour vérifier l'état du démon :</p>
+<p><span class="code">check_windexserver [-q]</span></p>
+<p>retourne 0 si <span class="WindexServer">Windex Server</span> 
+	est démarré, sinon 1 (<i>récupérable via la variable <span class="code">$?</span></i>) 
+	. L'option -q permet de fonctionner en mode &quot;silencieux&quot; : aucun message 
+	n'est affiché à l'écran.</p>
+<p align="left">Le fonctionnement du démon peut être observé par l'intermédiaire 
+	du fichier <span class="code">deamon_windexserver.log</span> situé dans le dossier 
+<span class="code">WEB-INF</span>.</p>
+</body>
+</html>
