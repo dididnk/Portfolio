@@ -1,7 +1,7 @@
 // Author  : Emmanuel Distingué NGBAME KOYAPOLO
 // Contact : ngbamedistingue@yahoo.com
 // Date    : 29 july 2021 
-// Statut  : Finished.
+// Last update : 25 January 2023
 
 $(document).ready(function(){
     $(window).scroll(function(){
@@ -39,15 +39,17 @@ $(document).ready(function(){
     });
 
     // typing text animation script
-    var typed = new Typed(".typing", {
-        strings: ["Etudiant", "Analyste", "Programmeur", "Développeur","Ecrivain"],
+    var typed = new Typed(".typing", 
+    {
+        strings: ["concepteur de logiciels", "développeur informatique", "chef de projet"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
     });
 
-    var typed = new Typed(".typing-2", {
-        strings: ["Etudiant", "Analyste", "Programmeur", "Développeur","Ecrivain"],
+    var typed = new Typed(".typing-2", 
+    {
+        strings: ["concepteur de logiciels", "développeur informatique", "chef de projet"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
