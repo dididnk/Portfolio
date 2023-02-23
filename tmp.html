@@ -1,18 +1,365 @@
+<!-- Author  : Emmanuel Distingué NGBAME KOYAPOLO
+Contact : ngbamedistingue@yahoo.com
+Date    : 29 july 2021 
+Statut  : Finished.  -->
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!-- feuille de style less -->
+    <link rel="stylesheet/less" type="text/css" href="include/styles.less" />
+    <script src="https://cdn.jsdelivr.net/npm/less@4"></script>
+    <!-- fontAwesome -->
+    <script src="https://kit.fontawesome.com/cabff833b6.js"></script>
+    <!-- java script -->
+    <script src="include/script.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <title>My Portfolio</title>
 </head>
+
 <body>
-    <div class="auth-checkbox-wrapper auth-check-left swm_block-element" id="saveId-container"> <div class="switch checked" tabindex="0" aria-label="Désactiver la mémorisation du code client"> <input type="checkbox" class="switch input" id="saveId" name="saveId" style="display: none" data-xiti="clic_memoriser_identifiant" tabindex="0" checked="checked"> <label for="saveId" class="labelSwitch" onclick="" aria-hidden="true" data-xiti="clic_memoriser_identifiant" aria-labelledby="memo_code_client_label"> <span class="hidden-checkbox-input"></span> <div class="toggle-btn-handle"></div> </label> </div> <span class="hidden-checkbox-label" id="memo_code_client_label" aria-hidden="true"><label for="saveId">Se souvenir de moi</label></span> <div class="swm-popover__container">  <button type="button" id="swm-popover__trigger" class="swm-popover__trigger" aria-label="Information sur la mémorisation du code client" aria-describedby="swm-infobulle"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"> <g fill="#615c5c" fill-rule="evenodd"> <path d="M10 .952C5.011.952.952 5.012.952 10c0 4.989 4.06 9.048 9.048 9.048 4.989 0 9.048-4.06 9.048-9.048 0-4.989-4.06-9.048-9.048-9.048M10 20C4.486 20 0 15.514 0 10S4.486 0 10 0s10 4.486 10 10-4.486 10-10 10"></path> <path d="M9 9.625v3.75a1.125 1.125 0 1 0 2.25 0v-3.75a1.125 1.125 0 1 0-2.25 0zM9 6.375a1.125 1.125 0 1 0 2.25 0 1.125 1.125 0 0 0-2.25 0z"></path> </g> </svg> </button> <div class="swm-popover swm-popover--top-right" id="swm-infobulle" role="tooltip"> <p>Se souvenir de moi</p> <p>En cochant cette case, votre code client sera mémorisé sur cet appareil.</p> <p>De cette manière vous n'aurez plus à le saisir lors de vos prochaines connexions.</p> <p>Ceci est déconseillé si votre ordinateur est utilisé par d'autres personnes.</p>  <button type="button" id="swm-btn_close" class="swm_button-secondaire swm_button-arrondi">J'ai compris</button> </div> </div> </div>
-    	
-    <a href="tel:7-66-79-45-58p33">CLICK TO CALL 1</a>
-    <br>
-    	
-<a href="tel:+33768383785">Jade</a>
+    <div class="scroll-up-btn">
+        <i class="fas fa-angle-up"></i>
+    </div>
+    <nav class="navbar">
+        <div class="max-width">
+            <div class="logo"><a href="#"><span>DNK</span><br> Distingué-Ngbame-Koyapolo</a></div>
+            <ul class="menu">
+                <li><a href="#home" class="menu-btn">Menu</a></li>
+                <li><a href="#about" class="menu-btn">A propos</a></li>
+                <li><a href="#services" class="menu-btn">Services</a></li>
+                <li><a href="#skills" class="menu-btn">Compétences</a></li>
+                <li><a href="#projets" class="menu-btn">Projets</a></li>
+                <li><a href="#teams" class="menu-btn">Equipes</a></li>
+                <li><a href="#contact" class="menu-btn">Contact</a></li>
+            </ul>
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- home section start -->
+    <section class="home" id="home">
+        <div class="max-width">
+            <div class="home-content">
+                <div class="text-1">Bonjour, je m'appelle</div>
+                <div class="text-2">Emmanuel NGBAME</div>
+                <div class="text-3">Je suis un <span class="typing"></span></div>
+                <a href="data/alternance_CV_pro_Emmanuel_NGBAME.pdf" download><span class="LinkCv">Télécharger CV</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- about section start -->
+    <section class="about" id="about">
+        <div class="max-width">
+            <h2 class="title">A propos de moi</h2>
+            <div class="about-content">
+                <div class="column left">
+                    <img src="images/profile-1.jpeg" alt="">
+                </div>
+                <div class="column right">
+                    <div class="text">Je suis Emmanuel and je suis un <span class="typing-2"></span></div>
+                    <p>Titulaire d'un diplôme de graduat (bac+3) en <b>Analyse et Programmation </b>
+                        à <b><a href="http://www.isckinshasa.cd/" target="_blank"> <span class="linkEts">l'Institut Supérieur de Commerce de Kinshasa (ISC-Kinshasa)</span></a></b>.
+                        J'ai eu ma première expérience au sein de la <a href="https://sofide.org/v/" target="_blank"><b><span class="linkEts">La Société Financière de Développement (SOFIDE-Kinshasa)</span></b></a>
+                        où j'ai pû mettre mes compétences en pratique dans l'analyse, la conception et le dévelopement au sein d'une équipe des experts proffessionnels de la nouvelle technologie.
+                        Grâce à l'équipe <a href="https://wolftech.online/" target="_blank"><b><span class="linkEts">Wolf Technologies</span></b></a> j'ai eu ma première expérience entant que développeur web Front.<br>
+                        J'effectue en ce moment un stage au sein de la Société <b><a href="https://www.lug.com/" target="_blank"> <span class="linkEts">Multimédia Solutions</span></a></b>, dans le service technique 
+                        entant que développeur informatique Fullstack.
+                    </p>
+                    <p>
+                        Autonome, curieux et rigoureux je me forme tous les jours, préparant ainsi des certifications sur les plateformes <a href="https://www.udemy.com/" target="_blank"> <span class="linkEts"><b>Udemy</b></span></a>,
+                        <a href="https://openclassrooms.com/fr/" target="_blank"> <span class="linkEts"><b>Openclassroom</b></span></a> (où j'ai d'ailleurs validé ma première certification dans la maîtrise de Html&Css) pour renforcer mon appétence pour l'informatique.
+                    </p>
+                    <p>
+                        Je suis actuellement dans la recherche d'une <b>entreprise</b> en vue d'une <b>alternance</b> qui doit débuter en <b>Septembre 2022</b> dans le Développement dans 
+                        toute sa globalité (développeur Fullstack, Apprenti dans la gestion de projets informatiques, Développeur applicatif, Testeur de logiciel, Apprendi Informaticien etc.)
+                    </p>
+                    <a href="data/Cv_Lm_Emmanuel-NGBAME.7z" style="color: grey;" download><i>Télécharger et lettre de motivation</i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- services section start -->
+    <section class="services" id="services">
+
+        <div class="max-width">
+            <h2 class="title">Mes services</h2>
+            <div class="serv-content">
+                <div class="card">
+                    <div class="box">
+                        <i class="fas fa-brain"></i>
+                        <div class="text">Analyse</div>
+                        <p>
+                            Avec la méthode MERISE ou UML je peux faire l'étude d'un projet allant de l'analyse à la conception,
+                            utilisant les techniques de la méthode MERISE pour mieux adapter le problème jusqu'à mettre en place un modèle efficace selon le cas.
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <i class="fas fa-edit"></i>
+                        <div class="text">Conception</div>
+                        <p>Je peux tout aussi bien concevoir un logiciel en autonomie comme en équipe.
+                            Je suis autonome, rigoureux, appliqué,
+                            motivé et avec un esprit d'équipe constant peu importe la diversité. 
+                            J'ai de projets réalisés en équipe et de nombreux projets personnels en cours.
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <i class="fas fa-paint-brush"></i>
+                        <div class="text">Design</div>
+                        <p>Un peu poussé, j'ai un goût particulier dans l'argonomie, bien que je ne suis pas graphiste mais 
+                            je suis créatif et je peux donc proposé un design lors de la conception d'un site ou d'une application.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- skills section start -->
+    <section class="skills" id="skills">
+        <div class="max-width">
+            <h2 class="title">Mes compétences</h2>
+            <div class="skills-content">
+                <div class="column left">
+                    <div class="text">Mes compétences sur base de mes études et expériences</div>
+                    <p>Les diffents langages de programmation et outils informatiques auxquels je m'en sors pas mal.</br>
+                        Sur ce lien vous verrez mon Github où je ne mets que pres peu de mes projets. </br>
+                        <span class="rqr">✪ </span>En cours de progression. </br>
+                        <span class="rqr">* </span>En cours d'apprentissage.
+                    </p>
+                    <a href="https://github.com/dididnk" target="_blank">Mon Github</a>
+                </div>
+                <div class="column right">
+                    <div class="bars">
+                        <div class="info">
+                            <span>C</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="line c"></div>
+                    </div>
+                    <div class="bars">
+                        <div class="info">
+                            <span>Visual Basic 11.0</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="line vb"></div>
+                    </div>
+                    <div class="bars">
+                        <div class="info">
+                            <span>HTML 5 & CSS 3</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="line htmlCss"></div>
+                    </div>
+                    <div class="bars">
+                        <div class="info">
+                            <span>Delphi 7</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="line delphi"></div>
+                    </div>
+                    <div class="bars">
+                        <div class="info">
+                            <span><span class="rqr">✪ </span>Python</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="line python"></div>
+                    </div>
+                    <div class="bars">
+                        <div class="info">
+                            <span>MySQL, SQL Server, SQL et Postgresql </span>
+                            <span>60%</span>
+                        </div>
+                        <div class="line bdd"></div>
+                    </div>
+                    <div class="bars">
+                        <div class="info">
+                            <span>Microsoft Acces</span>
+                            <span>65%</span>
+                        </div>
+                        <div class="line msacces"></div>
+                    </div>
+                    <div class="bars">
+                        <div class="info">
+                            <span> <span class="rqr">* </span>PHP, Kotlin, JavaScript, C# et OCAML</span>
+                            <span>20%</span>
+                        </div>
+                        <div class="line all"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- projets section start -->
+    <section class="projets" id="projets">
+        <div class="max-width">
+            <h2 class="title">Mes Projets</h2>
+            <div class="projets-content">
+                <div class="column left">
+                    <img src="images/tents.png" alt="">
+                </div>
+                <div class="column right">
+                    <div class="text"><span>Android Tents</span></div>
+                    <p>
+                        Développé en langage C avec la bibliothèque SDL, le jeu Tents est inspiré de fameux <b>Puzzle </b>
+                        de <b><a href="https://www.chiark.greenend.org.uk/~sgtatham/puzzles/js/tents.html#8x8de#911105660705777" target="_blank"> <span class="linkEts">Simon Tatham</span></a></b>.
+                    </p>
+                    <p>
+                        <b>Règles :</b><br>
+                        Ce jeu est un puzzle simple à un joueur. Le jeu commence par une grille de carrés, dont certains contiennent des arbres (🌲). 
+                        Le but du jeu est de placer des tentes (⛺) dans les cases vides (⬜) de manière à ce que les conditions suivantes soient remplies: <br>
+                        <ol>
+                            <li>Il n’y a pas deux tentes adjacentes, même en diagonale.</li>
+                            <li>Le nombre de tentes dans chaque rangée, et dans chaque colonne, correspond aux nombres attendus donnés autour des côtés de la grille</li>
+                            <li>Il y a exactement autant de tentes que d’arbres.</li>
+                            <li>Chaque tente doit être orthogonalement adjacente (horizontalement ou verticalement, mais pas en diagonale) à au moins un arbre et vice versa.</li>
+                        </ol>
+                    </p>
+                    <b><a href="https://github.com/dididnk/Android_Tents/archive/refs/heads/main.zip" download> <span class="linkEts">Télécharger Tent</span></a></b>.
+                </div>
+            </div>
+        </div>
+        <div class="max-width">
+            <div class="projets-content part2">
+                <div class="column left2">
+                    <img src="images/ecodis.PNG">
+                </div>
+                <div class="column right">
+                    <div class="text"><span>EcoD✞s</span></div>
+                    <p>
+                        EcoD✞s ou école des disciples est un site web en cours de développement pour permettre aux croyants et
+                        plus particulèrement aux chrétiens de développer une connaissance sur le discipôlat dans le christianisme.</p>
+                    <p>
+                        <b>Dans le site vous-y trouverez :</b><br>
+                        <ol>
+                            <li>Des cours entièrement GRATUIT de nouveau convertis au gagneur d'âmes.</li>
+                            <li>Des exercices pour tester vos connaissances Bibliques.</li>
+                            <li>La partie témoignage pour s'inpirer ou ranconter son histoire dans le but d'encourager les autres.</li>
+                            <li>Etc.</li>
+                        </ol>
+                        <b><a href="https://dididnk.github.io/Ecodis/" target="_blank"> <span class="linkEts">Lien vers le site Ecodis</span></a></b>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- teams section start -->
+    <section class="teams" id="teams">
+        <div class="max-width">
+            <h2 class="title">My teams</h2>
+            <div class="carousel owl-carousel">
+                <div class="card">
+                    <div class="box">
+                        <img src="images/wolf-1.jpeg" alt="">
+                        <div class="text">Rickain LUBO ✪</div>
+                        <p> Project, Database and Web Officer Nations Unies (OCHA) </br>
+                            CO Wolf Technologies and MAKUTA application </br>
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="images/tab-1.jpeg" alt="">
+                        <div class="text">Dunia-Tabitha NGBAME</div>
+                        <p>Assistante administrative chez POLYRISE.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="images/sam-1.jpeg" alt="">
+                        <div class="text">Samuel</div>
+                        <p>Développeur Web.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="images/saiz-1.jpeg" alt="">
+                        <div class="text">Joyce SABWE</div>
+                        <p>Mathématicien et Développeur.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="images/dnk-1.jpeg" alt="">
+                        <div class="text">ANONYME ✪</div>
+                        <p>Coach en développement numérique chez Google API.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- contact section start -->
+    <section class="contact" id="contact">
+        <div class="max-width">
+            <h2 class="title">Contactez moi</h2>
+            <div class="contact-content">
+                <div class="column left">
+                    <div class="text">Merci pour votre visite !</div>
+                    <p>
+                        Autonome et enthousiaste, mes premières expériences m'ontpermis de renforcer mes acquis et 
+                        d'appréhender les différents outils et techniques de la programmation. En quêtede nouveaux challenges,
+                         je souhaite rejoindre une entité à laquelle je pourrais apporter mon dynamismeet mon goût du challenge
+                          en vue de me professionnaliser tout au long de mon année d'alternance.
+                    </p>
+                    <div class="icons">
+                        <div class="row">
+                            <i class="fas fa-user"></i>
+                            <div class="info">
+                                <div class="head">Nom complet</div>
+                                <div class="sub-title">Emmanuel NGBAME KOYAPOLO</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="info">
+                                <div class="head">Addresse</div>
+                                <div class="sub-title">45 Avenue Aristide Briand, Mérignac 33700, Appartement 22</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <i class="fas fa-phone-alt"></i>
+                            <div class="info">
+                                <div class="head">Téléphone</div>
+                                <div class="sub-title">+33 7 66 79 45 58</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <i class="fas fa-envelope"></i>
+                            <div class="info">
+                                <div class="head">Email</div>
+                                <div class="sub-title"><a href="mailto:ngbamedistingue@yahoo.com">ngbamedistingue@yahoo.com</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- footer section starts -->
+    <footer>
+        <span>Créer par <a href="#">Emmanuel Distingué NGBAME KOYAPOLO</a> | <span class="far fa-copyright"> 2022 Tous droits réservés.</span></span>
+        <p style="color: grey;">version 1.x</p>
+    </footer>
 
 </body>
 </html>
