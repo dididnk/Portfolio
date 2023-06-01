@@ -1,8 +1,3 @@
-// Author  : Emmanuel Distingué NGBAME KOYAPOLO
-// Contact : ngbamedistingue@yahoo.com
-// Date    : 29 july 2021 
-// Statut  : Finished.
-
 $(document).ready(function(){
     $(window).scroll(function(){
         // sticky navbar on scroll script
@@ -39,20 +34,13 @@ $(document).ready(function(){
     });
 
     // typing text animation script
+    var myBio = ["Développeur informatique (Fullstack, Mobile, Desktop), Chef de projet (Agil scrum), Ingénieur IOT"];
     var typed = new Typed(".typing", {
-        strings: ["Etudiant", "Analyste", "Programmeur", "Développeur","Ecrivain"],
+        strings: myBio,
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
     });
-
-    var typed = new Typed(".typing-2", {
-        strings: ["Etudiant", "Analyste", "Programmeur", "Développeur","Ecrivain"],
-        typeSpeed: 100,
-        backSpeed: 60,
-        loop: true
-    });
-
     // owl carousel script
     $('.carousel').owlCarousel({
         margin: 20,
