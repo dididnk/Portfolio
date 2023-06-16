@@ -42,7 +42,8 @@ const tabitha = {
     job: "CEO",
     company: "Djohannie Beauty"
   };
-const teams = [rickain, michael, esteban, valentin, samuel, tabitha ];
+//const teams = [rickain, michael, esteban, valentin, samuel, tabitha ];
+const teams = [rickain, michael];
 
 const carouselElement = document.getElementById('carousel');
 
@@ -69,7 +70,7 @@ teams.forEach(person => {
     boxElement.appendChild(pElement);
     cardElement.appendChild(boxElement);
     carouselElement.appendChild(cardElement);
-    cardElement.style.marginRight = '12px';
+    cardElement.style.marginRight = '5%';
   });
   
   
