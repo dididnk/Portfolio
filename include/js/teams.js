@@ -42,8 +42,8 @@ const tabitha = {
     job: "CEO",
     company: "Djohannie Beauty"
   };
-//const teams = [rickain, michael, esteban, valentin, samuel, tabitha ];
-const teams = [rickain, michael];
+const teams = [rickain, michael, esteban, valentin, samuel, tabitha ];
+//const teams = [rickain, michael];
 
 const carouselElement = document.getElementById('carousel');
 
@@ -58,7 +58,7 @@ teams.forEach(person => {
     imgElement.src = person.img;
     imgElement.alt = person.fullname;
   
-    const textElement = document.createElement('div');
+    const textElement = document.createElement('span');
     textElement.classList.add('text');
     textElement.textContent = person.fullname;
   
@@ -74,5 +74,26 @@ teams.forEach(person => {
   });
   
   
-  $(carouselElement).owlCarousel({  });
+// owl carousel script
+$(carouselElement).owlCarousel({
+    margin: 20,
+    loop: true,
+    autoplay: true,
+    autoplayTimeOut: 2000,
+    autoplayHoverPause: true,
+    responsive: {
+        0:{
+            items: 1,
+            nav: false
+        },
+        600:{
+            items: 2,
+            nav: false
+        },
+        1000:{
+            items: 3,
+            nav: false
+        }
+    }
+});
   
