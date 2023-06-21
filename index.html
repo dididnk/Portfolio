@@ -14,6 +14,7 @@
     <script src="include/js/script.js" defer></script>
     <script src="include/js/graph.js" defer></script>
     <script src="include/js/teams.js" defer></script>
+    <script src="include/js/service.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -96,7 +97,7 @@
                 <div class="card">
                     <div class="box">
                         <i class="fas fa-brain"></i>
-                        <div class="text">Analyse</div>
+                        <p class="text">Analyse</p>
                         <p>
                             Avec la méthode MERISE ou UML je peux faire l'étude d'un projet allant de l'analyse à la
                             conception,
@@ -108,7 +109,7 @@
                 <div class="card">
                     <div class="box">
                         <i class="fas fa-edit"></i>
-                        <div class="text">Conception</div>
+                        <p class="text">Conception</p>
                         <p>Je peux tout aussi bien concevoir un logiciel en autonomie comme en équipe.
                             Je suis autonome, rigoureux, appliqué,
                             motivé et avec un esprit d'équipe constant peu importe la diversité.
@@ -119,7 +120,7 @@
                 <div class="card">
                     <div class="box">
                         <i class="fas fa-paint-brush"></i>
-                        <div class="text">Design</div>
+                        <p class="text">Design</p>
                         <p>Un peu poussé, j'ai un goût particulier dans l'argonomie, bien que je ne suis pas graphiste
                             mais
                             je suis créatif et je peux donc proposé un design lors de la conception d'un site ou d'une
@@ -171,64 +172,78 @@
     <section class="projets" id="projets">
         <div class="max-width">
             <h2 class="title">Mes Projets</h2>
-            <div class="projets-content">
-                <div class="column left">
-                    <img src="include/img/tents.png" alt="">
+            <details>
+                <summary>Personnels</summary>
+                <div class="max-width">
+                    <div class="projets-content part2">
+                        <div class="column left2">
+                            <img src="include/img/ecodis.PNG">
+                        </div>
+                        <div class="column right">
+                            <div class="text"><span>EcoD✞s</span></div>
+                            <p>
+                                EcoD✞s ou école des disciples est un site web en cours de développement pour permettre aux
+                                croyants et
+                                plus particulèrement aux chrétiens de développer une connaissance sur le discipôlat dans le
+                                christianisme.</p>
+                            <p>
+                                <b>Dans le site vous-y trouverez :</b><br>
+                            <ol>
+                                <li>Des cours entièrement GRATUIT de nouveau convertis au gagneur d'âmes.</li>
+                                <li>Des exercices pour tester vos connaissances Bibliques.</li>
+                                <li>La partie témoignage pour s'inpirer ou ranconter son histoire dans le but d'encourager les
+                                    autres.</li>
+                                <li>Etc.</li>
+                            </ol>
+                            <b><a href="https://dididnk.github.io/Ecodis/" target="_blank"> <span class="linkEts">Lien vers le
+                                        site Ecodis</span></a></b>.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="column right">
-                    <div class="text"><span>Android Tents</span></div>
-                    <p>
-                        Développé en langage C avec la bibliothèque SDL, le jeu Tents est inspiré de fameux <b>Puzzle
-                        </b>
-                        de <b><a href="https://www.chiark.greenend.org.uk/~sgtatham/puzzles/js/tents.html#8x8de#911105660705777"
-                                target="_blank"> <span class="linkEts">Simon Tatham</span></a></b>.
-                    </p>
-                    <p>
-                        <b>Règles :</b><br>
-                        Ce jeu est un puzzle simple à un joueur. Le jeu commence par une grille de carrés, dont certains
-                        contiennent des arbres (🌲).
-                        Le but du jeu est de placer des tentes (⛺) dans les cases vides (⬜) de manière à ce que les
-                        conditions suivantes soient remplies: <br>
-                    <ol>
-                        <li>Il n’y a pas deux tentes adjacentes, même en diagonale.</li>
-                        <li>Le nombre de tentes dans chaque rangée, et dans chaque colonne, correspond aux nombres
-                            attendus donnés autour des côtés de la grille</li>
-                        <li>Il y a exactement autant de tentes que d’arbres.</li>
-                        <li>Chaque tente doit être orthogonalement adjacente (horizontalement ou verticalement, mais pas
-                            en diagonale) à au moins un arbre et vice versa.</li>
-                    </ol>
-                    </p>
-                    <b><a href="https://github.com/dididnk/Android_Tents/archive/refs/heads/main.zip" download> <span
-                                class="linkEts">Télécharger Tent</span></a></b>.
+            </details>
+            <details>
+                <summary>Réalisés à l'école</summary>
+                <div class="projets-content">
+                    <div class="column left">
+                        <img src="include/img/tents.png" alt="">
+                    </div>
+                    <div class="column right">
+                        <div class="text"><span>Android Tents</span></div>
+                        <p>
+                            Développé en langage C avec la bibliothèque SDL, le jeu Tents est inspiré de fameux <b>Puzzle
+                            </b>
+                            de <b><a href="https://www.chiark.greenend.org.uk/~sgtatham/puzzles/js/tents.html#8x8de#911105660705777"
+                                    target="_blank"> <span class="linkEts">Simon Tatham</span></a></b>.
+                        </p>
+                        <p>
+                            <b>Règles :</b><br>
+                            Ce jeu est un puzzle simple à un joueur. Le jeu commence par une grille de carrés, dont certains
+                            contiennent des arbres (🌲).
+                            Le but du jeu est de placer des tentes (⛺) dans les cases vides (⬜) de manière à ce que les
+                            conditions suivantes soient remplies: <br>
+                        <ol>
+                            <li>Il n’y a pas deux tentes adjacentes, même en diagonale.</li>
+                            <li>Le nombre de tentes dans chaque rangée, et dans chaque colonne, correspond aux nombres
+                                attendus donnés autour des côtés de la grille</li>
+                            <li>Il y a exactement autant de tentes que d’arbres.</li>
+                            <li>Chaque tente doit être orthogonalement adjacente (horizontalement ou verticalement, mais pas
+                                en diagonale) à au moins un arbre et vice versa.</li>
+                        </ol>
+                        </p>
+                        <b><a href="https://github.com/dididnk/Android_Tents/archive/refs/heads/main.zip" download> <span
+                                    class="linkEts">Télécharger Tent</span></a></b>.
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="max-width">
-            <div class="projets-content part2">
-                <div class="column left2">
-                    <img src="include/img/ecodis.PNG">
-                </div>
-                <div class="column right">
-                    <div class="text"><span>EcoD✞s</span></div>
-                    <p>
-                        EcoD✞s ou école des disciples est un site web en cours de développement pour permettre aux
-                        croyants et
-                        plus particulèrement aux chrétiens de développer une connaissance sur le discipôlat dans le
-                        christianisme.</p>
-                    <p>
-                        <b>Dans le site vous-y trouverez :</b><br>
-                    <ol>
-                        <li>Des cours entièrement GRATUIT de nouveau convertis au gagneur d'âmes.</li>
-                        <li>Des exercices pour tester vos connaissances Bibliques.</li>
-                        <li>La partie témoignage pour s'inpirer ou ranconter son histoire dans le but d'encourager les
-                            autres.</li>
-                        <li>Etc.</li>
-                    </ol>
-                    <b><a href="https://dididnk.github.io/Ecodis/" target="_blank"> <span class="linkEts">Lien vers le
-                                site Ecodis</span></a></b>.
-                    </p>
-                </div>
-            </div>
+            </details>
+            <details>
+                <summary>Réalisés en entreprise en interne</summary>
+                <p>En cours de développement...</p>
+            </details>
+            <details>
+                <summary>Réalisés en entreprise pour un client</summary>
+                <p>En cours de développement...</p>
+            </details>
         </div>
     </section>
 
