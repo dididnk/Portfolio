@@ -1,3 +1,4 @@
+const TS = "Technology & Strategy";
 const rickain = 
 {
     fullname : "Rickain LUBO ✪", 
@@ -6,20 +7,12 @@ const rickain =
     company : "CEO Wolf Technologies and MAKUTA application", 
 };
 
-const michael = 
-{
-    fullname : "Michael R. ✪",
-    img : "include/img/MRA.jpg", 
-    job : "MyFire Executive Development Engineer", 
-    company : "Technology & Strategy", 
-};
-
 const esteban = 
 {
     fullname : "Esteban C. ✪",
     img :"include/img/Esteban.jpg",
     job : "Ingénieur Informatique", 
-    company : michael.company, 
+    company : TS, 
 };
 
 const valentin = 
@@ -27,7 +20,7 @@ const valentin =
     fullname : "Valentin R.",
     img :"include/img/VLR.jpg",
     job : "Ingénieur Informatique", 
-    company : michael.company, 
+    company : TS, 
 };
 const samuel = 
 {
@@ -42,8 +35,7 @@ const tabitha = {
     job: "CEO",
     company: "Djohannie Beauty"
   };
-const teams = [rickain, michael, esteban, valentin, samuel, tabitha ];
-//const teams = [rickain, michael];
+const teams = [rickain, esteban, valentin, samuel, tabitha ];
 
 const carouselElement = document.getElementById('carousel');
 

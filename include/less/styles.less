@@ -277,13 +277,12 @@ section .title::after {
     width: 45%;
 }
 
-.about .about-content .left img,
-.projets .projets-content .left img,
-.projets .projets-content .left2 img {
+.about .about-content .left img{
     height: 400px;
     width: 400px;
     object-fit: cover;
     border-radius: 50%;
+    box-shadow: 0 6px 10px 0 @Yellow, 0 8px 22px 0 @DarkYellow;
 }
 
 .about .about-content .right {
@@ -513,6 +512,13 @@ section .title::after {
 .rqr {
     color: @Yellow;
     border: none;
+}
+.projectsImage img {
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+    border-radius: 20% 0 20% 0;
+    box-shadow: 0 6px 10px 0 @Yellow, 0 8px 22px 0 @DarkYellow;
 }
 //-------------------------------------------------------------
 summary{
@@ -858,5 +864,13 @@ footer span a:hover {
         width: 35px;
         font-size: 23px;
         line-height: 38px;
+    }
+    .projets p{
+        text-align: left;
+    }
+    .projectsImage img {
+        height: 250px;
+        width: 100%;
+        object-fit: cover;
     }
 }
