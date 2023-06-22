@@ -1,8 +1,3 @@
-<!-- Author  : Emmanuel Distingué NGBAME KOYAPOLO
-Contact : ngbamedistingue@yahoo.com
-Date    : 29 july 2021 
-Statut  : Finished.  -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,6 +13,9 @@ Statut  : Finished.  -->
     <!-- java script -->
     <script src="include/js/script.js" defer></script>
     <script src="include/js/graph.js" defer></script>
+    <script src="include/js/teams.js" defer></script>
+    <script src="include/js/service.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
@@ -53,9 +51,9 @@ Statut  : Finished.  -->
     <section class="home" id="home">
         <div class="max-width">
             <div class="home-content">
-                <div class="text-1">Bonjour, je m'appelle</div>
-                <div class="text-2">Emmanuel NGBAME</div>
-                <div class="text-3">Je suis un <span class="typing"></span></div>
+                <p class="text-1">Bonjour, je m'appelle</p>
+                <p class="text-2">Emmanuel NGBAME</p>
+                <p class="text-3">Je suis un <span class="typing"></span></p>
                 <a href="data/cv/CDI_CV_pro_Emmanuel_NGBAME.pdf" download><span class="LinkCv">Télécharger CV</span></a>
             </div>
         </div>
@@ -67,7 +65,7 @@ Statut  : Finished.  -->
             <h2 class="title">A propos de moi</h2>
             <div class="about-content">
                 <div class="column left">
-                    <img src="images/profile-1.jpeg" alt="">
+                    <img src="include/img/profile-1.jpeg" alt="">
                 </div>
                 <div class="column right">
                     <p>Je suis un <b>développeur fullstack C# .Net</b>, possédant une double licence en
@@ -76,9 +74,9 @@ Statut  : Finished.  -->
                         d'applications et gestion de projet informatique.
                     </p>
 
-                    <p>Actuellement, je suis en master en tant que <b>développeur logiciel pour l'IoT</b> et j'occupe le
+                    <p>Actuellement, je suis en <b>Master</b> en tant que <b>développeur logiciel pour l'IoT (Internet of Things)</b> et j'occupe le
                         poste de développeur fullstack C# .Net en
-                        apprentisage jusqu'en 2024 pour un <b>Bac+5</b>.
+                        apprentisage jusqu'en Septembre 2024.
                     <P>Avec un an d'expérience en tant que <b>chargé de développement web</b> et un autre en tant
                         <b>développeur fullstack</b>, j'ai
                         acquis une solide expertise dans la conception et l'implémentation de solutions logicielles.
@@ -99,7 +97,7 @@ Statut  : Finished.  -->
                 <div class="card">
                     <div class="box">
                         <i class="fas fa-brain"></i>
-                        <div class="text">Analyse</div>
+                        <p class="text">Analyse</p>
                         <p>
                             Avec la méthode MERISE ou UML je peux faire l'étude d'un projet allant de l'analyse à la
                             conception,
@@ -111,7 +109,7 @@ Statut  : Finished.  -->
                 <div class="card">
                     <div class="box">
                         <i class="fas fa-edit"></i>
-                        <div class="text">Conception</div>
+                        <p class="text">Conception</p>
                         <p>Je peux tout aussi bien concevoir un logiciel en autonomie comme en équipe.
                             Je suis autonome, rigoureux, appliqué,
                             motivé et avec un esprit d'équipe constant peu importe la diversité.
@@ -122,7 +120,7 @@ Statut  : Finished.  -->
                 <div class="card">
                     <div class="box">
                         <i class="fas fa-paint-brush"></i>
-                        <div class="text">Design</div>
+                        <p class="text">Design</p>
                         <p>Un peu poussé, j'ai un goût particulier dans l'argonomie, bien que je ne suis pas graphiste
                             mais
                             je suis créatif et je peux donc proposé un design lors de la conception d'un site ou d'une
@@ -145,6 +143,7 @@ Statut  : Finished.  -->
                         <b>Analyse & conception </b>: MERISE<br>
                         <b>Chef de projet informatique </b>: Agil Scrum<br>
                         <b>Front-end </b>: Html5, Css, Less, Angular, Wordpress, Bootstrap<br>
+                        <b>Back-end </b>: API REST Asp net core (C#)<br>
                         <b>Fullstack </b>: Java/Aurélia js, C#/ .Net & Blazor, Python/Django & PHP<br>
                         <b>Desktop </b>: C++, C, Visual Basic, Delphi, Ocaml<br>
                         <b>Mobile </b>: Android studio (Kotlin et Java), C#/Xamarin<br>
@@ -164,9 +163,6 @@ Statut  : Finished.  -->
                         </div>
                         <ul></ul>
                     </div>
-                    
-                    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-                    <script src="include/graph.js"></script>
                 </div>
             </div>
         </div>
@@ -176,95 +172,88 @@ Statut  : Finished.  -->
     <section class="projets" id="projets">
         <div class="max-width">
             <h2 class="title">Mes Projets</h2>
-            <div class="projets-content">
-                <div class="column left">
-                    <img src="images/tents.png" alt="">
+            <details>
+                <summary>Personnels</summary>
+                <div class="max-width">
+                    <div class="projets-content part2">
+                        <div class="column left2">
+                            <img src="include/img/ecodis.PNG">
+                        </div>
+                        <div class="column right">
+                            <div class="text"><span>EcoD✞s</span></div>
+                            <p>
+                                EcoD✞s ou école des disciples est un site web en cours de développement pour permettre aux
+                                croyants et
+                                plus particulèrement aux chrétiens de développer une connaissance sur le discipôlat dans le
+                                christianisme.</p>
+                            <p>
+                                <b>Dans le site vous-y trouverez :</b><br>
+                            <ol>
+                                <li>Des cours entièrement GRATUIT de nouveau convertis au gagneur d'âmes.</li>
+                                <li>Des exercices pour tester vos connaissances Bibliques.</li>
+                                <li>La partie témoignage pour s'inpirer ou ranconter son histoire dans le but d'encourager les
+                                    autres.</li>
+                                <li>Etc.</li>
+                            </ol>
+                            <b><a href="https://dididnk.github.io/Ecodis/" target="_blank"> <span class="linkEts">Lien vers le
+                                        site Ecodis</span></a></b>.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="column right">
-                    <div class="text"><span>Android Tents</span></div>
-                    <p>
-                        Développé en langage C avec la bibliothèque SDL, le jeu Tents est inspiré de fameux <b>Puzzle
-                        </b>
-                        de <b><a href="https://www.chiark.greenend.org.uk/~sgtatham/puzzles/js/tents.html#8x8de#911105660705777"
-                                target="_blank"> <span class="linkEts">Simon Tatham</span></a></b>.
-                    </p>
-                    <p>
-                        <b>Règles :</b><br>
-                        Ce jeu est un puzzle simple à un joueur. Le jeu commence par une grille de carrés, dont certains
-                        contiennent des arbres (🌲).
-                        Le but du jeu est de placer des tentes (⛺) dans les cases vides (⬜) de manière à ce que les
-                        conditions suivantes soient remplies: <br>
-                    <ol>
-                        <li>Il n’y a pas deux tentes adjacentes, même en diagonale.</li>
-                        <li>Le nombre de tentes dans chaque rangée, et dans chaque colonne, correspond aux nombres
-                            attendus donnés autour des côtés de la grille</li>
-                        <li>Il y a exactement autant de tentes que d’arbres.</li>
-                        <li>Chaque tente doit être orthogonalement adjacente (horizontalement ou verticalement, mais pas
-                            en diagonale) à au moins un arbre et vice versa.</li>
-                    </ol>
-                    </p>
-                    <b><a href="https://github.com/dididnk/Android_Tents/archive/refs/heads/main.zip" download> <span
-                                class="linkEts">Télécharger Tent</span></a></b>.
+            </details>
+            <details>
+                <summary>Réalisés à l'école</summary>
+                <div class="projets-content">
+                    <div class="column left">
+                        <img src="include/img/tents.png" alt="">
+                    </div>
+                    <div class="column right">
+                        <div class="text"><span>Android Tents</span></div>
+                        <p>
+                            Développé en langage C avec la bibliothèque SDL, le jeu Tents est inspiré de fameux <b>Puzzle
+                            </b>
+                            de <b><a href="https://www.chiark.greenend.org.uk/~sgtatham/puzzles/js/tents.html#8x8de#911105660705777"
+                                    target="_blank"> <span class="linkEts">Simon Tatham</span></a></b>.
+                        </p>
+                        <p>
+                            <b>Règles :</b><br>
+                            Ce jeu est un puzzle simple à un joueur. Le jeu commence par une grille de carrés, dont certains
+                            contiennent des arbres (🌲).
+                            Le but du jeu est de placer des tentes (⛺) dans les cases vides (⬜) de manière à ce que les
+                            conditions suivantes soient remplies: <br>
+                        <ol>
+                            <li>Il n’y a pas deux tentes adjacentes, même en diagonale.</li>
+                            <li>Le nombre de tentes dans chaque rangée, et dans chaque colonne, correspond aux nombres
+                                attendus donnés autour des côtés de la grille</li>
+                            <li>Il y a exactement autant de tentes que d’arbres.</li>
+                            <li>Chaque tente doit être orthogonalement adjacente (horizontalement ou verticalement, mais pas
+                                en diagonale) à au moins un arbre et vice versa.</li>
+                        </ol>
+                        </p>
+                        <b><a href="https://github.com/dididnk/Android_Tents/archive/refs/heads/main.zip" download> <span
+                                    class="linkEts">Télécharger Tent</span></a></b>.
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="max-width">
-            <div class="projets-content part2">
-                <div class="column left2">
-                    <img src="images/ecodis.PNG">
-                </div>
-                <div class="column right">
-                    <div class="text"><span>EcoD✞s</span></div>
-                    <p>
-                        EcoD✞s ou école des disciples est un site web en cours de développement pour permettre aux
-                        croyants et
-                        plus particulèrement aux chrétiens de développer une connaissance sur le discipôlat dans le
-                        christianisme.</p>
-                    <p>
-                        <b>Dans le site vous-y trouverez :</b><br>
-                    <ol>
-                        <li>Des cours entièrement GRATUIT de nouveau convertis au gagneur d'âmes.</li>
-                        <li>Des exercices pour tester vos connaissances Bibliques.</li>
-                        <li>La partie témoignage pour s'inpirer ou ranconter son histoire dans le but d'encourager les
-                            autres.</li>
-                        <li>Etc.</li>
-                    </ol>
-                    <b><a href="https://dididnk.github.io/Ecodis/" target="_blank"> <span class="linkEts">Lien vers le
-                                site Ecodis</span></a></b>.
-                    </p>
-                </div>
-            </div>
+            </details>
+            <details>
+                <summary>Réalisés en entreprise en interne</summary>
+                <p>En cours de développement...</p>
+            </details>
+            <details>
+                <summary>Réalisés en entreprise pour un client</summary>
+                <p>En cours de développement...</p>
+            </details>
         </div>
     </section>
 
     <!-- teams section start -->
     <section class="teams" id="teams">
         <div class="max-width">
-            <h2 class="title">My teams</h2>
-            <div class="carousel owl-carousel">
-                <div class="card">
-                    <div class="box">
-                        <img src="images/wolf-1.jpeg" alt="">
-                        <div class="text">Rickain LUBO ✪</div>
-                            CEO Wolf Technologies and MAKUTA </br>
-                        </p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="box">
-                        <img src="images/tab-1.jpeg" alt="">
-                        <div class="text">Dunia-Tabitha NGBAME</div>
-                        <p>CEO Djohannie Beauty</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="box">
-                        <img src="images/sam-1.jpeg" alt="">
-                        <div class="text">Samuel</div>
-                        <p>Web Developper</p>
-                    </div>
-                </div>
-            </div>
+            <h2 class="title">Mes références</h2>
+            <div id="carousel" class="carousel owl-carousel"></div>
+            <p style="color: #FFE873">Have already worked with me.</p>
+            <p style="color: #FFE873">✪ Manager.</p>
         </div>
     </section>
 
@@ -275,19 +264,18 @@ Statut  : Finished.  -->
             <div class="contact-content">
                 <div class="column left">
                     <p>
-                        Autonome et enthousiaste, mes premières expériences m'ontpermis de renforcer mes acquis et
-                        d'appréhender les différents outils et techniques de la programmation. En quêtede nouveaux
-                        challenges,
-                        je souhaite rejoindre une entité à laquelle je pourrais apporter mon dynamismeet mon goût du
-                        challenge
-                        en vue de me professionnaliser tout au long de mon année d'alternance.
+                        Autonome et enthousiaste, mes premières expériences m'ont permis de renforcer mes acquis et
+                        d'appréhender les différents outils et techniques de la programmation. 
+                        A l'écoute des nouvelles opportunités, rejoindre une entité à laquelle je pourrais apporter mon dynamisme et mon goût du
+                        challenge en vue de me professionnaliser demeure mon objectif principal.
                     </p>
                     <p>
-                        Je suis motivé par le C# .Net et passionné par son potentiel d'innovation. Mon objectif
-                        professionnel
-                        est de contribuer à des projets novateurs dans ce domaine et de continuer à développer mes
-                        compétences techniques pour progresser dans ma carrière.
+                        Je suis analyste et programmeur informatique de formation, chef de projet et développeur d'applications de formation,
+                        ingénieur spécialiste en IOT de formation. 
                     </p>
+                    <p>
+                        Mon objectif professionnel est de contribuer à des projets novateurs dans
+                        diverses domaines et de continuer à développer mes compétences techniques pour progresser dans ma carrière.</p>
                     <div class="icons">
                         <div class="row">
                             <i class="fas fa-map-marker-alt"></i>
@@ -303,7 +291,7 @@ Statut  : Finished.  -->
                             </div>
                         </div>
                     </div>
-                    <div class="text"><i>Merci pour votre visite !</i></div>
+                    <p><i>Merci pour votre visite !</i></p>
                 </div>
             </div>
         </div>
