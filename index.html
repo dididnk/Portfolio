@@ -12,10 +12,13 @@
     <script src="https://kit.fontawesome.com/cabff833b6.js" crossorigin="anonymous"></script>
     <!-- java script -->
     <script src="include/js/script.js" defer></script>
-    <script src="include/js/graph.js" defer></script>
+    <script src="include/js/chart.js" defer></script>
     <script src="include/js/teams.js" defer></script>
     <script src="include/js/service.js" defer></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.3/dist/chart.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
@@ -147,7 +150,7 @@
                         <b>Back-end </b>: API REST Asp net core (C#)<br>
                         <b>Fullstack </b>: Java/Aurélia js, C#/ .Net & Blazor, Python/Django & PHP<br>
                         <b>Desktop </b>: C++, C, Visual Basic, Delphi, Ocaml<br>
-                        <b>Mobile </b>: Android studio (Kotlin et Java), C#/Xamarin<br>
+                        <b>Mobile </b>: Android studio (Kotlin et Java), C#/Xamarin et Flutter<br>
                         <b>Test </b>: Katalon, Cucumber (Gherkin)/Java<br>
                         <b>BDD </b>: SQL, SQL Lite, MySQL, Postgresql, MariaDB, MongoDB, Neo4J<br>
                         <b>Méthode de développement</b>: POO, Impératif, Fonctionnel, Mvc & MVVM<br>
@@ -157,13 +160,8 @@
                     </p>
                     <a href="https://github.com/dididnk" target="_blank">Mon Github</a>
                 </div>
-                <div class="column right">
-                    <div class="graph-stats details">
-                        <div class="chart-container">
-                            <canvas class="my-chart"></canvas>
-                        </div>
-                        <ul></ul>
-                    </div>
+                <div class="column right chart">
+                    <canvas id="barchart" width="300" height="300"></canvas>
                 </div>
             </div>
         </div>
