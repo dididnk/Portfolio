@@ -3,8 +3,8 @@ const rickain =
 {
     fullname : "Rickain LUBO ✪", 
     img : "include/img/wolf-1.jpeg",
-    job : "Project, Database and Web Officer Nations Unies (OCHA)", 
-    company : "CEO Wolf Technologies and MAKUTA application", 
+    job : "Chief Executive Officer", 
+    company : "WOLF TECHNOLOGIES", 
 };
 
 const esteban = 
@@ -32,8 +32,8 @@ const samuel =
 const tabitha = {
     fullname: "Dunia-Tabitha N.",
     img: "include/img/tab-1.jpeg",
-    job: "CEO",
-    company: "Djohannie Beauty"
+    job: "Cheffe de projet e-business",
+    company: "Incomm"
   };
 const teams = [rickain, esteban, valentin, samuel, tabitha ];
 
