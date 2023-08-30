@@ -1,7 +1,7 @@
 const TS = "Technology & Strategy";
 const rickain = 
 {
-    fullname : "Rickain LUBO ✪", 
+    fullname : "Rickain L. ✪", 
     img : "include/img/wolf-1.jpeg",
     job : "Chief Executive Officer", 
     company : "WOLF TECHNOLOGIES", 
