@@ -1,23 +1,9 @@
-const TS = "Technology & Strategy";
-
 const teamMembers = [
     {
         fullname: "Rickain L. ✪",
         img: "include/img/wolf-1.jpeg",
         job: "Chief Executive Officer",
         company: "WOLF TECHNOLOGIES",
-    },
-    {
-        fullname: "Esteban C. ✪",
-        img: "include/img/Esteban.jpg",
-        job: "Ingénieur Informatique",
-        company: TS,
-    },
-    {
-        fullname: "Valentin R.",
-        img: "include/img/VLR.jpg",
-        job: "Ingénieur Informatique",
-        company: TS,
     },
     {
         fullname: "Samuel A.",
