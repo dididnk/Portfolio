@@ -4,8 +4,8 @@ var barchart = new Chart(ctx, {
     data: {
         labels: ['Flutter', 'C# .Net Core', 'Python', 'Kotlin', 'Arduino', 'Angular'],
         datasets: [{
-            label: 'Technologie',
-            data: [13, 19, 15, 13, 10, 8],
+            label: 'Sur 20',
+            data: [13, 15, 10, 10, 9, 10],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.5)',
                 'rgba(54, 162, 235, 0.5)',

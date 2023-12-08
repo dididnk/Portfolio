@@ -74,3 +74,41 @@ $(document).ready(function(){
         }
     });
 });
+
+/**
+             <!-- Personnels -->
+            <details>
+                <summary>Personnels</summary>
+                <div class="max-width">
+                    <div class="projets-content part2">
+                        <div class="column projectsImage">
+                            <img src="include/img/bible.jpg">
+                        </div>
+                        <div class="column right">
+                            <h3 class="text"><span>EcoD✞s</span></h3>
+                            <h4>Description</h4>
+                            <p>
+                                Plateforme chrétien.</p>
+                            <h4>Objectif</h4>
+                            <p>
+                                Développer un site gratuit pour permettre aux chrétiens d'apprendre le discipolat.
+                            </p>
+                            <p>Des cours entièrement GRATUIT de nouveau convertis au gagneur d'âmes.</p>
+                            <p>Des exercices pour tester vos connaissances Bibliques.</p>
+                            <p>La partie témoignage pour s'inpirer ou ranconter son histoire dans le but d'encourager les
+                                autres
+                            </p>
+                            <p><b>Taille de l'équipe/poste : </b>CEO</p>
+                            <h4>Technologies</h4>
+                            <ol>
+                                <li>Html5 & Less : Font-end (static avec feuille de style)</li>
+                                <li>Js : Front-end (dynamique)</li>
+                            </ol>
+                            <p>
+                                <b><a href="https://dididnk.github.io/Ecodis/" target="_blank"> <span class="linkEts">EcoD✞s <i class="fas fa-link"></i></span></a></b>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </details> 
+ */

@@ -9,13 +9,13 @@ const teamMembers = [
         fullname: "Samuel A.",
         img: "include/img/sam-1.jpeg",
         job: "Ingénieur Informatique",
-        company: "Freelance",
+        company: "",
     },
     {
         fullname: "Dunia-Tabitha N.",
         img: "include/img/tab-1.jpeg",
-        job: "Cheffe de projet e-business",
-        company: "Incomm",
+        job: "Cheffe de projet web",
+        company: "",
     },
 ];
 
