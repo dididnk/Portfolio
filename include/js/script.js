@@ -44,7 +44,7 @@ $(document).ready(function(){
     });
 
     // Typing text animation script
-    var myBio = ["Développeur informatique (Fullstack, Mobile, Desktop), Chef de projet (Agile Scrum), Ingénieur IOT"];
+    var myBio = [" Développeur de logiciels ", " Aspirant professionnel DevSecOps ", " Spécialisé en cybersécurité et cloud "];
     var typed = new Typed(".typing", {
         strings: myBio,
         typeSpeed: 100,
