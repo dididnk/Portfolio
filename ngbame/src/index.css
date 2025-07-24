@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 @theme {
   --color-border: hsl(var(--border));
   --color-background: hsl(var(--background));
@@ -91,11 +92,11 @@
     @apply border-border;
   }
 
-  html{
+  html {
     @apply scroll-smooth;
   }
 
-  body{
+  body {
     @apply bg-background text-foreground transition-colors duration-300;
     font-feature-settings: "rling" 1, "calt" 1;
   }
@@ -139,20 +140,20 @@
 }
 
 @utility cosmic-button {
-  @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium transition-all duration-300 hover:shadow-[0_0_10px_rgba(139, 92, 246, 0.5)] hover:scale-105 active:scale-95;
+  @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium transition-all duration-300 hover:shadow-[0_0_10px_rgba(139,92,246,0.5)] hover:scale-105 active:scale-95;
 }
 
-@utility star{
+@utility star {
   @apply absolute rounded-full bg-white;
   box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4);
 }
 
-@utility meteor{
+@utility meteor {
   @apply absolute bg-linear-to-r from-white via-white to-transparent rounded-full;
   box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.3);
 }
 
-#route{
+#route {
   max-width: 100%;
   margin: 0 auto;
   padding: 0;
