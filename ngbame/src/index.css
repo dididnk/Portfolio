@@ -86,6 +86,19 @@
 
     --border: 213 33% 20%;
   }
+
+  * {
+    @apply border-border;
+  }
+
+  html{
+    @apply scroll-smooth;
+  }
+
+  body{
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-feature-settings: "rling" 1, "calt" 1;
+  }
 }
 
 @utility container {
@@ -137,4 +150,11 @@
 @utility meteor{
   @apply absolute bg-linear-to-r from-white via-white to-transparent rounded-full;
   box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.3);
+}
+
+#route{
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
 }
