@@ -1,5 +1,4 @@
-import { Instagram, Linkedin, Mail, MapPin, Send } from "lucide-react";
-import { cn } from "../lib/utils";
+import { Instagram, Linkedin, Mail, MapPin } from "lucide-react";
 
 export const ContactSection = () => {
   return (
@@ -54,19 +53,18 @@ export const ContactSection = () => {
           </div>
 
           <div className="bg-card p-8 rounded-lg shadow-xs text-center">
-
             <h3 className="font-medium mb-4"> Connect With Me</h3>
-              <div className="flex space-x-4 justify-center">
-                <a
-                  href="https://www.linkedin.com/in/emmanuel-ngbame-04b33b1b7/"
-                  target="_blank"
-                >
-                  <Linkedin />
-                </a>
-                <a href="#" target="_blank">
-                  <Instagram />
-                </a>
-              </div>
+            <div className="flex space-x-4 justify-center">
+              <a
+                href="https://www.linkedin.com/in/emmanuel-ngbame-04b33b1b7/"
+                target="_blank"
+              >
+                <Linkedin />
+              </a>
+              <a href="#" target="_blank">
+                <Instagram />
+              </a>
+            </div>
           </div>
         </div>
       </div>
