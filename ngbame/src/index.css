@@ -104,7 +104,7 @@
 
 @utility container {
   margin-inline: auto;
-  paddin-inline: 2rem;
+  padding-inline: 2rem;
 
   @media (width >= 640px) {
     max-width: 640px;
@@ -125,7 +125,7 @@
 
 @utility text-glow {
   @apply relative;
-  text-shaddow: 0 0 10px rgba(167, 139, 250, 0.5);
+  text-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
 }
 
 @utility card-hover {

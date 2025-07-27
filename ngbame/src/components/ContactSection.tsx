@@ -1,17 +1,18 @@
-import { Instagram, Linkedin, Mail, MapPin } from "lucide-react";
+import { Linkedin, Mail, MapPin } from "lucide-react";
 
 export const ContactSection = () => {
   return (
     <section id="contact" className="py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-          Get In <span className="text-primary">Touch</span>
+          Entrer en <span className="text-primary">Contact</span>
         </h2>
 
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, omnis.
-          Soluta laborum, accusamus aut ducimus omnis dicta natus magnam
-          mollitia!
+          Passionné par les défis techniques et l'innovation, je suis ouvert aux
+          opportunités qui allient développement et sécurité. Vous avez un
+          projet ambitieux, une problématique complexe ou simplement envie
+          d'échanger sur les bonnes pratiques DevSecOps ? Contactez-moi !
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -43,9 +44,10 @@ export const ContactSection = () => {
                 </div>
 
                 <div>
-                  <h4 className="text-lg font-semibold">Location</h4>
+                  <h4 className="text-lg font-semibold">Mobilité</h4>
                   <a className="text-muted-foreground hover:text-primary transition-colors">
-                    Strasbourg, France
+                    Basé en Alsace, ouvert à Paris/Bordeaux - et flexible pour
+                    des projets inspirants ailleurs en France.
                   </a>
                 </div>
               </div>
@@ -53,16 +55,14 @@ export const ContactSection = () => {
           </div>
 
           <div className="bg-card p-8 rounded-lg shadow-xs text-center">
-            <h3 className="font-medium mb-4"> Connect With Me</h3>
+            <h3 className="font-medium mb-4"> On se connecte ?</h3>
             <div className="flex space-x-4 justify-center">
               <a
                 href="https://www.linkedin.com/in/emmanuel-ngbame-04b33b1b7/"
                 target="_blank"
+                className="text-muted-foreground hover:text-primary transition-colors"
               >
-                <Linkedin />
-              </a>
-              <a href="#" target="_blank">
-                <Instagram />
+                <Linkedin size={60}/>
               </a>
             </div>
           </div>

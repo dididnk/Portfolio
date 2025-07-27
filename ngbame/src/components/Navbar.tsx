@@ -27,7 +27,7 @@ export const Navbar = () => {
   return (
     <div
       className={cn(
-        "fixed w-full z-40 tracking-all duration-300",
+        "fixed w-full z-40 tracking-all duration-300 capitalize font-semibold",
         isScrolled ? "py-3 bg-background/80 backdrop-blur-md shadow-xs" : "py-5"
       )}
     >
@@ -37,7 +37,7 @@ export const Navbar = () => {
           className="text-xl font-bold text-primary flex items-center"
         >
           <span className="relative z-10">
-            <span className="text-glow text-foreground">Dnk</span> Portfolio
+            <span className="text-glow text-foreground">Port</span>folio
           </span>
         </a>
 

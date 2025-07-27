@@ -1,88 +1,57 @@
-import { act, useState } from "react";
+import { useState } from "react";
 import { cn } from "../lib/utils";
 
 const skills = [
   // Frontend Skills
-  { name: "ReactJs", level: 85, categorie: "frontend" },
-  { name: "Angular 2+", level: 80, categorie: "frontend" },
-  { name: "Blazor", level: 85, categorie: "frontend" },
-  { name: "Aurelia.js", level: 70, categorie: "frontend" },
-  { name: "Django", level: 65, categorie: "frontend" },
+  { name: "ReactJs", level: 80, categorie: "frontend" },
+  { name: "Angular 2+", level: 70, categorie: "frontend" },
+  { name: "Blazor", level: 70, categorie: "frontend" },
 
   // Backend Skills
   { name: "C# .NET", level: 90, categorie: "backend" },
-  { name: "Python", level: 75, categorie: "backend" },
-  { name: "Java", level: 70, categorie: "backend" },
-  { name: "NodeJs", level: 75, categorie: "backend" },
 
   // Mobile Skills
-  { name: "Flutter", level: 80, categorie: "mobile" },
-  { name: "Kotlin", level: 70, categorie: "mobile" },
-
-  // IoT Skills
-  { name: "Arduino", level: 65, categorie: "iot" },
-  { name: "C", level: 60, categorie: "iot" },
-  { name: "C++", level: 60, categorie: "iot" },
+  { name: "Flutter", level: 90, categorie: "mobile" },
 
   // Database Skills
   { name: "MySQL", level: 80, categorie: "database" },
-  { name: "PostgreSQL", level: 75, categorie: "database" },
-  { name: "MariaDB", level: 75, categorie: "database" },
-  { name: "MongoDB", level: 70, categorie: "database" },
-  { name: "SQLite", level: 65, categorie: "database" },
+  { name: "MongoDB", level: 80, categorie: "database" },
 
   // DevOps Skills
-  { name: "Docker", level: 70, categorie: "devops" },
-  { name: "Kubernetes", level: 65, categorie: "devops" },
-  { name: "Ansible", level: 60, categorie: "devops" },
-  { name: "Vagrant", level: 60, categorie: "devops" },
-  { name: "GitOps", level: 60, categorie: "devops" },
+  { name: "Docker", level: 50, categorie: "devops" },
+  { name: "Kubernetes", level: 50, categorie: "devops" },
 
   // Cloud Skills
-  { name: "AWS Cloud", level: 70, categorie: "cloud" },
-
-  // Security Skills
-  { name: "Gestion des vulnérabilités", level: 65, categorie: "cybersecurity" },
-  {
-    name: "Sensibilisation à la sécurité de l’information",
-    level: 70,
-    categorie: "cybersecurity",
-  },
+  { name: "AWS Cloud", level: 50, categorie: "cloud" },
+  { name: "Microsoft Azure", level: 50, categorie: "cloud" },
 
   // Architecture
-  { name: "MVC", level: 85, categorie: "architecture" },
-  { name: "Microservices", level: 75, categorie: "architecture" },
-  { name: "Oignon", level: 70, categorie: "architecture" },
-  { name: "CQRS", level: 70, categorie: "architecture" },
-  { name: "DDD", level: 70, categorie: "architecture" },
+  { name: "MVC", level: 90, categorie: "architecture" },
+  { name: "Microservices", level: 80, categorie: "architecture" },
+  { name: "CQRS", level: 60, categorie: "architecture" },
 
   // Tools
   { name: "Git", level: 90, categorie: "tools" },
-  { name: "Jira", level: 80, categorie: "tools" },
-  { name: "Azure DevOps", level: 75, categorie: "tools" },
-  { name: "Pack Office", level: 80, categorie: "tools" },
 
   // Methodologies
   { name: "Agile", level: 85, categorie: "methodology" },
-  { name: "Merise", level: 70, categorie: "methodology" },
+  { name: "Merise", level: 85, categorie: "methodology" },
 
   // Other Technical Skills
-  { name: "REST API", level: 85, categorie: "other" },
+  { name: "REST API", level: 80, categorie: "other" },
   { name: "Design Pattern", level: 80, categorie: "other" },
   { name: "Clean Code", level: 80, categorie: "other" },
-  { name: "Tests unitaires", level: 75, categorie: "other" },
+  { name: "Tests unitaires", level: 60, categorie: "other" },  
 ];
 
 const categories = [
-  "all",
+  "toutes",
   "frontend",
   "backend",
   "mobile",
-  "iot",
   "database",
   "devops",
   "cloud",
-  "cybersecurity",
   "architecture",
   "tools",
   "methodology",
@@ -90,17 +59,17 @@ const categories = [
 ];
 
 export const SkillsSsection = () => {
-  const [activeCategory, setActiveCAtegory] = useState("all");
+  const [activeCategory, setActiveCAtegory] = useState(categories[0]);
 
   const filteredSkills = skills.filter(
-    (skill) => activeCategory === "all" || skill.categorie === activeCategory
+    (skill) => activeCategory === categories[0] || skill.categorie === activeCategory
   );
 
   return (
     <section id="skills" className="py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-          My <span className="text-primary">Skills</span>
+          Mes <span className="text-primary">Compétences</span>
         </h2>
 
         <div className="flex flex-wrap justify-center gap-4 mb-12">
