@@ -1,0 +1,48 @@
+# Dépendances et builds
+/node_modules/
+/dist/
+/.env
+/.env.local
+/.env.*.local
+
+# Fichiers de cache
+/.vscode/
+/.idea/
+/.sass-cache/
+/__pycache__/
+*.log
+*.tmp
+*.temp
+
+# Système
+.DS_Store
+.thumbs.db
+*.swp
+*.swo
+
+# Tests et couverture
+/coverage/
+/junit.xml
+
+# Vite/ESLint/Prettier
+/.eslintcache
+/.prettierignore
+/.vite/
+
+# Environnement de développement
+.env.development
+.env.production
+.env.test
+
+# Fichiers spécifiques à l'éditeur
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# Fichiers système macOS
+**/.DS_Store
+
+# Fichiers temporaires
+*.bak
+*.old
+*.orig

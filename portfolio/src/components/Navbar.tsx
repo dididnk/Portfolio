@@ -1,18 +1,20 @@
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { cn } from "../lib/utils";
 import { Menu, X } from "lucide-react";
 
 const navItems = [
-  { name: "Accueil", href: "#hero" },
-  { name: "à propos", href: "#about" },
-  { name: "Compétences", href: "#skills" },
-  { name: "Projets", href: "#projects" },
-  { name: "Contact", href: "#contact" },
+  { name: "Accueil", to: "#" },
+  { name: "à propos", to: "#about" },
+  { name: "Compétences", to: "#skills" },
+  { name: "Projets", to: "#projects" },
+  { name: "Contact", to: "#contact" },
 ];
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,9 +22,19 @@ export const Navbar = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Scroll to anchor on location change
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace("#", "");
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [location]);
 
   return (
     <div
@@ -32,25 +44,27 @@ export const Navbar = () => {
       )}
     >
       <div className="container flex items-center justify-between">
-        <a
-          href="#hero"
+        <Link
+          to="#hero"
           className="text-xl font-bold text-primary flex items-center"
+          onClick={() => setIsMenuOpen(false)}
         >
           <span className="relative z-10">
             <span className="text-glow text-foreground">Port</span>folio
           </span>
-        </a>
+        </Link>
 
         {/* desktop nav */}
         <div className="hidden md:flex space-x-8">
           {navItems.map((item, key) => (
-            <a
-              href={item.href}
+            <Link
+              to={item.to}
               key={key}
               className="text-foreground/80 hover:text-primary transition-colors duration-300"
+              onClick={() => setIsMenuOpen(false)}
             >
               {item.name}
-            </a>
+            </Link>
           ))}
         </div>
 
@@ -72,16 +86,16 @@ export const Navbar = () => {
               : "opacity-0 pointer-events-none"
           )}
         >
-          <div className="flex flex-col spacce-y-8 text-xl">
+          <div className="flex flex-col space-y-8 text-xl">
             {navItems.map((item, key) => (
-              <a
-                href={item.href}
+              <Link
+                to={item.to}
                 key={key}
                 className="text-foreground/80 hover:text-primary transition-colors duration-300"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </div>
         </div>

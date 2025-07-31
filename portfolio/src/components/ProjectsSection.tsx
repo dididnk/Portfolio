@@ -6,7 +6,7 @@ const projects = [
     title: "Portfolio",
     description:
       "Ce site même - une vitrine ReactJS de mes compétences en développement moderne.",
-    image: "/projects/project.png",
+    image: "/me/projects/project.png",
     tags: [
       "React.js (Vite)",
       "TypeScript",
@@ -14,15 +14,15 @@ const projects = [
       "Responsive Design",
     ],
     demoUrl: "#",
-    githubUrl: "#",
-    isPublic: false,
+    githubUrl: "https://github.com/dididnk/me",
+    isPublic: true,
   },
   {
     id: 2,
     title: "SportVille",
     description:
       "Application mobile innovante qui connecte les sportifs de tous niveaux autour d'expériences locales partagées.",
-    image: "/projects/project2.png",
+    image: "/me/projects/project2.png",
     tags: [
       "Flutter",
       "Firebase",
