@@ -6,7 +6,7 @@ const projects = [
     title: "Portfolio",
     description:
       "Ce site même - une vitrine ReactJS de mes compétences en développement moderne.",
-    image: "/me/projects/project.png",
+    image: "/Portfolio/projects/project.png",
     tags: [
       "React.js (Vite)",
       "TypeScript",
@@ -22,7 +22,7 @@ const projects = [
     title: "SportVille",
     description:
       "Application mobile innovante qui connecte les sportifs de tous niveaux autour d'expériences locales partagées.",
-    image: "/me/projects/project2.png",
+    image: "/Portfolio/projects/project2.png",
     tags: [
       "Flutter",
       "Firebase",
