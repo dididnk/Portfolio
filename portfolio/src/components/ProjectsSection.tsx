@@ -35,6 +35,19 @@ const projects = [
     githubUrl: "#",
     isPublic: false,
   },
+  {
+    id: 3,
+    title: "Rock Leaf Scissor",
+    description:
+      "Un jeu mobile simple construit avec Flutter où le joueur affronte l'ordinateur dans un match classique Roche – Feuille – Ciseaux.",
+    image: "/Portfolio/projects/project3.png",
+    tags: [
+      "Flutter",
+    ],
+    demoUrl: "#",
+    githubUrl: "https://github.com/dididnk/rock_paper_scissor",
+    isPublic: true,
+  },
 ];
 
 export const ProjectsSection = () => {
