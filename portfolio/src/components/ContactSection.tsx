@@ -1,4 +1,4 @@
-import { Linkedin, Mail, MapPin } from "lucide-react";
+import { Calendar, Linkedin } from "lucide-react";
 
 export const ContactSection = () => {
   return (
@@ -22,32 +22,17 @@ export const ContactSection = () => {
             <div className="space-y-6 justify-center">
               <div className="flex items-start space-x-4">
                 <div className="p-3 rounded-full bg-primary/10">
-                  <Mail className="h-6 w-6 text-primary" />
+                  <Calendar className="h-6 w-6 text-primary" />
                 </div>
 
                 <div>
-                  <h4 className="text-lg font-semibold">Email</h4>
+                  <h4 className="text-lg font-semibold">Calendly</h4>
                   <a
-                    href="mailto:ngbamedistingue@yahoo.com"
+                    href="https://calendly.com/emmanuel-ngbame/30min?month=2025-09"
+                    target="_blank"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    ngbamedistingue@yahoo.com
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div className="space-y-6 justify-center">
-              <div className="flex items-start space-x-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <MapPin className="h-6 w-6 text-primary" />
-                </div>
-
-                <div>
-                  <h4 className="text-lg font-semibold">Mobilité</h4>
-                  <a className="text-muted-foreground hover:text-primary transition-colors">
-                    Basé en Alsace, ouvert à Paris/Bordeaux - et flexible pour
-                    des projets inspirants ailleurs en France.
+                    Échange opportunité – Développement IT
                   </a>
                 </div>
               </div>
@@ -62,7 +47,7 @@ export const ContactSection = () => {
                 target="_blank"
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
-                <Linkedin size={60}/>
+                <Linkedin size={60} />
               </a>
             </div>
           </div>

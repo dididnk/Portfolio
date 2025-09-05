@@ -37,7 +37,7 @@ const projects = [
   },
   {
     id: 3,
-    title: "Rock Leaf Scissor",
+    title: "Rock Paper Scissor",
     description:
       "Un jeu mobile simple construit avec Flutter où le joueur affronte l'ordinateur dans un match classique Roche – Feuille – Ciseaux.",
     image: "/Portfolio/projects/project3.png",
