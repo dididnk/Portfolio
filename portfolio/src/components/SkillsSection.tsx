@@ -41,7 +41,8 @@ const skills = [
   { name: "REST API", level: 80, categorie: "other" },
   { name: "Design Pattern", level: 80, categorie: "other" },
   { name: "Clean Code", level: 80, categorie: "other" },
-  { name: "Tests unitaires", level: 60, categorie: "other" },  
+  { name: "Cobol", level: 60, categorie: "other" },
+  { name: "Tests unitaires", level: 80, categorie: "other" },  
 ];
 
 const categories = [
