@@ -16,6 +16,11 @@ const skills = [
   // Database Skills
   { name: "MySQL", level: 80, categorie: "database" },
   { name: "MongoDB", level: 80, categorie: "database" },
+  { name: "SQL Server", level: 80, categorie: "database" },
+  { name: "MariaDB", level: 60, categorie: "database" },
+  { name: "Oracle", level: 60, categorie: "database" },
+  { name: "DB2", level: 60, categorie: "database" },
+  { name: "Neo4J", level: 70, categorie: "database" },
 
   // DevOps Skills
   { name: "Docker", level: 50, categorie: "devops" },
@@ -42,6 +47,14 @@ const skills = [
   { name: "Design Pattern", level: 80, categorie: "other" },
   { name: "Clean Code", level: 80, categorie: "other" },
   { name: "Cobol", level: 60, categorie: "other" },
+  { name: "Java", level: 60, categorie: "other" },
+  { name: "Python", level: 60, categorie: "other" },
+  { name: "Delphi", level: 60, categorie: "other" },
+  { name: "Kotlin", level: 60, categorie: "other" },
+  { name: "Php", level: 60, categorie: "other" },
+  { name: "Xamarin", level: 60, categorie: "other" },
+  { name: "VB", level: 60, categorie: "other" },
+  { name: "OCaml", level: 60, categorie: "other" },
   { name: "Tests unitaires", level: 80, categorie: "other" },  
 ];
 
