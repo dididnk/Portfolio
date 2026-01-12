@@ -45,7 +45,7 @@ export const AboutSection = () => {
                   <div className="text-left">
                     <h4 className="font-semibold text-lg">Développement</h4>
                     <p className="text-muted-foreground italic mb-1 mt-1">
-                      Polyvalent - FullStack/Mobile/Desktop
+                      Polyvalent - Mainframe/FullStack/Mobile/Desktop
                     </p>
                     <p className="text-muted-foreground">
                       COBOL Mainframe (batch, online) et C# (.NET), avec capacité d’adaptation rapide aux environnements et architectures hybrides.
