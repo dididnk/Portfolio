@@ -9,11 +9,7 @@ import {
 
 export const AboutSection = () => {
   const title: string =
-    "Développeur Logiciel | Expert Cybersécurité Cloud | Aspirant DevSecOps";
-  const description: string =
-    "Passionné par le développement Full-Stack (Blazor, React) et Mobile (Flutter, Kotlin), j'ai renforcé mes compétences avec un Master en Cybersécurité & Cloud. ";
-  const description2: string =
-    "Je me spécialise désormais en DevSecOps pour intégrer la sécurité dès la conception, en automatisant les processus sans compromettre performance et conformité.";
+    "Développeur logiciel Full Stack & Mobile, spécialisé Mainframe COBOL | Cybersécurité & Cloud";
 
   return (
     <section id="about" className="py-24 px-4 relative">
@@ -25,10 +21,6 @@ export const AboutSection = () => {
         <div className="center grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold">{title}</h3>
-
-            <p className="text-muted-foreground">{description}</p>
-
-            <p className="text-muted-foreground">{description2}</p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
               <a href="#contact" className="cosmic-button text-center">
@@ -56,10 +48,7 @@ export const AboutSection = () => {
                       Polyvalent - FullStack/Mobile/Desktop
                     </p>
                     <p className="text-muted-foreground">
-                      Maîtrise des écosystèmes JavaScript, C# et Dart pour créer
-                      des applications cross-platform performantes (React,
-                      Blazor, Flutter). Capacité à m'adapter rapidement aux
-                      nouveaux frameworks.
+                      COBOL Mainframe (batch, online) et C# (.NET), avec capacité d’adaptation rapide aux environnements et architectures hybrides.
                     </p>
                   </div>
                 </div>
